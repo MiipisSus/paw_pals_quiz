@@ -61,8 +61,9 @@ class AnswerView(APIView):
         cached_data = RedisService.get(f"question_{data.get('question_id')}")
         if cached_data and data.get('selected_slug') == cached_data.get('correct_slug'):
             is_correct = True
+            correct_slug = cached_data.get('correct_slug')
         else:
-            is_correct = QuestionService.is_answer_correct(data.get('question_id'), data.get('selected_slug'))
+            is_correct, correct_slug = QuestionService.is_answer_correct(data.get('question_id'), data.get('selected_slug'))
             
         score = 1 if is_correct else 0
 
@@ -92,7 +93,7 @@ class AnswerView(APIView):
                 score=score
             )
             
-        serializer = AnswerSerializer({'is_correct': is_correct, 'score': score})
+        serializer = AnswerSerializer({'correct_slug': correct_slug, 'is_correct': is_correct, 'score': score})
 
         return Response(serializer.data)
 

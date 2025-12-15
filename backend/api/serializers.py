@@ -51,6 +51,7 @@ class AnswerInputSerializer(serializers.Serializer):
     
     
 class AnswerSerializer(serializers.Serializer):
+    correct_slug = serializers.CharField(max_length=100)
     score = serializers.IntegerField()
     is_correct = serializers.BooleanField()
 

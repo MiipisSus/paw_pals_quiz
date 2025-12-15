@@ -44,4 +44,4 @@ class QuestionService:
         except Question.DoesNotExist:
             raise ValueError(f'Question with ID "{question_id}" not found.')
         
-        return question.answer.slug == selected_slug
+        return question.answer.slug == selected_slug, question.answer.slug

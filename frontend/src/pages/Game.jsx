@@ -1,32 +1,33 @@
 import { useEffect, useState } from "react";
-import { Trophy } from "lucide-react";
+import { Trophy, ArrowRight } from "lucide-react";
+import { OrbitProgress } from "react-loading-indicators";
 
 import { fetchQuestion, submitAnswer } from "../services/apiService";
 import { useGame } from "../contexts/GameContext";
 
 function Game() {
   const { gameSessionId, setScore, score, setRounds, rounds } = useGame();
+  const [isLoading, setIsLoading] = useState(true);
   const [currentImage, setCurrentImage] = useState(null);
   const [currentChoices, setCurrentChoices] = useState([]);
   const [questionId, setQuestionId] = useState(null);
+  const [selectedChoice, setSelectedChoice] = useState(null);
+  const [correctAnswer, setCorrectAnswer] = useState(null);
+  const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const question = await fetchQuestion(gameSessionId);
-        setCurrentImage(question.image_url);
-        setCurrentChoices(question.choices);
-        setQuestionId(question.id);
-      } catch (error) {
-        console.error("Failed to fetch questions:", error);
-      }
-    };
-
-    fetchData();
+    if (gameSessionId) {
+      handleQuestionFetch();
+    }
   }, [gameSessionId]);
 
   async function handleQuestionFetch() {
     try {
+      setIsLoading(true);
+      setSelectedChoice(null);
+      setCorrectAnswer(null);
+      setIsAnswerCorrect(null);
+
       const question = await fetchQuestion(gameSessionId);
       setCurrentImage(question.image_url);
       setCurrentChoices(question.choices);
@@ -34,10 +35,14 @@ function Game() {
       setRounds(question.current_round);
     } catch (error) {
       console.error("Failed to fetch questions:", error);
+    } finally {
+      setIsLoading(false);
     }
   }
 
   async function handleSubmitAnswer(choice) {
+    setSelectedChoice(choice);
+
     try {
       const answerData = {
         game_session_id: gameSessionId,
@@ -45,9 +50,9 @@ function Game() {
         selected_slug: choice.slug,
       };
       const response = await submitAnswer(answerData);
+      setIsAnswerCorrect(response.is_correct);
+      setCorrectAnswer(response.correct_slug);
       setScore((prevScore) => prevScore + response.score);
-      // Check if is correct and update score/rounds accordingly
-      await handleQuestionFetch();
     } catch (error) {
       console.error("Failed to fetch questions:", error);
     }
@@ -55,17 +60,33 @@ function Game() {
 
   return (
     <div className="center h-[calc(100vh-4rem)]">
-      <div className="flex w-6/10 h-7/10 overflow-hidden bg-white rounded-4xl shadow-2xl">
-        <div className="relative w-1/2 bg-black">
-          <img
-            src={currentImage}
-            alt="Image"
-            className="w-full h-full object-cover object-center text-white"
-          />
-          <i className="center ri-question-line z-2 absolute bottom-6 right-6 size-12 text-3xl text-darker-accent bg-white rounded-full"></i>
+      <div className="flex w-8/10 h-7/10 overflow-hidden bg-white rounded-4xl shadow-2xl">
+        <div className="relative w-1/2 bg-tetariary">
+          {isLoading ? (
+            <div className="center flex-col text-center gap-2 w-full h-full bg-secondary">
+              <OrbitProgress
+                dense
+                color="#6d8ef2"
+                size="medium"
+                text=""
+                textColor=""
+              />
+              <p className="text-sm font-medium text-light-brown">
+                SUMMONING DOGGO...
+              </p>
+            </div>
+          ) : (
+            <>
+              <img
+                src={currentImage}
+                className="w-full h-full object-cover object-center text-white"
+              />
+              <i className="center ri-question-line z-2 absolute bottom-6 right-6 size-12 text-3xl text-darker-accent bg-white rounded-full"></i>
+            </>
+          )}
         </div>
         <div className="center flex-col w-1/2">
-          <div className="flex gap-4 px-6 my-6 ml-auto mb-auto">
+          <div className="flex gap-4 px-6 my-6 mb-auto ml-auto">
             <p className="px-2 py-1 bg-darker-primary text-white font-bold rounded-lg">
               Round<span className="ml-3">{rounds}</span>
             </p>
@@ -82,17 +103,57 @@ function Game() {
               Look at the photo and pick the breed!
             </h3>
           </div>
-          <ul className="flex flex-col text-center gap-3 w-8/10 p-0 mb-auto list-none">
-            {currentChoices.map((choice, index) => (
-              <button
-                key={index}
-                className="bg-darker-primary text-white font-semibold p-3 rounded-lg shadow-sm cursor-pointer"
-                onClick={() => handleSubmitAnswer(choice)}
-              >
-                {choice.name}
-              </button>
-            ))}
+          <ul className="grid grid-cols-2 grid-rows-2 text-center gap-3 w-8/10 p-0 list-none">
+            {currentChoices.length > 0
+              ? currentChoices.map((choice, index) => (
+                  <button
+                    key={index}
+                    className={`text-white font-semibold p-3 rounded-lg shadow-sm ${
+                      isAnswerCorrect !== null
+                        ? choice.slug === correctAnswer
+                          ? "bg-green-500"
+                          : choice.slug === selectedChoice?.slug
+                          ? "bg-red-500"
+                          : "bg-gray-200 cursor-not-allowed"
+                        : "bg-darker-primary"
+                    }`}
+                    onClick={() => handleSubmitAnswer(choice)}
+                  >
+                    {choice.name}
+                  </button>
+                ))
+              : Array.from({ length: 4 }, (_, index) => (
+                  <button
+                    key={index}
+                    disabled
+                    className="bg-secondary text-gray-500 font-semibold p-3 rounded-lg shadow-sm cursor-not-allowed"
+                  >
+                    &nbsp;
+                  </button>
+                ))}
           </ul>
+          <div
+            className={`flex justify-between items-center text-center p-4 mt-auto mb-6 bg-secondary border-2 border-darker-secondary rounded-xl w-7/10 ${
+              isAnswerCorrect === null ? "invisible" : "visible"
+            }`}
+          >
+            {isAnswerCorrect ? (
+              <p className="text-sm font-semibold text-green-500">
+                BINGO! CORRECT!
+              </p>
+            ) : (
+              <p className="text-sm font-semibold text-red-500">
+                OOPS! WRONG...
+              </p>
+            )}
+            <button
+              className="center gap-2 px-4 py-1 text-sm font-semibold bg-brown text-white rounded-2xl"
+              onClick={() => handleQuestionFetch()}
+            >
+              NEXT ROUND
+              <ArrowRight className="size-4 font-semibold" />
+            </button>
+          </div>
         </div>
       </div>
     </div>

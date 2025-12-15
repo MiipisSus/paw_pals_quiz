@@ -28,6 +28,10 @@
     background-position: 0 0, 25px 25px;
     background-size: 50px 50px;
   }
+
+  button {
+    @apply cursor-pointer;
+  }
 }
 
 @layer utilities {
