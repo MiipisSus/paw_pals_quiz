@@ -1,12 +1,27 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Trophy, ArrowRight } from "lucide-react";
 import { OrbitProgress } from "react-loading-indicators";
 
-import { fetchQuestion, submitAnswer } from "../services/apiService";
+import {
+  fetchQuestion,
+  submitAnswer,
+  endGameSession,
+} from "../services/apiService";
 import { useGame } from "../contexts/GameContext";
 
 function Game() {
-  const { gameSessionId, setScore, score, setRounds, rounds } = useGame();
+  const {
+    gameSessionId,
+    setScore,
+    score,
+    setRounds,
+    rounds,
+    totalRounds,
+    setRoundRecords,
+  } = useGame();
+  const navigate = useNavigate();
+
   const [isLoading, setIsLoading] = useState(true);
   const [currentImage, setCurrentImage] = useState(null);
   const [currentChoices, setCurrentChoices] = useState([]);
@@ -14,6 +29,7 @@ function Game() {
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [correctAnswer, setCorrectAnswer] = useState(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
+  const [isGameOver, setIsGameOver] = useState(false);
 
   useEffect(() => {
     if (gameSessionId) {
@@ -35,7 +51,6 @@ function Game() {
       setRounds(question.current_round);
     } catch (error) {
       console.error("Failed to fetch questions:", error);
-    } finally {
       setIsLoading(false);
     }
   }
@@ -53,17 +68,28 @@ function Game() {
       setIsAnswerCorrect(response.is_correct);
       setCorrectAnswer(response.correct_slug);
       setScore((prevScore) => prevScore + response.score);
+      console.log(rounds, totalRounds);
+      if (rounds >= totalRounds) {
+        setIsGameOver(true);
+      }
+      console.log(isGameOver);
     } catch (error) {
       console.error("Failed to fetch questions:", error);
     }
+  }
+
+  async function handleEndGame() {
+    const response = await endGameSession(gameSessionId);
+    setRoundRecords(response.round_records);
+    navigate("/game-result");
   }
 
   return (
     <div className="center h-[calc(100vh-4rem)]">
       <div className="flex w-8/10 h-7/10 overflow-hidden bg-white rounded-4xl shadow-2xl">
         <div className="relative w-1/2 bg-tetariary">
-          {isLoading ? (
-            <div className="center flex-col text-center gap-2 w-full h-full bg-secondary">
+          {isLoading && (
+            <div className="absolute inset-0 center flex-col text-center gap-2 bg-secondary z-10">
               <OrbitProgress
                 dense
                 color="#6d8ef2"
@@ -75,15 +101,14 @@ function Game() {
                 SUMMONING DOGGO...
               </p>
             </div>
-          ) : (
-            <>
-              <img
-                src={currentImage}
-                className="w-full h-full object-cover object-center text-white"
-              />
-              <i className="center ri-question-line z-2 absolute bottom-6 right-6 size-12 text-3xl text-darker-accent bg-white rounded-full"></i>
-            </>
           )}
+          <img
+            src={currentImage}
+            onLoad={() => setIsLoading(false)}
+            onError={() => setIsLoading(false)}
+            className="w-full h-full object-cover object-center text-white"
+          />
+          <i className="center ri-question-line z-2 absolute bottom-6 right-6 size-12 text-3xl text-darker-accent bg-white rounded-full"></i>
         </div>
         <div className="center flex-col w-1/2">
           <div className="flex gap-4 px-6 my-6 mb-auto ml-auto">
@@ -146,13 +171,22 @@ function Game() {
                 OOPS! WRONG...
               </p>
             )}
-            <button
-              className="center gap-2 px-4 py-1 text-sm font-semibold bg-brown text-white rounded-2xl"
-              onClick={() => handleQuestionFetch()}
-            >
-              NEXT ROUND
-              <ArrowRight className="size-4 font-semibold" />
-            </button>
+            {isGameOver ? (
+              <button
+                className="center gap-2 px-4 py-1 text-sm font-semibold bg-darker-accent text-white rounded-2xl"
+                onClick={() => handleEndGame()}
+              >
+                SEE RESULT
+              </button>
+            ) : (
+              <button
+                className="center gap-2 px-4 py-1 text-sm font-semibold bg-brown text-white rounded-2xl"
+                onClick={() => handleQuestionFetch()}
+              >
+                NEXT ROUND
+                <ArrowRight className="size-4 font-semibold" />
+              </button>
+            )}
           </div>
         </div>
       </div>

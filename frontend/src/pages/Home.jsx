@@ -6,12 +6,13 @@ import { startGameSession } from "../services/apiService";
 
 function Home() {
   const navigate = useNavigate();
-  const { setGameSessionId } = useGame();
+  const { setGameSessionId, setTotalRounds } = useGame();
 
   const handleStartGame = async () => {
     try {
       const response = await startGameSession();
       setGameSessionId(response.game_session_id);
+      setTotalRounds(response.total_rounds);
       navigate("/game");
     } catch (error) {
       console.error("Failed to start game:", error);

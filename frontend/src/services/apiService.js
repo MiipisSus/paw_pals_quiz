@@ -1,22 +1,35 @@
 const BASE_URL = "/api/";
 
 export async function startGameSession() {
-  const headers = {
-    "Content-Type": "application/json",
-  };
-
   const response = await fetch(`${BASE_URL}start-game/`, {
     method: "POST",
-    headers: headers,
+    headers: {
+      "Content-Type": "application/json",
+    },
     credentials: "include",
   });
 
   if (!response.ok) {
     throw new Error("Failed to start game session");
   }
-  const data = await response.json();
+  return response.json();
+}
 
-  return data;
+export async function endGameSession(gameSessionId) {
+  const response = await fetch(`${BASE_URL}end-game/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({
+      game_session_id: gameSessionId,
+    }),
+  });
+  if (!response.ok) {
+    throw new Error("Failed to end game session");
+  }
+  return response.json();
 }
 
 export async function fetchQuestion(gameSessionId) {

@@ -6,6 +6,8 @@ export function GameProvider({ children }) {
   const [gameSessionId, setGameSessionId] = useState(null);
   const [score, setScore] = useState(0);
   const [rounds, setRounds] = useState(1);
+  const [totalRounds, setTotalRounds] = useState(0);
+  const [roundRecords, setRoundRecords] = useState([]);
 
   const value = {
     gameSessionId,
@@ -14,6 +16,10 @@ export function GameProvider({ children }) {
     setScore,
     rounds,
     setRounds,
+    totalRounds,
+    setTotalRounds,
+    roundRecords,
+    setRoundRecords,
   };
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;

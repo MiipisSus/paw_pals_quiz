@@ -59,6 +59,7 @@ class AnswerSerializer(serializers.Serializer):
 class StartGameSerializer(serializers.Serializer):
     is_guest = serializers.BooleanField(required=False, default=False)
     game_session_id = serializers.UUIDField()
+    total_rounds = serializers.IntegerField()
 
 
 class EndGameInputSerializer(serializers.Serializer):

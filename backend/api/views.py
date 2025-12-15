@@ -110,7 +110,11 @@ class StartGameView(APIView):
             GuestGameSessionService.create_session(game_session_id=game_session_id)
             is_guest = True
 
-        serializer = StartGameSerializer({'game_session_id': game_session_id, 'is_guest': is_guest})
+        serializer = StartGameSerializer(
+            {'game_session_id': game_session_id,
+             'is_guest': is_guest,
+             'total_rounds': 3}
+            )
         
         return Response(serializer.data)
     
