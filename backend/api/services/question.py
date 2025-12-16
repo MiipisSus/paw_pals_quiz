@@ -6,6 +6,15 @@ from api.models import Breed, Question
 
 class QuestionService:
     @classmethod
+    def get_question_by_id(cls, question_id: int) -> Question:
+        try:
+            question = Question.objects.get(id=question_id)
+        except Question.DoesNotExist:
+            raise ValueError(f'Question with ID "{question_id}" not found.')
+        
+        return question
+    
+    @classmethod
     def generate_question(cls) -> Question:
         image_url = DogAPIService.fetch_random_single_image()
         

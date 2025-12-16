@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { startGameSession } from "../services/apiService";
 
 const GameContext = createContext();
 
@@ -22,7 +23,27 @@ export function GameProvider({ children }) {
     setRoundRecords,
   };
 
-  return <GameContext.Provider value={value}>{children}</GameContext.Provider>;
+  const startNewGame = async () => {
+    try {
+      const response = await startGameSession();
+      setGameSessionId(response.game_session_id);
+      setTotalRounds(response.total_rounds);
+
+      setScore(0);
+      setRounds(1);
+      setRoundRecords([]);
+      return response;
+    } catch (error) {
+      console.error("Failed to start game:", error);
+      throw error;
+    }
+  };
+
+  return (
+    <GameContext.Provider value={{ ...value, startNewGame }}>
+      {children}
+    </GameContext.Provider>
+  );
 }
 
 export function useGame() {

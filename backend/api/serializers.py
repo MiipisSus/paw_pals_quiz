@@ -39,15 +39,18 @@ class QuestionSerializer(serializers.ModelSerializer):
 
 
 class RoundRecordSerializer(serializers.ModelSerializer):
+    image_url = serializers.CharField(source='question.image_url')
+    
     class Meta:
         model = RoundRecord
-        fields = ['question', 'selected_answer_slug', 'correct_answer_slug', 'is_correct', 'score']
+        fields = ['image_url', 'choices', 'selected_slug', 'correct_slug', 'is_correct', 'score']
 
 
 class AnswerInputSerializer(serializers.Serializer):
     game_session_id = serializers.UUIDField()
     question_id = serializers.UUIDField()
     selected_slug = serializers.CharField(max_length=100)
+    choices = serializers.ListField()
     
     
 class AnswerSerializer(serializers.Serializer):

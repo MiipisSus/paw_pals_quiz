@@ -63,6 +63,7 @@ function Game() {
         game_session_id: gameSessionId,
         question_id: questionId,
         selected_slug: choice.slug,
+        choices: currentChoices,
       };
       const response = await submitAnswer(answerData);
       setIsAnswerCorrect(response.is_correct);

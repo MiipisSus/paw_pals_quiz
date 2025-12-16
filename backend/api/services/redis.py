@@ -2,7 +2,7 @@ from django.core.cache import cache
 
 class RedisService:
     @classmethod
-    def set(cls, key, value, ttl=300):
+    def set(cls, key, value, ttl=600):
         cache.set(key, value, timeout=ttl)
 
     @classmethod

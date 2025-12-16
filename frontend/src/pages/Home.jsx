@@ -6,13 +6,11 @@ import { startGameSession } from "../services/apiService";
 
 function Home() {
   const navigate = useNavigate();
-  const { setGameSessionId, setTotalRounds } = useGame();
+  const { setGameSessionId, setTotalRounds, startNewGame } = useGame();
 
   const handleStartGame = async () => {
     try {
-      const response = await startGameSession();
-      setGameSessionId(response.game_session_id);
-      setTotalRounds(response.total_rounds);
+      await startNewGame();
       navigate("/game");
     } catch (error) {
       console.error("Failed to start game:", error);
@@ -48,12 +46,6 @@ function Home() {
           PAW PALS QUIZ ・ 2025
         </p>
       </div>
-      {/* <button
-        className="bg-white p-5 rounded cursor-pointer"
-        onClick={handleStartGame}
-      >
-        PRESS TO START!
-      </button> */}
     </div>
   );
 }
