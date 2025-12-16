@@ -86,8 +86,8 @@ function Game() {
   }
 
   return (
-    <div className="center h-[calc(100vh-4rem)]">
-      <div className="flex w-8/10 h-7/10 overflow-hidden bg-white rounded-4xl shadow-2xl">
+    <div className="center h-screen">
+      <div className="flex w-[clamp(60rem,70%,75rem)] h-7/10 overflow-hidden bg-white rounded-4xl shadow-2xl">
         <div className="relative w-1/2 bg-tetariary">
           {isLoading && (
             <div className="absolute inset-0 center flex-col text-center gap-2 bg-secondary z-10">

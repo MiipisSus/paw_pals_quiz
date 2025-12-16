@@ -5,7 +5,7 @@ function MainLayout() {
   return (
     <>
       <Header />
-      <main className="pt-16">
+      <main className="">
         <Outlet />
       </main>
     </>

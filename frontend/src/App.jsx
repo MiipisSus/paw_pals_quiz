@@ -10,7 +10,9 @@ function App() {
     <GameProvider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<MainLayout />}>
+            <Route index element={<Home />} />
+          </Route>
           <Route path="/game" element={<MainLayout />}>
             <Route index element={<Game />} />
           </Route>
