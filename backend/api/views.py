@@ -1,5 +1,3 @@
-from django.http import JsonResponse
-from django.middleware.csrf import get_token
 from rest_framework.views import APIView, Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -9,12 +7,14 @@ from uuid import uuid4
 from datetime import datetime
 
 from .serializers import QuestionInputSerializer, QuestionSerializer, AnswerInputSerializer, AnswerSerializer, \
-    StartGameSerializer, EndGameInputSerializer, EndGameSerializer, RoundRecordSerializer
-from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, RoundRecordService
+    StartGameSerializer, EndGameInputSerializer, EndGameSerializer
+from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, RoundRecordService, BreedService
     
 
 class QuestionView(APIView):
     def post(self, request, *args, **kwargs):
+        lang = request.GET.get('lang', 'en')
+
         serializer = QuestionInputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
@@ -31,18 +31,19 @@ class QuestionView(APIView):
             current_round = len(session_data.get('round_records', [])) + 1
 
         question = QuestionService.generate_question()
-        choices = QuestionService.generate_random_choices(question.answer)
+        choices = QuestionService.generate_random_choices(question.answer, lang=lang)
         
         serializer = QuestionSerializer(question, context={
             'choices': choices,
             'current_round': current_round
             })
         
-        RedisService.set(f"{game_session_id}_{question.id}", {
-            "correct_slug": question.answer.slug,
-            "choices": choices,
-            'image_url': question.image_url
-        })
+        if not RedisService.exists(f"{game_session_id}_{question.id}"):
+            RedisService.set(f"{game_session_id}_{question.id}", {
+                "correct_slug": question.answer.slug,
+                "choices": choices,
+                'image_url': question.image_url
+            })
         
         return Response(serializer.data)
     
@@ -96,6 +97,8 @@ class AnswerView(APIView):
             }
             
             session_data['round_records'].append(round_record)
+            
+            breed = BreedService.get_breed_by_slug(correct_slug)
 
             GuestGameSessionService.update_session_data(game_session_id=data.get('game_session_id'), data=session_data)
 
@@ -109,7 +112,9 @@ class AnswerView(APIView):
                 choices=choices
             )
             
-        serializer = AnswerSerializer({'correct_slug': correct_slug, 'is_correct': is_correct, 'score': score})
+        serializer = AnswerSerializer(
+            {'breed': breed, 'correct_slug': correct_slug, 'is_correct': is_correct, 'score': score}, 
+            context={'request': request})
 
         return Response(serializer.data)
 

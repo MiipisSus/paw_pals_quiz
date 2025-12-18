@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { PawPrint } from "lucide-react";
 
 import { useGame } from "../contexts/GameContext.jsx";
@@ -7,6 +8,7 @@ import { tokenManager, logoutUser } from "../services/apiService";
 
 function Home() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const { setGameSessionId, setTotalRounds, startNewGame } = useGame();
   const [isLoggedIn, setIsLoggedIn] = useState(tokenManager.isAuthenticated());
 
@@ -15,7 +17,7 @@ function Home() {
       await startNewGame();
       navigate("/game");
     } catch (error) {
-      console.error("Failed to start game:", error);
+      console.error(t("game.startGameFailed"), error);
     }
   };
 
@@ -24,24 +26,22 @@ function Home() {
       await logoutUser();
       setIsLoggedIn(false);
     } catch (error) {
-      console.error("Logout failed:", error);
+      console.error(t("auth.logoutFailed"), error);
       setIsLoggedIn(false);
     }
   };
 
   return (
     <div className="center h-screen">
-      <div className="center flex-col gap-2 w-3/10 h-7/10 py-10 bg-white rounded-4xl shadow-2xl">
+      <div className="center flex-col gap-2 w-3/10 h-7/10 py-10 bg-white rounded-4xl shadow-2xl relative">
         <div className="center flex-col gap-2 mt-auto mb-10">
           <PawPrint className="size-20 p-3 mb-5 bg-accent text-primary rounded-full shadow-inner" />
           <h1 className="text-4xl font-extrabold text-center text-darker-primary">
-            PAW PALS
+            {t("home.title")}
             <br />
-            <span className="text-darker-accent">QUIZ</span>
+            <span className="text-darker-accent">{t("home.subtitle")}</span>
           </h1>
-          <h2 className="font-semibold text-brown/50">
-            WHO is the real "Dogge" master?
-          </h2>
+          <h2 className="font-semibold text-brown/50">{t("home.slogan")}</h2>
         </div>
         <div className="center flex-col w-full gap-4">
           {isLoggedIn ? (
@@ -50,13 +50,13 @@ function Home() {
                 className="w-1/2 py-3 bg-gray-200 text-gray-600 font-bold rounded-3xl cursor-pointer"
                 onClick={handleLogout}
               >
-                Logout
+                {t("home.buttons.logout")}
               </button>
               <button
                 className="w-1/2 py-3 bg-darker-accent text-white font-bold rounded-3xl cursor-pointer"
                 onClick={handleStartGame}
               >
-                Play
+                {t("home.buttons.play")}
               </button>
             </>
           ) : (
@@ -65,19 +65,19 @@ function Home() {
                 className="w-1/2 py-3 bg-darker-primary text-brown font-bold rounded-3xl cursor-pointer"
                 onClick={() => navigate("/login")}
               >
-                Login
+                {t("home.buttons.login")}
               </button>
               <button
                 className="w-1/2 py-3 bg-darker-accent text-white font-bold rounded-3xl cursor-pointer"
                 onClick={handleStartGame}
               >
-                Play as Guest
+                {t("home.buttons.playAsGuest")}
               </button>
             </>
           )}
         </div>
         <p className="mt-auto text-sm text-brown/30 font-bold">
-          PAW PALS QUIZ ・ 2025
+          {t("home.footer")}
         </p>
       </div>
     </div>

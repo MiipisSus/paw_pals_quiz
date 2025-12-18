@@ -1,0 +1,46 @@
+{
+  "home": {
+    "title": "狗狗品種",
+    "subtitle": "大猜謎",
+    "slogan": "誰是真正的狗狗達人？",
+    "buttons": {
+      "login": "登入",
+      "logout": "登出",
+      "play": "開始遊戲",
+      "playAsGuest": "訪客遊戲"
+    },
+    "footer": "PAW PALS QUIZ ・ 2025"
+  },
+  "common": {
+    "loading": "載入中...",
+    "error": "發生錯誤",
+    "success": "成功",
+    "cancel": "取消",
+    "confirm": "確認"
+  },
+  "auth": {
+    "loginFailed": "登入失敗",
+    "logoutFailed": "登出失敗",
+    "pleaseLogin": "請先登入"
+  },
+  "game": {
+    "startGameFailed": "遊戲開始失敗",
+    "fetchQuestionFailed": "獲取問題失敗",
+    "submitAnswerFailed": "提交答案失敗",
+    "loadingDoggo": "召喚狗狗中...",
+    "score": "分數",
+    "round": "回合",
+    "whoIsTheDog": "這隻狗勾",
+    "dog": "是誰？",
+    "instruction": "看圖片選擇正確的品種！",
+    "correctAnswer": "答對了！棒極了！",
+    "wrongAnswer": "哎呀！答錯了...",
+    "seeResult": "查看結果",
+    "nextRound": "下一輪",
+    "timeUp": "時間到！",
+    "correct": "答對了！",
+    "wrong": "答錯了！",
+    "gameOver": "遊戲結束",
+    "finalScore": "最終分數"
+  }
+}

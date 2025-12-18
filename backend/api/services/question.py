@@ -38,10 +38,10 @@ class QuestionService:
         return question
     
     @classmethod
-    def generate_random_choices(cls, correct_breed: Breed, num_choices: int = 3) -> list[str]:
+    def generate_random_choices(cls, correct_breed: Breed, num_choices: int = 3, lang='en') -> list[str]:
         wrong_breeds = Breed.objects.exclude(id=correct_breed.id).order_by('?')[:num_choices]
-        choices = [{'slug': breed.slug, 'name': breed.name_en} for breed in wrong_breeds]
-        choices.append({'slug': correct_breed.slug, 'name': correct_breed.name_en})
+        choices = [{'slug': breed.slug, 'name': breed.name_en if lang == 'en' else breed.name_zh} for breed in wrong_breeds]
+        choices.append({'slug': correct_breed.slug, 'name': correct_breed.name_en if lang == 'en' else correct_breed.name_zh})
         random.shuffle(choices)
         
         return choices

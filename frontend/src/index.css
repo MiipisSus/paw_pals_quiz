@@ -1,4 +1,9 @@
 @import "tailwindcss";
+@font-face {
+  font-family: "GenSenRoundedTW";
+  src: url("./assets/fonts/GenSenRounded2TW-otf/GenSenRounded2TW-R.otf")
+    format("opentype");
+}
 
 @theme {
   --color-primary: #fff2c6;
@@ -20,7 +25,7 @@
   }
 
   body {
-    font-family: "Fredoka", sans-serif;
+    font-family: "Fredoka", "GenSenRoundedTW", sans-serif;
 
     @apply bg-tertiary/50;
     background-image: radial-gradient(#e3ebf8 20%, transparent 20%),

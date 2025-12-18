@@ -4,10 +4,12 @@ from .models import Breed, Question, RoundRecord, GameSession
 
 class BreedSerializer(serializers.ModelSerializer):
     name = serializers.SerializerMethodField()
+    introduction = serializers.SerializerMethodField()
+    origin = serializers.SerializerMethodField()
     
     class Meta:
         model = Breed
-        fields = ['id', 'name', 'created_at', 'updated_at']
+        fields = ['id', 'name', 'introduction', 'origin', 'created_at', 'updated_at']
         read_only_fields = ['created_at', 'updated_at']
         
     def get_name(self, obj: Breed):
@@ -16,6 +18,20 @@ class BreedSerializer(serializers.ModelSerializer):
         if lang == 'zh':
             return obj.name_zh
         return obj.name_en
+    
+    def get_introduction(self, obj: Breed):
+        request = self.context.get('request')
+        lang = request.GET.get('lang') if request else None
+        if lang == 'zh':
+            return obj.introduction_zh
+        return obj.introduction_en
+    
+    def get_origin(self, obj: Breed):
+        request = self.context.get('request')
+        lang = request.GET.get('lang') if request else None
+        if lang == 'zh':
+            return obj.origin_zh
+        return obj.origin_en
     
 
 class QuestionInputSerializer(serializers.Serializer):
@@ -54,6 +70,7 @@ class AnswerInputSerializer(serializers.Serializer):
     
     
 class AnswerSerializer(serializers.Serializer):
+    breed = BreedSerializer()
     correct_slug = serializers.CharField(max_length=100)
     score = serializers.IntegerField()
     is_correct = serializers.BooleanField()

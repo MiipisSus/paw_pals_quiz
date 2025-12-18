@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Trophy, ArrowRight } from "lucide-react";
 import { OrbitProgress } from "react-loading-indicators";
 
@@ -21,6 +22,7 @@ function Game() {
     setRoundRecords,
   } = useGame();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const [isLoading, setIsLoading] = useState(true);
   const [currentImage, setCurrentImage] = useState(null);
@@ -50,7 +52,7 @@ function Game() {
       setQuestionId(question.id);
       setRounds(question.current_round);
     } catch (error) {
-      console.error("Failed to fetch questions:", error);
+      console.error(t("game.fetchQuestionFailed"), error);
       setIsLoading(false);
     }
   }
@@ -75,7 +77,7 @@ function Game() {
       }
       console.log(isGameOver);
     } catch (error) {
-      console.error("Failed to fetch questions:", error);
+      console.error(t("game.submitAnswerFailed"), error);
     }
   }
 
@@ -99,7 +101,7 @@ function Game() {
                 textColor=""
               />
               <p className="text-sm font-medium text-light-brown">
-                SUMMONING DOGGO...
+                {t("game.loadingDoggo")}
               </p>
             </div>
           )}
@@ -113,8 +115,9 @@ function Game() {
         </div>
         <div className="center flex-col w-1/2">
           <div className="flex gap-4 px-6 my-6 mb-auto ml-auto">
-            <p className="px-2 py-1 bg-darker-accent text-white font-bold rounded-lg">
-              Round<span className="ml-3">{rounds}</span>
+            <p className="center px-2 py-1 bg-darker-accent text-white font-bold rounded-lg">
+              {t("game.round")}
+              <span className="ml-3">{rounds}</span>
               <span className="text-white/50 text-sm">/{totalRounds}</span>
             </p>
             <p className="center px-2 py-1 bg-white text-darker-primary border font-bold rounded-lg">
@@ -124,10 +127,11 @@ function Game() {
           </div>
           <div className="w-8/10 mb-10">
             <h2 className="mb-2 text-3xl text-brown font-bold">
-              Who's the <span className="text-darker-accent">Dog?</span>
+              {t("game.whoIsTheDog")}{" "}
+              <span className="text-darker-accent">{t("game.dog")}</span>
             </h2>
             <h3 className="text-md text-gray-400 font-semibold">
-              Look at the photo and pick the breed!
+              {t("game.instruction")}
             </h3>
           </div>
           <ul className="grid grid-cols-2 grid-rows-2 text-center gap-3 w-8/10 p-0 list-none">
@@ -169,11 +173,11 @@ function Game() {
           >
             {isAnswerCorrect ? (
               <p className="text-sm font-semibold text-green-500">
-                BINGO! CORRECT!
+                {t("game.correctAnswer")}
               </p>
             ) : (
               <p className="text-sm font-semibold text-red-500">
-                OOPS! WRONG...
+                {t("game.wrongAnswer")}
               </p>
             )}
             {isGameOver ? (
@@ -181,14 +185,14 @@ function Game() {
                 className="center gap-2 px-4 py-1 text-sm font-semibold bg-darker-accent text-white rounded-2xl"
                 onClick={() => handleEndGame()}
               >
-                SEE RESULT
+                {t("game.seeResult")}
               </button>
             ) : (
               <button
                 className="center gap-2 px-4 py-1 text-sm font-semibold bg-brown text-white rounded-2xl"
                 onClick={() => handleQuestionFetch()}
               >
-                NEXT ROUND
+                {t("game.nextRound")}
                 <ArrowRight className="size-4 font-semibold" />
               </button>
             )}

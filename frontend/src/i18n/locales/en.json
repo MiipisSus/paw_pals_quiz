@@ -1,0 +1,46 @@
+{
+  "home": {
+    "title": "PAW PALS",
+    "subtitle": "QUIZ",
+    "slogan": "WHO is the real \"Dogge\" master?",
+    "buttons": {
+      "login": "Login",
+      "logout": "Logout",
+      "play": "Play",
+      "playAsGuest": "Play as Guest"
+    },
+    "footer": "PAW PALS QUIZ ・ 2025"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "auth": {
+    "loginFailed": "Login failed",
+    "logoutFailed": "Logout failed",
+    "pleaseLogin": "Please login first"
+  },
+  "game": {
+    "startGameFailed": "Failed to start game",
+    "fetchQuestionFailed": "Failed to fetch questions",
+    "submitAnswerFailed": "Failed to submit answer",
+    "loadingDoggo": "SUMMONING DOGGO...",
+    "score": "Score",
+    "round": "Round",
+    "whoIsTheDog": "Who's the",
+    "dog": "Dog?",
+    "instruction": "Look at the photo and pick the breed!",
+    "correctAnswer": "BINGO! CORRECT!",
+    "wrongAnswer": "OOPS! WRONG...",
+    "seeResult": "SEE RESULT",
+    "nextRound": "NEXT ROUND",
+    "timeUp": "Time's up!",
+    "correct": "Correct!",
+    "wrong": "Wrong!",
+    "gameOver": "Game Over",
+    "finalScore": "Final Score"
+  }
+}
