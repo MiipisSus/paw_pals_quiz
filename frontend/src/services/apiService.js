@@ -1,5 +1,21 @@
 const BASE_URL = "/api/";
 
+function getCurrentLanguage() {
+  const savedLang = localStorage.getItem("i18nextLng");
+  if (savedLang) {
+    return savedLang;
+  }
+
+  const browserLang = navigator.language || navigator.userLanguage;
+  return browserLang.startsWith("zh") ? "zh" : "en";
+}
+
+function addLanguageParam(url) {
+  const lang = getCurrentLanguage();
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}lang=${lang}`;
+}
+
 export const tokenManager = {
   setAccessToken: (token) => {
     localStorage.setItem("access_token", token);
@@ -76,7 +92,8 @@ export async function endGameSession(gameSessionId) {
 }
 
 export async function fetchQuestion(gameSessionId) {
-  const response = await authenticatedFetch(`${BASE_URL}question/`, {
+  const url = addLanguageParam(`${BASE_URL}question/`);
+  const response = await authenticatedFetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -93,7 +110,8 @@ export async function fetchQuestion(gameSessionId) {
 }
 
 export async function submitAnswer(data) {
-  const response = await authenticatedFetch(`${BASE_URL}answer/`, {
+  const url = addLanguageParam(`${BASE_URL}answer/`);
+  const response = await authenticatedFetch(url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

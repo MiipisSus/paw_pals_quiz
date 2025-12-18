@@ -24,12 +24,14 @@ function Game() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
+  const [questionId, setQuestionId] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [currentImage, setCurrentImage] = useState(null);
   const [currentChoices, setCurrentChoices] = useState([]);
-  const [questionId, setQuestionId] = useState(null);
   const [selectedChoice, setSelectedChoice] = useState(null);
   const [correctAnswer, setCorrectAnswer] = useState(null);
+  const [currentIntroduction, setCurrentIntroduction] = useState(null);
+  const [currentOrigin, setCurrentOrigin] = useState(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
   const [isGameOver, setIsGameOver] = useState(false);
 
@@ -70,6 +72,8 @@ function Game() {
       const response = await submitAnswer(answerData);
       setIsAnswerCorrect(response.is_correct);
       setCorrectAnswer(response.correct_slug);
+      setCurrentIntroduction(response.breed.introduction);
+      setCurrentOrigin(response.breed.origin);
       setScore((prevScore) => prevScore + response.score);
       console.log(rounds, totalRounds);
       if (rounds >= totalRounds) {
@@ -109,9 +113,42 @@ function Game() {
             src={currentImage}
             onLoad={() => setIsLoading(false)}
             onError={() => setIsLoading(false)}
-            className="w-full h-full object-cover object-center text-white"
+            className="w-full h-full object-cover object-center bg-primary text-white"
           />
-          <i className="center ri-question-line z-2 absolute bottom-6 right-6 size-12 text-3xl text-darker-accent bg-white rounded-full"></i>
+          {isAnswerCorrect === null ? (
+            <div className="center z-2 absolute bottom-6 right-6 size-12 bg-white rounded-full">
+              <div className="flex items-center gap-2">
+                <i className="ri-question-line text-3xl mr-left text-darker-accent shrink-0"></i>
+              </div>
+            </div>
+          ) : (
+            <div className="flex flex-col z-2 absolute bottom-6 right-6 p-4 bg-white rounded-lg max-w-80 shadow-lg">
+              <div className="flex items-center gap-2 mb-2">
+                <i className="ri-question-line text-3xl mr-left text-darker-accent shrink-0"></i>
+                <p className="px-2 py-1 bg-darker-accent text-white text-xs rounded-lg whitespace-nowrap">
+                  FROM &nbsp;
+                  <span className="text-primary font-medium text-sm">
+                    {currentOrigin}
+                  </span>
+                </p>
+              </div>
+              <p className="text-brown text-sm leading-relaxed wrap-break-word hyphens-auto">
+                {currentIntroduction
+                  ?.split("。")
+                  .map((sentence, index, array) => (
+                    <span key={index}>
+                      {sentence}
+                      {index < array.length - 1 && sentence.trim() && (
+                        <>
+                          。
+                          <br />
+                        </>
+                      )}
+                    </span>
+                  ))}
+              </p>
+            </div>
+          )}
         </div>
         <div className="center flex-col w-1/2">
           <div className="flex gap-4 px-6 my-6 mb-auto ml-auto">
