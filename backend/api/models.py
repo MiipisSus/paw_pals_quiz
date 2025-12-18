@@ -8,6 +8,10 @@ class Breed(models.Model):
     slug = models.CharField(max_length=100, unique=True)
     name_en = models.CharField(max_length=100, unique=True)
     name_zh = models.CharField(max_length=100, unique=True, null=True, blank=True)
+    origin_en = models.CharField(max_length=100, null=True, blank=True)
+    origin_zh = models.CharField(max_length=100, null=True, blank=True)
+    introduction_en = models.TextField(null=True, blank=True)
+    introduction_zh = models.TextField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

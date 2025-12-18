@@ -1,0 +1,1523 @@
+{
+  "generated_at": "2025-12-18 07:24:13",
+  "total_breeds": 165,
+  "successful": 165,
+  "failed": 0,
+  "failed_breeds": [],
+  "breed_info": [
+    {
+      "english_name": "Affenpinscher",
+      "chinese_name": "猴面犬",
+      "slug": "affenpinscher",
+      "introduce_zh": "牠們聰明、好奇、頑固且充滿活力，經常被形容為擁有「大狗」的性格。雖然體型嬌小，但警惕性高，對家人忠誠。最初用於德國廚房和馬廄中捕捉老鼠等害蟲，現今主要作為伴侶犬。",
+      "introduce_en": "They are intelligent, curious, stubborn, and full of energy, often described as having a \"big dog\" personality. Despite their small stature, they are highly alert and fiercely loyal to their families. Originally bred in Germany to catch rats and other vermin in kitchens and stables, they are now primarily cherished as companion dogs.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Wild African",
+      "chinese_name": "非洲野犬",
+      "slug": "african-wild",
+      "introduce_zh": "非洲野犬極具社會性，生活在緊密的群體中，以高效的合作狩獵而聞名。牠們聰明、機警，對同伴展現出強烈的忠誠與關懷。作為野生生態系統中的頂級掠食者，非洲野犬在維持生物多樣性和控制草食動物數量方面扮演關鍵角色，並無人類馴養或工作用途。",
+      "introduce_en": "African wild dogs are highly social, living in close-knit packs and renowned for their efficient cooperative hunting. They are intelligent and alert, demonstrating strong loyalty and care towards their pack members. As apex predators within their wild ecosystems, African wild dogs play a crucial role in maintaining biodiversity and controlling herbivore populations. They have not been domesticated by humans nor do they serve any working purpose.",
+      "origin_zh": "非洲撒哈拉以南地區",
+      "origin_en": "sub-saharan africa"
+    },
+    {
+      "english_name": "Airedale",
+      "chinese_name": "艾爾谷梗 (愛爾蘭梗)",
+      "slug": "airedale",
+      "introduce_zh": "聰明、勇敢且充滿活力，對家人忠誠但帶有獨立性，需要早期訓練和社交化。最初用於獵捕水獺及其他小型獵物；現代是優秀的家庭伴侶犬、表演犬，也曾被用作警犬和軍犬。",
+      "introduce_en": "Intelligent, brave, and energetic, they are loyal to their families yet possess an independent streak, requiring early training and socialization. Originally bred for hunting otters and other small game, today they are excellent family companions and show dogs, and have also served as police and military dogs.",
+      "origin_zh": "英國 (約克郡艾爾谷)",
+      "origin_en": "United Kingdom (Eyre Valley, Yorkshire)"
+    },
+    {
+      "english_name": "Akita",
+      "chinese_name": "秋田犬",
+      "slug": "akita",
+      "introduce_zh": "忠誠、勇敢且聰明，對家人極度保護，但對陌生人可能較為保留，且對其他狗可能有較強的支配欲。最初用於狩獵大型獵物（如熊和野豬）及看守，現代則主要作為伴侶犬和護衛犬。",
+      "introduce_en": "Loyal, brave, and intelligent, Akitas are fiercely protective of their families. They can be reserved with strangers and may exhibit strong dominant tendencies towards other dogs. Originally used for hunting large game (such as bears and wild boars) and guarding, they primarily serve as companion and guard dogs today.",
+      "origin_zh": "日本（秋田縣）",
+      "origin_en": "Japan (Akita Prefecture)"
+    },
+    {
+      "english_name": "Appenzeller",
+      "chinese_name": "阿彭策爾山犬",
+      "slug": "appenzeller",
+      "introduce_zh": "精力充沛、活潑好動、聰明且學習能力強。牠們忠誠且警戒心高，對家人友善但對陌生人可能保持距離。最初作為牧牛犬和農場護衛犬，現代則多為伴侶犬、工作犬，也常活躍於各種犬類運動。",
+      "introduce_en": "Energetic, lively, intelligent, and highly trainable. They are loyal and vigilant, friendly towards their families but may be reserved with strangers. Originally bred as cattle dogs and farm guardians, they are now often found as cherished companion dogs and capable working dogs, frequently excelling in various canine sports.",
+      "origin_zh": "瑞士",
+      "origin_en": "Switzerland"
+    },
+    {
+      "english_name": "Kelpie Australian",
+      "chinese_name": "澳洲凱爾比犬",
+      "slug": "australian-kelpie",
+      "introduce_zh": "聰明、精力充沛、警覺性高，是天生的工作犬，對主人忠誠但可能對陌生人較為保留。牠們需要大量的活動和心智刺激。主要用於牧羊及其他牲畜，牠們以其卓越的牧羊能力和耐力而聞名，至今仍是澳洲重要的牧羊犬種。",
+      "introduce_en": "Intelligent, energetic, and highly alert, the Australian Kelpie is a natural working dog. They are loyal to their owners but can be reserved with strangers. They require extensive exercise and mental stimulation. Primarily utilized for herding sheep and other livestock, they are renowned for their exceptional herding ability and remarkable endurance. To this day, they remain an important sheepdog breed in Australia.",
+      "origin_zh": "澳洲",
+      "origin_en": "Australia"
+    },
+    {
+      "english_name": "Shepherd Australian",
+      "chinese_name": "澳洲牧羊犬",
+      "slug": "australian-shepherd",
+      "introduce_zh": "聰明、活潑、忠誠且精力充沛，具有強烈的牧羊本能，需要大量的身體和精神刺激。最初被培育為牧羊和牧牛犬，現代則常作為伴侶犬、工作犬，並在犬類運動中表現出色。",
+      "introduce_en": "Intelligent, lively, loyal, and energetic, the Australian Shepherd possesses a strong herding instinct and requires significant physical and mental stimulation. Originally bred as a herding dog for sheep and cattle, they are now commonly found as companion dogs, working dogs, and excel in various dog sports.",
+      "origin_zh": "美國",
+      "origin_en": "USA"
+    },
+    {
+      "english_name": "Indian Bakharwal",
+      "chinese_name": "印度巴哈瓦犬",
+      "slug": "bakharwal-indian",
+      "introduce_zh": "牠們勇敢、忠誠且具保護性，對家人充滿愛意，但對陌生人可能保持警惕。牠們非常聰明且具有獨立思考能力。主要作為牲畜守護犬，保護羊群、山羊和牛隻免受狼、豹等掠食者的侵害。牠們也是當地遊牧民族重要的工作犬。",
+      "introduce_en": "They are brave, loyal, and protective, displaying deep affection towards their families, but can be reserved or wary of strangers. Highly intelligent and capable of independent thought, they primarily serve as Livestock Guardian Dogs (LGDs). Their main role is to safeguard flocks of sheep, goats, and herds of cattle from predators such as wolves and leopards. They also act as essential working dogs for the local nomadic communities.",
+      "origin_zh": "印度（喜馬拉雅地區，如喀什米爾、喜馬偕爾邦）",
+      "origin_en": "India (Himalayan regions such as Kashmir, Himachal Pradesh)"
+    },
+    {
+      "english_name": "Basenji",
+      "chinese_name": "巴仙吉犬",
+      "slug": "basenji",
+      "introduce_zh": "聰明、獨立且好奇，有時會比較疏離，不吠叫但會發出獨特的約德爾式聲音。歷史上主要用於狩獵小型獵物；現代則主要作為伴侶犬。",
+      "introduce_en": "Intelligent, independent, and curious, they can be somewhat aloof at times. They do not bark but vocalize with a unique yodel-like sound. Historically, they were primarily used for hunting small game; nowadays, they are mainly kept as companion dogs.",
+      "origin_zh": "非洲中部（剛果盆地）",
+      "origin_en": "Central Africa (Congo Basin)"
+    },
+    {
+      "english_name": "Beagle",
+      "chinese_name": "米格魯",
+      "slug": "beagle",
+      "introduce_zh": "米格魯友善、好奇、活潑且精力充沛，具有敏銳的嗅覺和追蹤本能，對家人忠誠但有時會因專注於氣味而分心。最初主要用於狩獵野兔等小型獵物，依靠其卓越的嗅覺追蹤；現代則廣泛作為家庭伴侶犬，也常在機場或邊境擔任檢疫犬。",
+      "introduce_en": "The Beagle is a friendly, curious, lively, and energetic breed, possessing a keen sense of smell and strong tracking instincts. They are loyal to their families but are prone to becoming sidetracked when their powerful sense of smell becomes fixated on a scent.\n\nHistorically, Beagles were primarily bred for hunting small game, such as hares, relying on their superior olfactory abilities to track prey. In modern times, they are widely cherished as family companions and are frequently employed as quarantine dogs at airports or border crossings.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Bluetick",
+      "chinese_name": "藍色滴答獵犬",
+      "slug": "bluetick",
+      "introduce_zh": "聰明、忠誠且精力充沛，具有強烈的狩獵本能；在家中對家人通常溫和友善，但需要足夠的運動量。主要用於狩獵，特別是追蹤和樹立浣熊及其他小型哺乳動物，因其卓越的嗅覺和耐力而聞名；也是活躍家庭的優秀伴侶犬。",
+      "introduce_en": "Intelligent, loyal, and energetic, with a strong hunting instinct. At home, they are typically gentle and friendly with family, but require ample exercise. Primarily used for hunting, especially for tracking and treeing raccoons and other small mammals, they are renowned for their exceptional scenting ability and stamina. They also make excellent companion dogs for active families.",
+      "origin_zh": "美國",
+      "origin_en": "USA"
+    },
+    {
+      "english_name": "Borzoi",
+      "chinese_name": "俄羅斯狼犬",
+      "slug": "borzoi",
+      "introduce_zh": "牠們是優雅、沉靜且獨立的犬種，但對家人卻非常溫順和忠誠。擁有強烈的視力狩獵本能，對小動物可能會有追逐衝動。牠們最初被培育用於在俄羅斯廣闊的平原上追捕狼、狐狸和野兔。現代則多作為伴侶犬、表演犬和參與誘餌追逐活動。",
+      "introduce_en": "They are elegant, serene, and independent dogs, yet are profoundly gentle and loyal to their families. Possessing a keen sighthound instinct, they have a strong prey drive and may exhibit an impulse to chase small animals. They were originally bred to hunt wolves, foxes, and hares across the vast plains of Russia. Today, they are primarily cherished as companion dogs, show dogs, and active participants in lure coursing events.",
+      "origin_zh": "俄羅斯",
+      "origin_en": "Russia"
+    },
+    {
+      "english_name": "Bouvier",
+      "chinese_name": "法蘭德斯畜牧犬",
+      "slug": "bouvier",
+      "introduce_zh": "牠們忠誠、保護性強且勇敢，對家人充滿愛意，但對陌生人會保持警惕。牠們聰明且意志堅定，需要早期社會化和持續的訓練。最初作為牧牛犬、拉車犬和護衛犬使用，現代則多為警犬、護衛犬、導盲犬或忠實的家庭伴侶犬。",
+      "introduce_en": "They are loyal, protective, and brave, displaying deep affection for their families but remaining wary of strangers. Intelligent and strong-willed, they require early socialization and consistent training. Originally bred as cattle herders, cart pullers, and guard dogs, they are now frequently employed as police dogs, protection dogs, guide dogs, or devoted family companions.",
+      "origin_zh": "法蘭德斯地區 (比利時與法國邊界)",
+      "origin_en": "Flanders region (Border of Belgium and France)"
+    },
+    {
+      "english_name": "Boxer",
+      "chinese_name": "拳師犬",
+      "slug": "boxer",
+      "introduce_zh": "拳師犬活潑、精力充沛且聰明，對家人忠誠熱情，同時也保有玩心和保護性。歷史上曾作為鬥犬、狩獵犬和警衛犬，現代則主要為家庭伴侶犬、警犬、軍犬或服務犬。",
+      "introduce_en": "Boxers are lively, energetic, and intelligent dogs. They are loyal and affectionate towards their families, while also retaining their playful and protective nature. Historically, they served as fighting dogs, hunting dogs, and guard dogs. Today, they primarily serve as family companions, police dogs, military dogs, or service dogs.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Brabancon",
+      "chinese_name": "布拉邦松",
+      "slug": "brabancon",
+      "introduce_zh": "牠們是活潑、好奇且聰明的犬隻，以其對家庭的深情和忠誠聞名。牠們可能較為敏感，需要溫柔對待。最初被培育來在馬廄捕鼠，如今則幾乎完全作為迷人且忠誠的伴侶犬被珍愛。",
+      "introduce_en": "They are lively, curious, and intelligent dogs, known for their deep affection and loyalty to their families. They can be quite sensitive, requiring gentle handling. Originally bred to hunt vermin in stables, they are now almost exclusively cherished as charming and devoted companion dogs.",
+      "origin_zh": "比利時",
+      "origin_en": "Belgium"
+    },
+    {
+      "english_name": "Briard",
+      "chinese_name": "布里亞牧羊犬",
+      "slug": "briard",
+      "introduce_zh": "聰明、勇敢且忠誠，對家人保護性強且溫柔，但對陌生人可能較為警惕。牠們精力充沛，需要大量的運動和精神刺激。最初被培育為牧羊犬和護衛犬，現代則廣泛作為伴侶犬、表演犬，以及在服從和敏捷性訓練中的工作犬。",
+      "introduce_en": "Intelligent, courageous, and loyal, Briards are fiercely protective and gentle towards their families but can be reserved or cautious with strangers. They are energetic and require ample exercise and mental stimulation. Originally developed as herding and guardian dogs, they are now widely appreciated as companion animals, show dogs, and working dogs in disciplines such as obedience and agility.",
+      "origin_zh": "法國",
+      "origin_en": "France"
+    },
+    {
+      "english_name": "Norwegian Buhund",
+      "chinese_name": "挪威布芬犬",
+      "slug": "buhund-norwegian",
+      "introduce_zh": "聰明、活潑且友善，對家人忠誠並充滿熱情。牠們警惕且可能比較愛吠叫，需要足夠的運動和精神刺激。最初用於牧羊、放牧和看守農場，是多功能的農場犬。現代則多作為活躍的家庭伴侶犬，也常參與犬類運動如敏捷和服從訓練。",
+      "introduce_en": "Intelligent, lively, and friendly, they are loyal and affectionate companions to their families. They are alert and can be prone to barking, requiring ample exercise and mental stimulation. Originally bred for herding sheep, tending livestock, and guarding farms, they are truly versatile farm dogs. Today, they primarily serve as active family companions and frequently participate in canine sports such as agility and obedience.",
+      "origin_zh": "挪威",
+      "origin_en": "Norway"
+    },
+    {
+      "english_name": "Boston Bulldog",
+      "chinese_name": "波士頓鬥牛犬",
+      "slug": "bulldog-boston",
+      "introduce_zh": "活潑、友善且聰明，它們是充滿熱情的伴侶犬，性格溫和，渴望取悅主人並與家人緊密互動。最初作為鬥犬培育，但很快便發展成為深受喜愛的伴侶犬和家庭寵物。",
+      "introduce_en": "Lively, friendly, and intelligent, they are devoted companion dogs with a gentle disposition, eager to please their owners and thriving on close interaction with their families. Originally bred as fighting dogs, they quickly evolved into beloved companion dogs and family pets.",
+      "origin_zh": "美國波士頓",
+      "origin_en": "Boston, USA"
+    },
+    {
+      "english_name": "English Bulldog",
+      "chinese_name": "英國鬥牛犬",
+      "slug": "bulldog-english",
+      "introduce_zh": "性格溫和、友善且忠誠，儘管外表粗獷，但牠們通常是沉穩且有愛心的家庭伴侶犬。歷史上用於鬥牛（bull-baiting），現代主要作為家庭伴侶犬。",
+      "introduce_en": "English Bulldogs are known for their gentle, friendly, and loyal temperament. Despite their rugged appearance, they are typically calm and loving family companions. Historically bred for bull-baiting, they primarily serve as cherished household pets and companions today.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "French Bulldog",
+      "chinese_name": "法國鬥牛犬",
+      "slug": "bulldog-french",
+      "introduce_zh": "法國鬥牛犬性格溫和、友善且充滿魅力，牠們喜歡與人互動並是絕佳的伴侶犬。雖然有時固執，但聰明且容易訓練。最初是英國鬥牛犬的迷你版，在英國被培育出來作為伴侶犬。後來被引入法國，成為巴黎工人階級和藝術家的寵兒，並逐漸發展成現在的法國鬥牛犬。現代主要作為家庭寵物和伴侶犬。",
+      "introduce_en": "French Bulldogs are gentle-natured, friendly, and charming, loving to interact with people and making excellent companion dogs. While they can be stubborn at times, they are intelligent and easy to train. Originally bred in England as a miniature version of the English Bulldog, they were specifically developed for companionship. Later, they were introduced to France, where they quickly became favorites of the Parisian working class and artists, and gradually evolved into the French Bulldog we recognize today. Today, they are primarily cherished as family pets and companion dogs.",
+      "origin_zh": "法國",
+      "origin_en": "France"
+    },
+    {
+      "english_name": "Staffordshire Bullterrier",
+      "chinese_name": "史塔福郡牛頭梗",
+      "slug": "bullterrier-staffordshire",
+      "introduce_zh": "性格勇敢、忠誠且極度親人，尤其對兒童耐心友善，因此被譽為「保姆犬」。牠們聰明活潑，樂於取悅主人。最初用於鬥牛和鬥熊，後來轉為鬥犬。現代主要作為伴侶犬和家庭寵物，因其溫馴友善的性格而廣受歡迎。",
+      "introduce_en": "Courageous, loyal, and exceptionally affectionate, Staffordshire Bull Terriers are particularly patient and friendly with children, earning them the affectionate moniker 'Nanny Dog'. They are intelligent and lively, possessing a strong desire to please their owners. Originally bred for bull and bear-baiting, they were later adapted for dog-fighting. Today, they are cherished primarily as companion dogs and family pets, widely popular for their gentle and amiable disposition.",
+      "origin_zh": "英格蘭",
+      "origin_en": "England"
+    },
+    {
+      "english_name": "Australian Cattledog",
+      "chinese_name": "澳洲牧牛犬",
+      "slug": "cattledog-australian",
+      "introduce_zh": "澳洲牧牛犬非常聰明、精力充沛且忠誠，對主人極為保護。牠們具有強烈的牧牛本能，需要大量的體能和智力訓練。最初培育用於在澳洲惡劣環境下驅趕和管理牛群。現代也常作為活躍家庭的伴侶犬和參與犬類運動。",
+      "introduce_en": "The Australian Cattle Dog is a highly intelligent, energetic, and loyal breed, known for being extremely protective of its owners. They possess strong herding instincts and require significant physical and mental stimulation to thrive. This breed was originally developed to herd and manage cattle in the harsh Australian environment. In modern times, they often serve as devoted companions for active families and excel in various canine sports.",
+      "origin_zh": "澳洲",
+      "origin_en": "Australia"
+    },
+    {
+      "english_name": "Cavapoo",
+      "chinese_name": "卡瓦普",
+      "slug": "cavapoo",
+      "introduce_zh": "卡瓦普犬溫和友善、聰明且熱情，非常喜歡與人互動。牠們性格活潑但不會過度亢奮，非常適合家庭生活。主要作為伴侶犬和家庭寵物，因其親人的天性以及較低的掉毛量（受貴賓犬影響）而受到歡迎。",
+      "introduce_en": "Cavapoos are gentle-natured, intelligent, and affectionate dogs who highly enjoy interacting with people. They possess a lively temperament without being overly hyperactive, making them ideal companions for family life. Primarily sought after as companion dogs and family pets, their popularity stems from their people-oriented nature and their low-shedding coat, a desirable trait inherited from their Poodle lineage.",
+      "origin_zh": "澳洲",
+      "origin_en": "Australia"
+    },
+    {
+      "english_name": "Chihuahua",
+      "chinese_name": "吉娃娃",
+      "slug": "chihuahua",
+      "introduce_zh": "吉娃娃是一種警惕、活潑且聰明的犬種，對主人極為忠誠且情感豐富。牠們雖然體型小巧，卻常常展現出勇敢甚至有點自大的個性。主要作為家庭寵物和伴侶犬，因其小巧體型和對主人的深情而廣受喜愛。",
+      "introduce_en": "The Chihuahua is an alert, lively, and intelligent breed, known for their extreme loyalty and deep affection towards their owners. Despite their small stature, they often display a brave and even somewhat feisty personality. Primarily kept as family pets and companion dogs, they are widely cherished for their diminutive size and profound devotion to their human companions.",
+      "origin_zh": "墨西哥",
+      "origin_en": "Mexico"
+    },
+    {
+      "english_name": "Indian Chippiparai",
+      "chinese_name": "印度奇皮帕萊犬",
+      "slug": "chippiparai-indian",
+      "introduce_zh": "聰明、勇敢且忠誠，對主人熱愛但對陌生人可能保持警惕，具有強烈的狩獵本能和高度警覺性。傳統上主要用於狩獵野兔、鹿和野豬等小型至中型獵物，也常被用作看家護院的守衛犬。",
+      "introduce_en": "Intelligent, brave, and loyal, the Indian Chippiparai is deeply affectionate towards its owners but may be wary or reserved with strangers. It possesses a strong hunting instinct and a high level of alertness. Traditionally, this breed was primarily used for hunting small to medium-sized game such as hares, deer, and wild boars. They are also frequently employed as guard dogs for homes and properties.",
+      "origin_zh": "印度，泰米爾納德邦 (Tamil Nadu, India)",
+      "origin_en": "Tamil Nadu, India"
+    },
+    {
+      "english_name": "Chow",
+      "chinese_name": "鬆獅犬",
+      "slug": "chow",
+      "introduce_zh": "性格獨立、矜持且帶有些許疏離感，對家人極其忠誠但對陌生人保持警惕。歷史上被用於狩獵、牧羊、拉車和守衛，現代則主要作為伴侶犬。",
+      "introduce_en": "Characterized by an independent, dignified, and somewhat aloof temperament, Chows are fiercely loyal to their families but remain reserved or suspicious around strangers. Historically, they were employed for hunting, herding, pulling carts, and guarding. In modern times, they primarily serve as companion dogs.",
+      "origin_zh": "中國",
+      "origin_en": "China"
+    },
+    {
+      "english_name": "Clumber",
+      "chinese_name": "克倫伯獵犬",
+      "slug": "clumber",
+      "introduce_zh": "性格溫和、沉著冷靜且忠誠，對家人友善。牠們有時可能較為固執，但耐心訓練下會是很棒的伴侶。傳統上主要被用作狩獵犬，尤其擅長在濃密植被中尋找並取回鳥類獵物。現今也常作為伴侶犬或展示犬。",
+      "introduce_en": "Clumbers possess a gentle, placid, and loyal temperament, making them amiable with family members. Although they can sometimes exhibit a stubborn streak, with patient training, they prove to be wonderful companions. Traditionally, they were primarily employed as gundogs, particularly adept at flushing and retrieving game birds from dense cover. Today, they are also cherished as companion animals and frequently seen in the show ring.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Cockapoo",
+      "chinese_name": "可卡貴賓犬",
+      "slug": "cockapoo",
+      "introduce_zh": "聰明、友善、活潑且深情，通常非常親人並適合家庭，對兒童及其他寵物也友善。伴侶犬、家庭寵物",
+      "introduce_en": "Intelligent, friendly, lively, and affectionate, they are typically very devoted to their families and make excellent family pets. They are also friendly towards children and other pets. Companion dog, family pet.",
+      "origin_zh": "美國",
+      "origin_en": "USA"
+    },
+    {
+      "english_name": "Border Collie",
+      "chinese_name": "邊境牧羊犬",
+      "slug": "collie-border",
+      "introduce_zh": "邊境牧羊犬聰明、警覺、反應快，精力充沛且熱衷於工作。牠們對主人忠誠，但需要大量活動與智力刺激來保持身心健康。主要用於牧羊，尤其是放牧綿羊。現代也常作為伴侶犬、敏捷犬、服從犬、飛盤犬及搜救犬。",
+      "introduce_en": "Border Collies are intelligent, alert, and highly responsive, possessing abundant energy and a strong desire to work. They are loyal to their owners but require extensive physical activity and mental stimulation to maintain their physical and mental well-being. Primarily, they are used for herding, particularly sheep. In modern times, they are also commonly seen as companion dogs, agility dogs, obedience dogs, disc dogs, and search and rescue dogs.",
+      "origin_zh": "蘇格蘭與英格蘭邊境地區",
+      "origin_en": "Scotland and England border area"
+    },
+    {
+      "english_name": "Coonhound",
+      "chinese_name": "獵浣熊犬",
+      "slug": "coonhound",
+      "introduce_zh": "精力充沛、嗅覺敏銳且追蹤能力強，對家人忠誠友善，但在追蹤獵物時會非常專注和執著。主要用於追蹤和獵捕浣熊及其他小型哺乳動物，也常作為家庭伴侶犬和運動犬。",
+      "introduce_en": "Energetic, keen-scented, and possessing exceptional tracking abilities, Coonhounds are loyal and friendly companions to their families. However, when on the trail of game, they become intensely focused and tenacious. Their primary role is tracking and hunting raccoons and other small mammals, but they also make excellent family pets and sport dogs.",
+      "origin_zh": "美國",
+      "origin_en": "USA"
+    },
+    {
+      "english_name": "Cardigan Corgi",
+      "chinese_name": "卡迪根威爾斯柯基犬",
+      "slug": "corgi-cardigan",
+      "introduce_zh": "聰明、忠誠且深情，性格溫和但警惕性高，對家人友善，適合有活力的家庭。最初用於牧牛、牧羊和看守農場，現代多作為家庭伴侶犬。",
+      "introduce_en": "Intelligent, loyal, and affectionate, the Cardigan Corgi possesses a gentle yet highly vigilant nature. Friendly towards family members, they are well-suited for active households. Originally utilized for herding cattle and sheep, and for guarding farms, they are primarily cherished family companion dogs in modern times.",
+      "origin_zh": "英國威爾斯",
+      "origin_en": "Wales, UK"
+    },
+    {
+      "english_name": "Cotondetulear",
+      "chinese_name": "馬達加斯加棉花犬",
+      "slug": "cotondetulear",
+      "introduce_zh": "牠們友善、活潑、聰明且深情，喜歡與人互動並展現其幽默感，是極佳的家庭伴侶犬。最初作為馬達加斯加貴族家庭的伴侶犬，現代主要仍是深受喜愛的家庭寵物。",
+      "introduce_en": "Known for their friendly, lively, intelligent, and affectionate nature, they delight in human interaction and often display a charming sense of humor, making them superb family companions. Originally serving as companion dogs for the noble families of Madagascar, today they primarily remain beloved family pets.",
+      "origin_zh": "馬達加斯加",
+      "origin_en": "madagascar"
+    },
+    {
+      "english_name": "Dachshund",
+      "chinese_name": "臘腸犬",
+      "slug": "dachshund",
+      "introduce_zh": "牠們活潑、好奇且聰明，但有時也可能固執己見。對家人忠誠，但對陌生人可能保持警惕。最初被培育用於追捕獾和其他穴居動物。現今主要作為伴侶犬。",
+      "introduce_en": "They are lively, curious, and intelligent, though they can sometimes be stubborn. Loyal to their families, they may be wary of strangers. Originally bred to hunt badgers and other burrowing animals, they now primarily serve as companion dogs.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Dalmatian",
+      "chinese_name": "大麥町",
+      "slug": "dalmatian",
+      "introduce_zh": "大麥町精力充沛、活潑好動、友善且聰明，對家人忠誠，但有時會比較固執。牠們需要大量的運動和精神刺激來保持快樂。歷史上主要作為馬車犬，負責在馬車旁奔跑護衛，也曾是獵犬、牧羊犬和消防犬。現代則廣泛作為活躍的伴侶犬和家庭寵物。",
+      "introduce_en": "Dalmatians are energetic, lively, friendly, and intelligent dogs. They are loyal to their families but can be somewhat stubborn at times. They require a significant amount of exercise and mental stimulation to stay happy and well-adjusted. Historically, they were primarily developed as coach dogs, responsible for running alongside horse-drawn carriages to guard them. They have also served roles as hunting dogs, herding dogs, and firehouse mascots. Today, they are widely enjoyed as active companion dogs and family pets.",
+      "origin_zh": "克羅埃西亞",
+      "origin_en": "Croatia"
+    },
+    {
+      "english_name": "Great Dane",
+      "chinese_name": "大丹犬",
+      "slug": "dane-great",
+      "introduce_zh": "個性溫和友善，對家人充滿感情且忠誠，有時對陌生人會較為警惕。儘管體型巨大，卻是著名的「溫柔巨人」。最初被培育為獵捕野豬的獵犬，現代主要作為忠實的家庭伴侶犬和護衛犬。",
+      "introduce_en": "Great Danes are known for their gentle and friendly temperament, being deeply affectionate and loyal to their families, though sometimes reserved or watchful with strangers. Despite their imposing size, they are famously known as \"gentle giants.\" Originally bred as hunting dogs for wild boar, today they primarily serve as devoted family companions and effective guardians.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Swedish Danish",
+      "chinese_name": "丹麥-瑞典農場犬",
+      "slug": "danish-swedish",
+      "introduce_zh": "性格友善、活潑且聰明，對主人忠誠並喜歡與人互動。牠們警覺性高，學習能力強。最初是農場犬，用於捕捉害蟲、看守農場和牧牛。現代則多作為伴侶犬，也擅長犬類運動。",
+      "introduce_en": "The Swedish Danish Farmdog is characterized by a friendly, lively, and intelligent disposition. They are loyal to their owners and enjoy interacting with people. Possessing high alertness and a strong learning ability, they were originally bred as versatile farm dogs, used for catching pests, guarding the farm, and herding cattle. In modern times, they are predominantly cherished as companion dogs and also excel in various canine sports.",
+      "origin_zh": "丹麥與瑞典",
+      "origin_en": "Denmark and Sweden"
+    },
+    {
+      "english_name": "Scottish Deerhound",
+      "chinese_name": "蘇格蘭獵鹿犬",
+      "slug": "deerhound-scottish",
+      "introduce_zh": "牠們性格溫和、友善且尊貴，對家人忠誠但對陌生人可能保持距離。儘管體型龐大，牠們在家中通常安靜沉穩，但在戶外則精力充沛、熱愛奔跑。最初被培育來追捕蘇格蘭高地的紅鹿，是力量、速度與耐力的結合。現代主要作為伴侶犬和展覽犬，但也保留了牠們作為視線獵犬的本能。",
+      "introduce_en": "Scottish Deerhounds possess a gentle, friendly, and dignified temperament. Loyal to their families, they may be reserved with strangers. Despite their large size, they are typically quiet and calm indoors, but become energetic and delight in running outdoors. Originally bred to hunt red deer in the Scottish Highlands, they embody a combination of strength, speed, and endurance. Today, they primarily serve as companion and show dogs, yet they retain their inherent sighthound instincts.",
+      "origin_zh": "蘇格蘭",
+      "origin_en": "Scotland"
+    },
+    {
+      "english_name": "Dhole",
+      "chinese_name": "豺",
+      "slug": "dhole",
+      "introduce_zh": "Dhole是高度群居的野生犬科動物，以其複雜的社會結構和合作狩獵聞名。牠們聰明、警惕，並擁有多樣的叫聲進行溝通。作為其生態系統中的頂級掠食者，Dhole的主要用途是在野外控制獵物族群，維持生態平衡。牠們並非家犬，因此沒有人類賦予的傳統用途。",
+      "introduce_en": "The Dhole is a highly social wild canid, known for its complex social structure and cooperative hunting. They are intelligent, alert, and possess a diverse repertoire of vocalizations for communication. As an apex predator in its ecosystem, the Dhole's primary purpose is to control prey populations in the wild, thus maintaining ecological balance. They are not domestic dogs and therefore have no traditional uses assigned by humans.",
+      "origin_zh": "亞洲 (南亞、東南亞、中亞部分地區)",
+      "origin_en": "Asia (South Asia, Southeast Asia, parts of Central Asia)"
+    },
+    {
+      "english_name": "Dingo",
+      "chinese_name": "澳洲野犬",
+      "slug": "dingo",
+      "introduce_zh": "澳洲野犬是高度獨立、聰明且對人類保持警惕的野生犬科動物。牠們適應力強，通常以小群體生活，並展現出複雜的社會行為。作為澳洲生態系統中的頂級掠食者，澳洲野犬在維持野生動物種群數量和生態平衡方面扮演著重要角色。牠們通常被視為野生動物，而非傳統意義上被人類馴養利用的犬種。",
+      "introduce_en": "Dingoes are highly independent, intelligent wild canids that are wary of humans. They are highly adaptable, typically living in small groups and exhibiting complex social behaviors. As apex predators in the Australian ecosystem, Dingoes play a crucial role in maintaining wildlife populations and ecological balance. They are generally considered wild animals, rather than a traditional dog breed domesticated and utilized by humans.",
+      "origin_zh": "澳洲",
+      "origin_en": "Australia"
+    },
+    {
+      "english_name": "Doberman",
+      "chinese_name": "杜賓犬",
+      "slug": "doberman",
+      "introduce_zh": "聰明、警惕、忠誠且無畏，對家人有很強的保護欲，需要適當的訓練和社會化。最初被培育為個人護衛犬和警犬；現代常用於警務、軍事、搜救、治療犬和家庭伴侶犬。",
+      "introduce_en": "Intelligent, alert, loyal, and fearless, the Doberman possesses a strong protective instinct towards its family, requiring proper training and socialization. Originally bred as personal protection dogs and police dogs, this breed is now commonly utilized in police and military work, search and rescue, as therapy dogs, and as cherished family companions.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Norwegian Elkhound",
+      "chinese_name": "挪威獵鹿犬",
+      "slug": "elkhound-norwegian",
+      "introduce_zh": "牠們勇敢、獨立且忠誠，對家人友善，但對陌生人可能較為保留。牠們聰明且精力充沛，需要足夠的運動和心智刺激。牠們最初被培育用於追蹤和圍捕大型獵物，如駝鹿（麋鹿）和熊。現代則多作為忠實的家庭伴侶犬，也適合參與犬類運動。",
+      "introduce_en": "They are brave, independent, and loyal. While friendly with their families, they can be reserved with strangers. Intelligent and energetic, they require ample physical activity and and mental stimulation. They were originally bred to track and hold large game, such as moose and bear, at bay. Today, they primarily serve as loyal family companions and excel in various dog sports.",
+      "origin_zh": "挪威",
+      "origin_en": "Norway"
+    },
+    {
+      "english_name": "Entlebucher",
+      "chinese_name": "恩特勒布赫牧牛犬",
+      "slug": "entlebucher",
+      "introduce_zh": "牠們聰明、精力充沛且自信，對家人極其忠誠，可能對陌生人較為保留。需要大量的身體活動與心理刺激。歷史上主要用於牧牛、護衛農場和驅趕牲畜。現代則常作為活躍家庭的優秀伴侶犬，並在犬類運動中表現出色。",
+      "introduce_en": "Intelligent, energetic, and self-assured, they are fiercely loyal to their families and may be reserved with strangers. They require ample physical activity and mental stimulation. Historically, they were primarily used for herding cattle, guarding farms, and driving livestock. In modern times, they frequently serve as excellent companion dogs for active families and excel in canine sports.",
+      "origin_zh": "瑞士",
+      "origin_en": "Switzerland"
+    },
+    {
+      "english_name": "Eskimo",
+      "chinese_name": "愛斯基摩犬",
+      "slug": "eskimo",
+      "introduce_zh": "聰明、警覺且活潑友善，對主人忠誠並渴望取悅，但可能對陌生人較為謹慎。最初因其智力和敏捷性而成為受歡迎的馬戲團表演犬，現代則主要作為伴侶犬和展示犬。",
+      "introduce_en": "Intelligent, alert, and vivacious and friendly, they are loyal to their owners and eager to please, though they may be somewhat reserved with strangers. Originally popular as circus performers due to their intelligence and agility, they are now primarily kept as companion and show dogs.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Lapphund Finnish",
+      "chinese_name": "芬蘭拉普獵犬",
+      "slug": "finnish-lapphund",
+      "introduce_zh": "芬蘭拉普獵犬性格友善、警惕、勇敢且冷靜，對主人忠誠並樂於取悅。牠們聰明且容易訓練，是非常好的家庭伴侶犬。牠們最初被薩米人用於牧放馴鹿，是一種優秀的牧羊犬。現代則多作為忠實的家庭伴侶犬，也常活躍於各種犬類運動。",
+      "introduce_en": "The Finnish Lapphund is friendly, alert, courageous, and calm, loyal to its owner and eager to please. They are intelligent and highly trainable, making them excellent family companion dogs. Originally used by the Sami people for herding reindeer, they are excellent herding dogs. Today, they primarily serve as loyal family companions and are often active in various dog sports.",
+      "origin_zh": "芬蘭",
+      "origin_en": "Finland"
+    },
+    {
+      "english_name": "Bichon Frise",
+      "chinese_name": "比熊犬",
+      "slug": "frise-bichon",
+      "introduce_zh": "牠們活潑開朗、愛玩耍，性情溫和且聰明，非常喜歡與人互動並善於討人喜歡。對家庭成員充滿熱情，通常也適合與孩童及其他寵物相處。歷史上曾作為航海伴侶犬、歐洲貴族及皇室的寵物犬，也曾是馬戲團表演犬。現代主要作為伴侶犬和家庭寵物。",
+      "introduce_en": "Bichon Frises are known for their vivacious, cheerful, and playful nature. They are gentle-natured, intelligent, thrive on human interaction, and possess a natural ability to charm. They exhibit deep affection and enthusiasm towards family members and typically coexist harmoniously with children and other pets. Historically, they served various roles: as seafaring companions, beloved pets of European nobility and royalty, and even as circus performers. Today, they are predominantly cherished as devoted companion dogs and family pets.",
+      "origin_zh": "地中海地區（西班牙、法國）",
+      "origin_en": "Mediterranean region (Spain, France)"
+    },
+    {
+      "english_name": "Indian Gaddi",
+      "chinese_name": "印度加迪犬",
+      "slug": "gaddi-indian",
+      "introduce_zh": "忠誠、勇敢且警惕，對家人極為護主，但對陌生人則保持距離。牠們聰明且獨立，需要適當的訓練和社交。主要用於牧羊和護衛牲畜，對抗野獸侵襲，同時也是可靠的守護犬。",
+      "introduce_en": "Loyal, brave, and alert, they are fiercely protective of their family but reserved with strangers. They are intelligent and independent, requiring proper training and socialization. Primarily used for herding and guarding livestock against predator attacks, they also make reliable guard dogs.",
+      "origin_zh": "印度喜馬拉雅山區",
+      "origin_en": "Indian Himalayas"
+    },
+    {
+      "english_name": "Shepherd German",
+      "chinese_name": "德國牧羊犬",
+      "slug": "german-shepherd",
+      "introduce_zh": "聰明、勇敢、忠誠且警惕，學習能力極強，對家人表現出強烈的保護欲，適合有經驗的飼主。最初作為牧羊犬，現廣泛應用於警犬、軍犬、搜救犬、導盲犬及家庭伴侶犬等領域。",
+      "introduce_en": "Highly intelligent, brave, loyal, and vigilant, German Shepherds are exceptionally quick learners and display a strong protective instinct towards their families, making them best suited for experienced owners. While originally bred as herding dogs, they are now extensively employed in various fields such as police and military work, search and rescue, guide dog services, and as cherished family companions.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Indian Greyhound",
+      "chinese_name": "莫德霍爾獵犬 (或稱卡拉萬獵犬)",
+      "slug": "greyhound-indian",
+      "introduce_zh": "牠們是充滿活力的獵犬，以速度、耐力和敏銳的狩獵本能聞名。性格忠誠、聰明，對家人保護，但對陌生人可能較為警惕。主要用於追逐和捕捉小型獵物，如野兔和鹿。牠們也常被用作看家犬和牧群護衛犬。",
+      "introduce_en": "They are energetic sighthounds, renowned for their speed, endurance, and keen hunting instincts. Loyal and intelligent by nature, they are protective of their family but may be wary of strangers. They are primarily used for pursuing and capturing small game, such as hares and deer. They also often serve as watchdogs and livestock guardian dogs.",
+      "origin_zh": "印度",
+      "origin_en": "India"
+    },
+    {
+      "english_name": "Italian Greyhound",
+      "chinese_name": "義大利靈緹",
+      "slug": "greyhound-italian",
+      "introduce_zh": "溫馴、深情且敏感，非常依賴主人並喜歡依偎。牠們活潑好動但同時也享受舒適的休憩時光，對陌生人可能有些害羞。歷史上主要作為貴族的伴侶犬，因其優雅的外觀和適合室內生活的特性而備受推崇，也曾用於追捕小型獵物。現代則主要作為家庭伴侶犬和展示犬。",
+      "introduce_en": "Gentle, affectionate, and sensitive, they are deeply devoted to their owners and thrive on close companionship and cuddling. While energetic and playful, they equally appreciate comfortable indoor relaxation. They can be reserved or somewhat shy with strangers. Historically, they were highly prized as companions for nobility, revered for their elegant appearance and adaptability to indoor living, and were also utilized for hunting small game. In modern times, they predominantly serve as cherished family companions and successful show dogs.",
+      "origin_zh": "義大利 (其現代發展與普及)",
+      "origin_en": "Italy (its modern development and spread)"
+    },
+    {
+      "english_name": "Groenendael",
+      "chinese_name": "格羅安達犬",
+      "slug": "groenendael",
+      "introduce_zh": "牠們聰明、警覺且敏感，對主人忠誠並具保護欲。此犬種精力充沛，需要足夠的運動和心智刺激。主要被培育來牧羊和守衛，現代則廣泛用於警犬、搜救犬、服從和敏捷競賽，也是活躍的家庭伴侶犬。",
+      "introduce_en": "They are intelligent, alert, and sensitive, loyal and protective of their owners. This breed is highly energetic, requiring ample physical exercise and mental stimulation. Primarily bred for herding and guarding, they are now widely utilized in police work, search and rescue, obedience and agility competitions, and also make active family companions.",
+      "origin_zh": "比利時",
+      "origin_en": "Belgium"
+    },
+    {
+      "english_name": "Havanese",
+      "chinese_name": "哈瓦那犬",
+      "slug": "havanese",
+      "introduce_zh": "性格友善、活潑開朗、聰明且樂於取悅主人，是出色的家庭伴侶犬。最初是古巴貴族的伴侶犬，現今則廣受歡迎作為家庭寵物和表演犬。",
+      "introduce_en": "Friendly, lively and outgoing, intelligent, and eager to please, the Havanese makes an excellent family companion. Originally companion dogs to Cuban aristocracy, they are now widely popular as family pets and show dogs.",
+      "origin_zh": "古巴",
+      "origin_en": "cuba"
+    },
+    {
+      "english_name": "Afghan Hound",
+      "chinese_name": "阿富汗獵犬",
+      "slug": "hound-afghan",
+      "introduce_zh": "獨立、高貴且帶有貴族氣質，對陌生人顯得冷淡，但對主人忠誠，有時會展現調皮的一面。最初用於追捕大型獵物（如羚羊、狼），是出色的視覺型獵犬；現代則主要作為觀賞犬、伴侶犬和賽犬。",
+      "introduce_en": "Independent, dignified, and aristocratic in demeanor, the Afghan Hound is aloof towards strangers but fiercely loyal to its owners. They occasionally reveal a mischievous and playful side. Originally bred as an exceptional sighthound for hunting large game such as gazelles and wolves, they now primarily serve as show dogs, cherished companions, and competitive athletes.",
+      "origin_zh": "阿富汗",
+      "origin_en": "Afghanistan"
+    },
+    {
+      "english_name": "Basset Hound",
+      "chinese_name": "巴吉度獵犬",
+      "slug": "hound-basset",
+      "introduce_zh": "友善、溫和且忠誠，有時會顯得固執，但對家人極具耐心和愛心，是絕佳的家庭伴侶。最初用於追蹤小型獵物如兔子和野兔，憑藉其敏銳的嗅覺和低矮身軀在灌木叢中工作。現代多為家庭伴侶犬。",
+      "introduce_en": "Friendly, gentle, and loyal, Basset Hounds can sometimes display a stubborn streak, yet they exhibit immense patience and affection towards their family, making them excellent family companions. Originally bred for tracking small game such as rabbits and hares, they utilize their keen sense of smell and low-slung body to work effectively through dense undergrowth. Today, they are predominantly cherished as family companion dogs.",
+      "origin_zh": "法國",
+      "origin_en": "France"
+    },
+    {
+      "english_name": "Blood Hound",
+      "chinese_name": "尋血獵犬",
+      "slug": "hound-blood",
+      "introduce_zh": "性格溫順、友善且極為耐心，對家人忠誠。牠們具有堅韌不拔的精神，一旦開始追蹤就不會輕易放棄。主要用於追蹤失蹤人員或獵物，因其卓越的嗅覺能力，在執法部門中被廣泛應用於搜救和追踪任務。",
+      "introduce_en": "The Bloodhound possesses a gentle, friendly, and extremely patient temperament, demonstrating unwavering loyalty to its family. They are characterized by a tenacious spirit, showing remarkable persistence and an unwillingness to abandon a track once they've started. Primarily used for tracking missing persons or game, their exceptional olfactory abilities make them widely utilized in law enforcement for search and rescue and tracking missions.",
+      "origin_zh": "比利時、法國",
+      "origin_en": "Belgium, France"
+    },
+    {
+      "english_name": "English Hound",
+      "chinese_name": "英國獵犬",
+      "slug": "hound-english",
+      "introduce_zh": "牠們通常友善、精力充沛且嗅覺靈敏，對主人忠誠，但也可能獨立和固執，需要足夠的運動量。歷史上主要用於群體狩獵，透過嗅覺追蹤狐狸、野兔等獵物；現代除了少數仍作狩獵用途，也常作為活躍家庭的伴侶犬。",
+      "introduce_en": "They are typically friendly, energetic, and possess an acute sense of smell. Loyal to their owners, they can also exhibit an independent and stubborn streak, necessitating significant amounts of exercise. Historically, they were primarily employed for pack hunting, tracking quarry such as foxes and hares by scent. In modern times, while a small number continue to be used for hunting, they are commonly found as companion dogs in active households.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Ibizan Hound",
+      "chinese_name": "伊比薩獵犬",
+      "slug": "hound-ibizan",
+      "introduce_zh": "聰明、活潑且警覺，對家人溫柔忠誠但對陌生人可能較為保留。牠們獨立且具有貓科動物般的優雅。傳統上用於獵捕野兔和小型獵物，現代則多作為伴侶犬、表演犬及敏捷犬。",
+      "introduce_en": "Intelligent, lively, and alert, the Ibizan Hound is gentle and loyal to its family but can be reserved with strangers. They are independent and possess a cat-like elegance. Traditionally used for hunting rabbits and small game, today they are often cherished as companion dogs, show dogs, and agility dogs.",
+      "origin_zh": "西班牙 (伊比薩島)",
+      "origin_en": "Spain (Ibiza)"
+    },
+    {
+      "english_name": "Plott Hound",
+      "chinese_name": "普羅特獵犬",
+      "slug": "hound-plott",
+      "introduce_zh": "普羅特獵犬精力充沛、勇敢且堅韌，具有強烈的狩獵本能。牠們通常忠誠於家人，聰明且樂於學習，但需要足夠的運動量與心智刺激。主要用於狩獵大型獵物，如熊、山獅和浣熊，因其追蹤能力和毅力而聞名。現代也作為活躍家庭的伴侶犬和運動犬。",
+      "introduce_en": "The Plott Hound is energetic, brave, and tenacious, possessing a strong hunting instinct. They are typically loyal to their families, intelligent, and eager to learn, but require ample exercise and mental stimulation. Primarily used for hunting large game such as bear, mountain lion, and raccoon, they are renowned for their tracking ability and perseverance. In modern times, they also serve as companion and sport dogs for active families.",
+      "origin_zh": "美國 (北卡羅來納州)",
+      "origin_en": "United States (North Carolina)"
+    },
+    {
+      "english_name": "Walker Hound",
+      "chinese_name": "特里華克獵浣熊犬",
+      "slug": "hound-walker",
+      "introduce_zh": "精力充沛、聰明且勇敢，對獵物極度專注和堅持。牠們通常友善且適應力強。主要用於狩獵浣熊及其他小型樹棲動物，善於將獵物逼至樹上。牠們也是優秀的獵犬賽犬和伴侶犬。",
+      "introduce_en": "Energetic, intelligent, and courageous, with intense focus and tenacity on quarry. They are typically friendly and adaptable. Primarily used for hunting raccoons and other small arboreal animals, they excel at treeing game. They are also excellent competition hounds and companion dogs.",
+      "origin_zh": "美國",
+      "origin_en": "USA"
+    },
+    {
+      "english_name": "Husky",
+      "chinese_name": "哈士奇",
+      "slug": "husky",
+      "introduce_zh": "精力充沛、友善、聰明且外向，但有時也可能相當固執和獨立，需要大量的運動和精神刺激。主要作為雪橇犬，負責拉雪橇和搬運貨物；現代多作為伴侶犬或參與犬類運動。",
+      "introduce_en": "Energetic, friendly, intelligent, and outgoing, Huskies can also be quite stubborn and independent at times, requiring a significant amount of exercise and mental stimulation. Primarily bred as sled dogs, they were responsible for pulling sleds and transporting goods; today they are often companion dogs or participate in canine sports.",
+      "origin_zh": "西伯利亞，俄羅斯",
+      "origin_en": "Siberia, Russia"
+    },
+    {
+      "english_name": "Keeshond",
+      "chinese_name": "荷蘭毛獅犬",
+      "slug": "keeshond",
+      "introduce_zh": "聰明、活潑且友善，對家人非常忠誠且充滿熱情，喜歡與人互動並取悅主人。牠們通常與兒童及其他寵物相處融洽。最初作為荷蘭運河船隻上的看門犬和伴侶犬。現代主要作為家庭伴侶犬和展覽犬，在服從、敏捷等犬類運動中表現出色。",
+      "introduce_en": "Intelligent, lively, and friendly, Keeshonden are extremely loyal and affectionate towards their families, enjoying interaction with people and eager to please their owners. They generally get along well with children and other pets. They originally served as watchdogs and companion dogs on Dutch canal boats. Nowadays, they primarily serve as family companions and show dogs, excelling in dog sports such as obedience and agility.",
+      "origin_zh": "荷蘭",
+      "origin_en": "Netherlands"
+    },
+    {
+      "english_name": "Kelpie",
+      "chinese_name": "澳洲卡爾比犬",
+      "slug": "kelpie",
+      "introduce_zh": "聰明、警覺、精力充沛且工作導向，具有高度忠誠和取悅主人的慾望。主要作為牧羊犬，特別擅長於在廣闊的地區放牧綿羊，以其耐力和卓越的工作能力而聞名。",
+      "introduce_en": "Intelligent, alert, highly energetic, and work-oriented, the Kelpie possesses a high degree of loyalty and an eagerness to please its owner. Primarily a herding dog, it particularly excels at moving sheep over vast territories, renowned for its endurance and exceptional working ability.",
+      "origin_zh": "澳洲",
+      "origin_en": "Australia"
+    },
+    {
+      "english_name": "Kombai",
+      "chinese_name": "康拜犬",
+      "slug": "kombai",
+      "introduce_zh": "康拜犬以其極高的忠誠度、勇氣和保護欲聞名，對家人深情款款。牠們聰明且警覺，對陌生人保持警惕，展現出強烈的領地意識。傳統上主要用於狩獵野豬、鹿等大型獵物，並作為看門犬和牧羊犬保護家畜與財產。現代仍是優秀的護衛犬和家庭伴侶犬。",
+      "introduce_en": "The Kombai is renowned for its exceptional loyalty, courage, and strong protective instincts, exhibiting deep affection for its family. They are intelligent and alert, maintaining vigilance towards strangers and displaying a strong territorial awareness. Traditionally, they were primarily employed in hunting large game such as wild boar and deer, and also served as excellent watchdogs and herding dogs, safeguarding livestock and property. In modern times, they continue to be outstanding guard dogs and devoted family companions.",
+      "origin_zh": "印度 (泰米爾納德邦)",
+      "origin_en": "India (Tamil Nadu)"
+    },
+    {
+      "english_name": "Komondor",
+      "chinese_name": "柯蒙多犬",
+      "slug": "komondor",
+      "introduce_zh": "柯蒙多犬是一種天生具有守護本能的牧羊犬，性格沉穩、勇敢且對家庭極為忠誠，對陌生人則較為保留。主要用於牧羊犬，負責保護牲畜免受掠食者侵害；現代也作為護衛犬和家庭伴侶犬。",
+      "introduce_en": "The Komondor is a sheepdog with an innate guarding instinct. Its temperament is calm, courageous, and exceptionally loyal to its family, though it tends to be reserved with strangers. Historically, its primary role was as a livestock guardian dog, responsible for protecting flocks from predators. In modern times, it also serves as a capable guard dog and a devoted family companion.",
+      "origin_zh": "匈牙利",
+      "origin_en": "Hungary"
+    },
+    {
+      "english_name": "Kuvasz",
+      "chinese_name": "庫瓦茲犬",
+      "slug": "kuvasz",
+      "introduce_zh": "忠誠且具保護性，對家人溫柔但對陌生人可能較為保留；聰明且獨立，需要適當的訓練與社交。最初作為牲畜護衛犬，保護羊群免受掠食者侵害；現代仍保有此能力，亦可作為家庭伴侶犬及守衛犬。",
+      "introduce_en": "Loyal and protective, gentle with family but can be reserved with strangers. They are intelligent and independent, requiring proper training and socialization. Originally bred as a livestock guardian dog, protecting sheep from predators, they still retain this ability today and can also serve as family companions and guard dogs.",
+      "origin_zh": "匈牙利",
+      "origin_en": "Hungary"
+    },
+    {
+      "english_name": "Labradoodle",
+      "chinese_name": "拉布拉多貴賓犬",
+      "slug": "labradoodle",
+      "introduce_zh": "聰明、友善、活潑且社交性強，通常性格溫和且樂於取悅主人。最初作為低過敏性的導盲犬而培育，現今主要作為受歡迎的家庭寵物和治療犬。",
+      "introduce_en": "Intelligent, friendly, lively, and highly social, Labradoodles are generally gentle-natured and eager to please their owners. Originally bred as hypoallergenic guide dogs, they primarily serve today as popular family pets and therapy dogs.",
+      "origin_zh": "澳洲",
+      "origin_en": "Australia"
+    },
+    {
+      "english_name": "Labrador",
+      "chinese_name": "拉布拉多犬",
+      "slug": "labrador",
+      "introduce_zh": "性格友善、活潑開朗且聰明，對人溫和有耐心，非常樂於取悅主人，是優秀的家庭伴侶犬。最初用於協助漁民捕魚和找回漁網，現代廣泛作為導盲犬、服務犬、搜救犬、警犬以及忠實的家庭寵物。",
+      "introduce_en": "Possessing a friendly, outgoing, and intelligent temperament, Labradors are gentle and patient with people and remarkably eager to please their owners, making them excellent family companion dogs. Originally bred to assist fishermen with retrieving fish and nets, they are now widely utilized as guide dogs, service dogs, search and rescue dogs, police dogs, and devoted family pets.",
+      "origin_zh": "加拿大（紐芬蘭）",
+      "origin_en": "Canada (Newfoundland)"
+    },
+    {
+      "english_name": "Leonberg",
+      "chinese_name": "蘭伯格犬",
+      "slug": "leonberg",
+      "introduce_zh": "性格溫和、友善且耐心，對家人充滿愛心，同時具備警惕性，是可靠的守護者。歷史上作為伴侶犬、護衛犬和農場犬；現代則多為優秀的家庭伴侶犬、治療犬或搜救犬。",
+      "introduce_en": "Leonbergers are known for their gentle, friendly, and patient disposition, displaying deep affection towards their families. They also possess a watchful nature, making them reliable guardians. Historically, they served as companion dogs, guard dogs, and farm dogs; today, they are primarily cherished as excellent family companions, therapy dogs, or search and rescue dogs.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Lhasa",
+      "chinese_name": "拉薩犬",
+      "slug": "lhasa",
+      "introduce_zh": "聰明、警惕且獨立，對家人極為忠誠，但對陌生人可能較為保留。牠們擁有勇敢自信的性格，即使體型嬌小也充滿警覺性。歷史上主要被西藏寺廟和貴族用作看門犬，警示任何入侵者。現代則主要作為受歡迎的伴侶犬。",
+      "introduce_en": "Intelligent, alert, and independent, they are fiercely loyal to their family but can be reserved or aloof with strangers. They possess a courageous and confident nature, displaying keen alertness despite their small size. Historically, they were primarily utilized by Tibetan monasteries and nobility as watchdogs, specifically to alert against intruders. Today, they are cherished primarily as popular companion dogs.",
+      "origin_zh": "西藏 (Tibet)",
+      "origin_en": "Tibet"
+    },
+    {
+      "english_name": "Malamute",
+      "chinese_name": "阿拉斯加雪橇犬",
+      "slug": "malamute",
+      "introduce_zh": "牠們友善、忠誠且聰明，但同時也獨立、固執，需要適當的訓練和大量的運動。阿拉斯加雪橇犬通常對家人溫柔，但由於其強壯的本能，需要良好社會化。歷史上主要被用於拉雪橇、運輸重物及協助狩獵。現代則常作為家庭伴侶犬，同時也參與雪橇競賽、負重比賽及其他犬類運動。",
+      "introduce_en": "They are friendly, loyal, and intelligent, but also independent and stubborn, requiring proper training and plenty of exercise. Alaskan Malamutes are typically gentle with their families, but due to their strong natural instincts, good socialization is essential. Historically, they were primarily used for pulling sleds, transporting heavy loads, and assisting in hunting. In modern times, they are often cherished as family companion dogs, while also participating in sledding races, weight pull competitions, and other canine sports.",
+      "origin_zh": "美國阿拉斯加",
+      "origin_en": "Alaska, USA"
+    },
+    {
+      "english_name": "Malinois",
+      "chinese_name": "馬利諾斯犬",
+      "slug": "malinois",
+      "introduce_zh": "牠們聰明、警覺且精力充沛，具有強烈的工作慾望和保護本能。高度忠誠且易於訓練，但需要大量的體能和腦力刺激。最初用於牧羊，現今廣泛被用作警犬、軍犬、搜救犬、服務犬以及各種犬類運動的優秀夥伴。",
+      "introduce_en": "They are intelligent, vigilant, and highly energetic, possessing a strong work drive and protective instincts. Highly loyal and trainable, they nonetheless require substantial physical and mental stimulation. Originally bred for herding, they are now extensively employed as police dogs, military dogs, search and rescue dogs, and service dogs, as well as being excellent partners in various canine sports.",
+      "origin_zh": "比利時",
+      "origin_en": "Belgium"
+    },
+    {
+      "english_name": "Maltese",
+      "chinese_name": "馬爾濟斯",
+      "slug": "maltese",
+      "introduce_zh": "性格溫和、友善且活潑，非常聰明且忠誠，喜歡與人互動並渴望陪伴。歷史上主要作為貴族和皇室的伴侶犬，現代則主要擔任家庭寵物犬和展示犬的角色。",
+      "introduce_en": "Maltese are known for their gentle, friendly, and lively disposition. They are highly intelligent and loyal, thriving on human interaction and possessing a strong desire for companionship. Historically, they predominantly served as companion dogs for nobility and royalty. Today, they primarily fulfill roles as beloved family pets and successful show dogs.",
+      "origin_zh": "地中海中部地區（尤其與馬爾他島相關）",
+      "origin_en": "Central Mediterranean region (especially associated with the island of Malta)"
+    },
+    {
+      "english_name": "Bull Mastiff",
+      "chinese_name": "鬥牛獒",
+      "slug": "mastiff-bull",
+      "introduce_zh": "鬥牛獒忠誠、勇敢、自信且保護性強，對家人溫順友善。牠們天生警惕，對陌生人會保持距離，是優秀的守護者。此犬種最初在19世紀用於莊園保護，協助守衛人員追捕盜獵者。現代則主要作為家庭伴侶犬、護衛犬和警衛犬。",
+      "introduce_en": "The Bull Mastiff is loyal, brave, confident, and highly protective, yet gentle and friendly towards its family. They are naturally vigilant and reserved with strangers, making them excellent guardians. The breed was originally developed in the 19th century for estate protection, assisting gamekeepers in apprehending poachers. Today, they primarily serve as family companions, guard dogs, and watchdogs.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "English Mastiff",
+      "chinese_name": "英國獒犬",
+      "slug": "mastiff-english",
+      "introduce_zh": "性格溫和、沉穩，對家人極其忠誠且具有保護欲，是體型龐大但性情溫順的巨人。歷史上曾用於戰爭、鬥獸、守衛莊園和捕獵大型動物。現代主要作為家庭伴侶犬和可靠的守護犬。",
+      "introduce_en": "Known for its gentle and calm temperament, the English Mastiff is extremely loyal and protective of its family. It is a massive breed, often referred to as a \"gentle giant\" due to its docile nature. Historically, they were employed in warfare, animal baiting, guarding estates, and hunting large game. Today, they primarily serve as cherished family companions and reliable guardians.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Indian Mastiff",
+      "chinese_name": "印度獒犬",
+      "slug": "mastiff-indian",
+      "introduce_zh": "印度獒犬通常忠誠、勇敢且警惕，對家人極具保護性。牠們雖然外表威嚴，但在熟悉的環境和家人面前可以表現出溫順和深情。主要用於護衛、看家和牲畜保護，歷史上也曾用於狩獵。現代多作為護衛犬和忠實的伴侶犬。",
+      "introduce_en": "The Indian Mastiff is typically loyal, courageous, and vigilant, exhibiting strong protective instincts towards its family. Despite their imposing appearance, they can display gentleness and affection in familiar surroundings and with their family. Their primary roles have included guarding, property protection, and livestock protection; historically, they were also employed in hunting. In modern times, they often serve as formidable guard dogs and loyal companion animals.",
+      "origin_zh": "印度",
+      "origin_en": "India"
+    },
+    {
+      "english_name": "Tibetan Mastiff",
+      "chinese_name": "藏獒",
+      "slug": "mastiff-tibetan",
+      "introduce_zh": "忠誠、保護性強且獨立，對家人溫和但對陌生人保持警惕，需要有經驗的飼主進行訓練和社交。歷史上主要用於守護寺廟、村落、牲畜和帳篷，是一種威嚴的看門犬和牧羊犬。",
+      "introduce_en": "Loyal, fiercely protective, and independent, the Tibetan Mastiff is gentle with its family but reserved and wary of strangers. It requires consistent training and socialization from an experienced owner. Historically, they were primarily used for guarding temples, villages, livestock, and tents, serving as a majestic watchdog and livestock guardian.",
+      "origin_zh": "西藏 (中國)",
+      "origin_en": "Tibet (China)"
+    },
+    {
+      "english_name": "Mexicanhairless",
+      "chinese_name": "墨西哥無毛犬（或稱索羅犬）",
+      "slug": "mexicanhairless",
+      "introduce_zh": "忠誠、警覺且聰明，對家人深情並有保護欲，但對陌生人則較為保留，性格沉穩。歷史上被視為神聖的伴侶犬、守衛犬，並被用作熱源提供者；現代主要作為伴侶犬和展示犬。",
+      "introduce_en": "Loyal, alert, and intelligent, the Mexican Hairless is deeply affectionate and protective towards its family, yet reserved with strangers, possessing a calm demeanor. Historically, they were revered as sacred companion dogs, guardians, and even utilized as a source of warmth. Today, they predominantly serve as cherished companions and elegant show dogs.",
+      "origin_zh": "墨西哥",
+      "origin_en": "Mexico"
+    },
+    {
+      "english_name": "Mix",
+      "chinese_name": "米克斯",
+      "slug": "mix",
+      "introduce_zh": "性格多樣，可溫順可活潑，通常因基因多樣性而具有較好的適應能力與健康狀況，聰明且忠誠。最常見為家庭伴侶犬，亦可依其血統與訓練成為工作犬、服務犬或參與各種犬隻運動。",
+      "introduce_en": "Temperament is highly varied, ranging from gentle and docile to lively and energetic. Due to their genetic diversity, they often boast enhanced adaptability and robust health. They are intelligent and loyal. While most commonly serving as family companion dogs, they can also, depending on their genetic makeup and training, become excellent working dogs, service dogs, or participate in various canine sports.",
+      "origin_zh": "全球各地，無特定發源地",
+      "origin_en": "All over the world, no specific place of origin"
+    },
+    {
+      "english_name": "Bernese Mountain",
+      "chinese_name": "伯恩山犬",
+      "slug": "mountain-bernese",
+      "introduce_zh": "性格溫和、友善、聰明且忠誠，對家人充滿愛心，對陌生人則保持禮貌，是非常可靠的伴侶。歷史上主要用於瑞士農場，擔任牧羊、護衛和拉車的工作；現代則常作為出色的家庭伴侶犬、治療犬和服從性訓練犬。",
+      "introduce_en": "They possess a gentle, friendly, intelligent, and loyal disposition, are deeply affectionate towards their families, and maintain a polite demeanor with strangers, making them highly reliable companions. Historically, they were primarily employed on Swiss farms, performing duties such as herding, guarding, and drafting (pulling carts). Today, they frequently serve as outstanding family companions, therapy dogs, and excel in obedience work.",
+      "origin_zh": "瑞士",
+      "origin_en": "Switzerland"
+    },
+    {
+      "english_name": "Swiss Mountain",
+      "chinese_name": "大瑞士山犬",
+      "slug": "mountain-swiss",
+      "introduce_zh": "牠們通常自信、警惕、性情良好且忠誠。對家人深情並具保護性，同時也聰明且渴望取悅主人。傳統上在瑞士阿爾卑斯山區作為牧牛犬、驅趕犬和護衛犬，也常用於拉車。現代則多為忠實的家庭伴侶犬。",
+      "introduce_en": "They are typically confident, alert, good-natured, and loyal. Devoted and protective towards their families, they are also intelligent and eager to please their owners. Traditionally, in the Swiss Alps, they were employed as cattle herding, droving, and guard dogs, and were also commonly used for carting. Nowadays, they primarily serve as faithful family companion dogs.",
+      "origin_zh": "瑞士",
+      "origin_en": "Switzerland"
+    },
+    {
+      "english_name": "Indian Mudhol",
+      "chinese_name": "印度蒙多犬",
+      "slug": "mudhol-indian",
+      "introduce_zh": "牠們忠誠、聰明、勇敢，對家人充滿愛，但對陌生人可能較為保留。體能極佳且精力充沛，具有強烈的狩獵本能。主要作為狩獵犬，用於追捕小型至大型獵物如野豬和鹿，同時也是優秀的守衛犬。現代亦被印度軍警單位用於巡邏和偵查任務。",
+      "introduce_en": "They are loyal, intelligent, and courageous, deeply affectionate towards their families but can be reserved with strangers. Possessing excellent stamina and high energy, they have a strong hunting instinct. Primarily used as hunting dogs for pursuing small to large game such as wild boars and deer, they also serve as excellent guard dogs. In modern times, they are also utilized by Indian military and police units for patrol and detection duties.",
+      "origin_zh": "印度（卡納塔克邦蒙多地區）",
+      "origin_en": "India (Mondo district, Karnataka)"
+    },
+    {
+      "english_name": "Newfoundland",
+      "chinese_name": "紐芬蘭犬",
+      "slug": "newfoundland",
+      "introduce_zh": "性格溫和、友善、耐心且忠誠，對兒童特別友善，因此常被稱為「保姆犬」。牠們聰明且沉穩，非常適合家庭生活。最初被培育用於漁民的工作，包括從水中尋回失物、拖拉漁網及水上救生。現今牠們是優秀的家庭伴侶犬、展示犬，並持續在水上救生領域表現出色。",
+      "introduce_en": "Newfoundlands are known for their gentle, friendly, patient, and loyal temperament. They are exceptionally good with children, often earning them the nickname 'Nanny Dog'. Intelligent and calm, they are ideally suited for family life. Originally bred to assist fishermen, their historical roles included retrieving lost items from the water, hauling fishing nets, and water rescue. Today, they excel as devoted family companions and show dogs, and continue to perform outstandingly in water rescue.",
+      "origin_zh": "加拿大 紐芬蘭",
+      "origin_en": "canada newfoundland"
+    },
+    {
+      "english_name": "Otterhound",
+      "chinese_name": "水獺獵犬",
+      "slug": "otterhound",
+      "introduce_zh": "水獺獵犬通常友善、熱情且性情溫和，但也非常活潑、聰明且帶有一點固執。牠們擁有強烈的嗅覺和追蹤本能，同時也享受與家人相處。此犬種最初用於追蹤和獵捕水獺，具有卓越的嗅覺和在水中工作的能力。現今，牠們多為家庭伴侶犬或參與犬展和服從訓練。",
+      "introduce_en": "Otterhounds are typically friendly, enthusiastic, and gentle-natured, yet they are also very lively, intelligent, and possess a touch of stubbornness. They have a powerful sense of smell and a strong tracking instinct, while also thoroughly enjoying the company of their families. Originally bred for tracking and hunting otters, this breed boasts exceptional olfactory abilities and a natural aptitude for working in water. Today, they primarily serve as devoted family companions or participate actively in dog shows and obedience training.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Caucasian Ovcharka",
+      "chinese_name": "高加索犬",
+      "slug": "ovcharka-caucasian",
+      "introduce_zh": "個性獨立、勇敢且極具領地意識，對家人忠誠但對陌生人保持警惕，需要經驗豐富的飼主引導。歷史上主要用於守護牲畜免受掠食者侵害；現代則多作為護衛犬和家庭守護犬。",
+      "introduce_en": "Possessing an independent and courageous nature, the Caucasian Ovcharka is highly territorial, fiercely loyal to its family, yet reserved and wary of strangers. It requires guidance from an experienced handler. Historically, this breed was primarily utilized for guarding livestock against predators. In modern times, it predominantly serves as a formidable protection dog and devoted family guardian.",
+      "origin_zh": "高加索山區 (前蘇聯/俄羅斯)",
+      "origin_en": "Caucasus Mountains (former Soviet Union/Russia)"
+    },
+    {
+      "english_name": "Papillon",
+      "chinese_name": "蝴蝶犬",
+      "slug": "papillon",
+      "introduce_zh": "蝴蝶犬聰明、活潑且友善，對主人忠誠並充滿熱情。牠們通常警惕且優雅，喜歡與人互動。歷史上主要作為歐洲貴族與仕女的伴侶犬，現代則是非常受歡迎的家庭寵物、伴侶犬，也常活躍於敏捷性和服從性比賽中。",
+      "introduce_en": "Papillons are intelligent, lively, and friendly, showing great loyalty and devotion to their owners. They are typically alert and graceful, enjoying interaction with people. Historically, they served primarily as companion dogs for European nobility and ladies. Today, they are highly popular family pets and companions, often excelling in agility and obedience competitions.",
+      "origin_zh": "法國、比利時",
+      "origin_en": "France, Belgium"
+    },
+    {
+      "english_name": "Indian Pariah",
+      "chinese_name": "印度土狗",
+      "slug": "pariah-indian",
+      "introduce_zh": "聰明、適應力強且具有韌性，通常獨立但對家人忠誠，並警惕周遭環境，是出色的看門犬。歷史上主要作為村莊或街道上的自由放養犬，負責清除垃圾和擔任自然守衛。現代則越來越多被作為伴侶犬，也可用於牧羊或守衛財產。",
+      "introduce_en": "Intelligent, highly adaptable, and resilient, Indian Pariahs are typically independent yet fiercely loyal to their families. They are vigilant of their surroundings, making them excellent watchdogs. Historically, they primarily served as free-roaming dogs in villages and streets, responsible for scavenging refuse and acting as natural guardians. In modern times, they are increasingly adopted as companion dogs, and can also be trained for herding or property guardianship.",
+      "origin_zh": "印度次大陸",
+      "origin_en": "indian subcontinent"
+    },
+    {
+      "english_name": "Pekinese",
+      "chinese_name": "北京狗",
+      "slug": "pekinese",
+      "introduce_zh": "勇敢、獨立且充滿自信，對家人忠誠深情，但對陌生人可能較為冷淡，有時顯得固執。歷史上為中國皇室的伴侶犬和護衛犬，現代則主要作為家庭寵物和伴侶犬。",
+      "introduce_en": "Brave, independent, and self-assured, the Pekingese is deeply loyal and affectionate towards its family, though it may be reserved with strangers and can sometimes display a stubborn streak. Historically, the breed served as both a cherished companion and a watchdog for the Chinese Imperial Court. Today, it primarily thrives as a beloved family pet and companion.",
+      "origin_zh": "中國",
+      "origin_en": "China"
+    },
+    {
+      "english_name": "Pembroke",
+      "chinese_name": "潘布魯克威爾斯柯基犬",
+      "slug": "pembroke",
+      "introduce_zh": "聰明、活潑且外向，具有大膽而友善的性格。牠們對家人忠誠，但也可能相當固執。最初用於牧牛、牧羊和牧馬；現代則主要作為受歡迎的家庭伴侶犬，也常在犬類運動中表現出色。",
+      "introduce_en": "Intelligent, lively, and outgoing, with a bold and friendly personality. They are loyal to their families but can also be quite stubborn. Originally bred for herding cattle, sheep, and horses, they now primarily serve as popular family companion dogs and often excel in canine sports.",
+      "origin_zh": "威爾斯，英國",
+      "origin_en": "Wales, UK"
+    },
+    {
+      "english_name": "Miniature Pinscher",
+      "chinese_name": "迷你杜賓犬",
+      "slug": "pinscher-miniature",
+      "introduce_zh": "牠們精力充沛、活潑好動且勇敢無懼，對家人極為忠誠並充滿愛意。聰明且自信，有時會略顯固執，但充滿好奇心與警覺性。歷史上主要用於捕捉囓齒動物（如老鼠），現代則多作為忠實且充滿活力的家庭伴侶犬。",
+      "introduce_en": "They are energetic, lively, and fearless, displaying extreme loyalty and affection towards their families. Intelligent and confident, they can sometimes be a little headstrong, yet are highly curious and alert. Historically, their primary role was to catch rodents (such as rats). Today, they are cherished as loyal and vibrant family companions.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Pitbull",
+      "chinese_name": "比特犬",
+      "slug": "pitbull",
+      "introduce_zh": "比特犬通常充滿自信、精力旺盛且對家人非常忠誠和深情。牠們聰明且渴望取悅，但在面對其他動物時可能展現出堅韌的性格，需要適當的社會化和訓練。歷史上主要用於鬥牛、鬥熊以及後來的鬥狗活動；現代則多作為忠實的家庭伴侶犬、表演犬，以及參與搜救、治療等工作。",
+      "introduce_en": "Pit Bulls are typically confident, energetic, and extremely loyal and affectionate towards their families. They are intelligent and eager to please, but may display a tenacious nature when interacting with other animals, necessitating proper socialization and training. Historically, they were primarily used for bull-baiting, bear-baiting, and later, dog-fighting. In modern times, they are largely cherished as loyal family companions, performance dogs, and participate in activities such as search and rescue and therapy work.",
+      "origin_zh": "英國、美國",
+      "origin_en": "UK, US"
+    },
+    {
+      "english_name": "German Pointer",
+      "chinese_name": "德國指示犬",
+      "slug": "pointer-german",
+      "introduce_zh": "聰明、精力充沛、友善且忠誠，對主人非常投入，具有強烈的工作慾望。最初培育為多功能狩獵犬，用於指示獵物、追蹤和撿拾。現代也常作為活躍家庭的優秀伴侶犬。",
+      "introduce_en": "Intelligent, energetic, friendly, and loyal, they are deeply devoted to their owners and possess a strong work drive. Originally bred as versatile hunting dogs, they were used for pointing game, tracking, and retrieving. Today, they also frequently serve as excellent companion dogs for active families.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Germanlonghair Pointer",
+      "chinese_name": "德國長毛指示犬",
+      "slug": "pointer-germanlonghair",
+      "introduce_zh": "聰明、溫和且忠誠，對主人充滿熱情，渴望取悅。牠們是精力充沛的犬種，需要大量的活動和訓練。主要用於狩獵，是多功能的槍獵犬，能夠指示獵物、追蹤並在陸地和水中取回獵物。現代也作為活躍的家庭伴侶犬。",
+      "introduce_en": "Intelligent, gentle, and loyal, they are full of enthusiasm for their owners and eager to please. They are an energetic breed, requiring ample exercise and training. Primarily used for hunting, they are versatile gun dogs, capable of pointing, tracking, and retrieving game on land and in water. Today, they also serve as active family companions.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Pomeranian",
+      "chinese_name": "博美犬",
+      "slug": "pomeranian",
+      "introduce_zh": "聰明、活潑、好奇心強，雖然體型小但充滿自信，對主人忠誠且警惕。主要作為伴侶犬、玩賞犬和家庭寵物。",
+      "introduce_en": "Intelligent, lively, and highly curious, Pomeranians are small in stature but brimming with confidence. They are loyal and alert to their owners. They primarily serve as companion dogs, toy dogs, and cherished family pets.",
+      "origin_zh": "波美拉尼亞（位於今日德國與波蘭之間）",
+      "origin_en": "Pomerania (located between present-day Germany and Poland)"
+    },
+    {
+      "english_name": "Medium Poodle",
+      "chinese_name": "中型貴賓犬",
+      "slug": "poodle-medium",
+      "introduce_zh": "聰明、活潑且易於訓練，中型貴賓犬友善、忠誠，非常適合家庭生活。最初作為水獵犬，負責尋回獵物，現今則廣泛成為優秀的伴侶犬、表演犬及治療犬。",
+      "introduce_en": "Intelligent, vivacious, and highly trainable, the Medium Poodle is friendly and loyal, making them ideally suited for family life. Originally bred as water retrievers, tasked with retrieving game, they now widely excel as companion dogs, performance dogs, and therapy dogs.",
+      "origin_zh": "德國（法國為其主要發展國家）",
+      "origin_en": "Germany (France is its main developing country)"
+    },
+    {
+      "english_name": "Miniature Poodle",
+      "chinese_name": "迷你貴賓犬",
+      "slug": "poodle-miniature",
+      "introduce_zh": "聰明、活潑且學習能力強，對主人忠誠，個性友善且精力充沛。最初作為水獵犬來 retrieve 水禽，現代則主要作為受歡迎的伴侶犬、表演犬及敏捷犬。",
+      "introduce_en": "Intelligent, lively, and highly trainable, Miniature Poodles are loyal to their owners, with a friendly and energetic disposition. Originally bred as water retrievers to retrieve waterfowl, today they are primarily popular companion dogs, show dogs, and agility competitors.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Standard Poodle",
+      "chinese_name": "標準貴賓犬",
+      "slug": "poodle-standard",
+      "introduce_zh": "標準貴賓犬聰明、活潑且學習能力強，對主人忠誠並渴望取悅，性格優雅且自信。最初作為水獵犬，用於從水中找回獵物。現代主要作為伴侶犬、表演犬，也常訓練為服務犬或治療犬。",
+      "introduce_en": "The Standard Poodle is intelligent, lively, and highly trainable, loyal to its owners and eager to please, possessing an elegant and confident demeanor. Originally bred as a water retriever, they were used for retrieving game from water. Today, they primarily serve as companion and performance dogs, and are also frequently trained as service or therapy dogs.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Toy Poodle",
+      "chinese_name": "玩具貴賓犬",
+      "slug": "poodle-toy",
+      "introduce_zh": "聰明、活潑且學習能力強，對主人忠誠並渴望取悅，性格友善且感情豐富。主要作為伴侶犬和家庭寵物，也常在犬展中亮相，並因其高智商而擅長各類犬隻運動。",
+      "introduce_en": "Intelligent, lively, and highly trainable, Toy Poodles are loyal to their owners and eager to please, possessing a friendly and affectionate nature. Primarily serving as companion dogs and family pets, they are also frequently seen in dog shows. Furthermore, owing to their high intelligence, they excel in various dog sports.",
+      "origin_zh": "法國",
+      "origin_en": "France"
+    },
+    {
+      "english_name": "Pug",
+      "chinese_name": "巴哥犬",
+      "slug": "pug",
+      "introduce_zh": "友善、迷人且好玩，牠們是理想的伴侶犬，性格溫和且忠誠，但有時會有點固執。歷史上作為皇室貴族的伴侶犬，現代主要為家庭寵物和伴侶犬。",
+      "introduce_en": "Friendly, charming, and playful, Pugs are ideal companion dogs. They possess a gentle and loyal temperament, though they can sometimes exhibit a stubborn streak. Historically cherished as companions for royalty and nobility, today they primarily serve as beloved family pets and companions.",
+      "origin_zh": "中國",
+      "origin_en": "China"
+    },
+    {
+      "english_name": "Puggle",
+      "chinese_name": "巴哥米格魯",
+      "slug": "puggle",
+      "introduce_zh": "巴哥米格魯結合了巴哥犬的愛撒嬌和米格魯的活潑好奇，通常友善、開朗且充滿活力。牠們是熱情的家庭寵物，但也可能繼承一些固執的特質。主要作為伴侶犬和家庭寵物，因其迷人的外觀和友善的性格而受到歡迎。",
+      "introduce_en": "The Puggle combines the affectionate nature of the Pug with the lively curiosity of the Beagle, typically being friendly, outgoing, and full of energy. They are enthusiastic family pets, but may also inherit some stubborn traits. Primarily serving as companion dogs and family pets, they are popular for their charming appearance and friendly temperament.",
+      "origin_zh": "美國",
+      "origin_en": "USA"
+    },
+    {
+      "english_name": "Pyrenees",
+      "chinese_name": "大白熊犬",
+      "slug": "pyrenees",
+      "introduce_zh": "性格溫和、耐心且忠誠，對家人充滿愛心和保護慾；同時牠們聰明獨立，有時會顯得固執。歷史上主要作為牲畜守護犬，保護羊群免受捕食者侵害；現代則多作為家庭伴侶犬和守護犬。",
+      "introduce_en": "Gentle-natured, patient, and loyal, the Pyrenees are deeply loving and protective of their families. They are also intelligent and independent, though they can sometimes display a stubborn streak. Historically, their primary role was that of a livestock guardian dog, protecting flocks from predators. In modern times, they are widely cherished as family companions and guardians.",
+      "origin_zh": "法國與西班牙交界的庇里牛斯山區",
+      "origin_en": "The Pyrenees Mountains on the border between France and Spain"
+    },
+    {
+      "english_name": "Indian Rajapalayam",
+      "chinese_name": "印度拉賈帕拉亞姆犬",
+      "slug": "rajapalayam-indian",
+      "introduce_zh": "忠誠、聰明且勇敢，對家人極為忠誠並充滿愛意。對陌生人可能保持警惕，因此早期社會化和訓練至關重要。歷史上主要用於狩獵野豬和看家護院，因其敏銳的感官和保護本能而備受推崇。現代也作為忠實的伴侶犬。",
+      "introduce_en": "Loyal, intelligent, and brave, the Rajapalayam is exceptionally devoted and affectionate towards its family. It may be wary of strangers, so early socialization and training are crucial. Historically, this breed was primarily used for hunting wild boar and guarding property, highly valued for its keen senses and protective instincts. Today, it also serves as a faithful companion.",
+      "origin_zh": "印度，泰米爾納德邦",
+      "origin_en": "India, Tamil Nadu"
+    },
+    {
+      "english_name": "Redbone",
+      "chinese_name": "紅骨獵犬",
+      "slug": "redbone",
+      "introduce_zh": "友善、熱情且外向，對家人非常忠誠。牠們聰明且精力充沛，需要足夠的活動和智力刺激。主要用於獵捕浣熊、山貓和美洲獅等小型到中型獵物。現代也常作為活躍家庭的伴侶犬或參與犬隻運動。",
+      "introduce_en": "Friendly, enthusiastic, and outgoing, they are deeply devoted to their families. Intelligent and energetic, they require ample exercise and mental stimulation. They were primarily bred for hunting small to medium-sized game such as raccoons, bobcats, and cougars. Today, they are also often found as companions for active families or excelling in various canine sports.",
+      "origin_zh": "美國",
+      "origin_en": "USA"
+    },
+    {
+      "english_name": "Chesapeake Retriever",
+      "chinese_name": "切薩皮克灣尋回犬",
+      "slug": "retriever-chesapeake",
+      "introduce_zh": "聰明、勇敢且熱情，特別在水中工作時表現出色。牠們對家人忠誠並具保護性，對陌生人可能較為保留。最初作為水禽獵犬，負責在嚴寒水域中尋回獵物。現代除了狩獵，也是優秀的伴侶犬、工作犬及各種犬類運動的參與者。",
+      "introduce_en": "Intelligent, brave, and enthusiastic, they particularly excel when working in water. They are loyal and protective of their families and can be reserved with strangers. Originally bred as a waterfowl retriever, their purpose was to retrieve game from frigid waters. Today, beyond their role in hunting, they excel as companion dogs, working dogs, and participants in various dog sports.",
+      "origin_zh": "美國（切薩皮克灣地區）",
+      "origin_en": "United States (Chesapeake Bay Region)"
+    },
+    {
+      "english_name": "Curly Retriever",
+      "chinese_name": "捲毛尋回犬",
+      "slug": "retriever-curly",
+      "introduce_zh": "聰明、獨立且自豪，同時對家人忠誠深情。牠們性格溫和但對陌生人可能較為保守。最初用於狩獵水禽和陸地獵物，將獵物從水中或陸地尋回。現今仍作為獵犬，也常被飼養為家庭伴侶犬或參與犬類運動。",
+      "introduce_en": "Intelligent, independent, and proud, the Curly Retriever is simultaneously fiercely loyal and deeply affectionate towards its family. While gentle in nature, they can be reserved with strangers. Originally bred for hunting waterfowl and land game, they excelled at retrieving quarry from both water and land. Today, they continue to serve as working gundogs, are often cherished as family companions, and frequently participate in various dog sports.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Flatcoated Retriever",
+      "chinese_name": "平毛尋回犬",
+      "slug": "retriever-flatcoated",
+      "introduce_zh": "熱情活潑、聰明友善且樂於取悅，牠們以其長久保持的「幼犬般」的玩耍精神而聞名。最初作為水陸兩用的獵犬，用於尋回獵物。現今仍是優秀的獵犬，也是受歡迎的家庭伴侶犬、表演犬和參與犬類運動的能手。",
+      "introduce_en": "Enthusiastic, lively, intelligent, friendly, and eager to please, Flatcoats are known for their enduring 'puppy-like' playfulness. Originally bred as versatile land and water retrievers, they were used to retrieve game. Today, they remain excellent gundogs and are also popular family companions, show dogs, and accomplished participants in various canine sports.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Golden Retriever",
+      "chinese_name": "黃金獵犬",
+      "slug": "retriever-golden",
+      "introduce_zh": "黃金獵犬以其友善、溫順、聰明和耐心聞名，非常適合家庭生活，對小孩和其他動物表現出極大的包容性。牠們渴望取悅主人，學習能力強且忠誠。最初作為獵犬，專門用於在陸地和水中尋回被獵殺的鳥類。現代則廣泛被訓練為優秀的家庭伴侶犬、導盲犬、服務犬、搜救犬以及治療犬。",
+      "introduce_en": "Golden Retrievers are renowned for their friendly, gentle, intelligent, and patient nature, making them highly suitable for family life and demonstrating remarkable tolerance towards children and other animals. They are eager to please their owners, are quick learners, and possess strong loyalty.\n\nOriginally bred as gundogs, specializing in retrieving shot game birds on both land and water, their versatile nature has led them to be widely trained today as excellent family companions, guide dogs, service dogs, search and rescue dogs, and therapy dogs.",
+      "origin_zh": "蘇格蘭",
+      "origin_en": "Scotland"
+    },
+    {
+      "english_name": "Rhodesian Ridgeback",
+      "chinese_name": "羅德西亞脊背犬",
+      "slug": "ridgeback-rhodesian",
+      "introduce_zh": "性格尊貴、聰明且意志堅定，對家人極為忠誠並具保護性，對陌生人則可能較為冷淡。最初用於狩獵獅子等大型獵物，現代主要作為忠實的家庭伴侶犬、護衛犬和參與犬類運動的表現犬。",
+      "introduce_en": "Characterized by a dignified, intelligent, and strong-willed nature, Rhodesian Ridgebacks are exceptionally loyal and protective of their families, though they may be reserved or aloof with strangers. Originally bred for hunting large game such as lions, they now primarily serve as devoted family companions, capable guard dogs, and agile performance dogs in various canine sports.",
+      "origin_zh": "南非（羅德西亞，即今辛巴威）",
+      "origin_en": "South Africa (Rhodesia, now Zimbabwe)"
+    },
+    {
+      "english_name": "Rottweiler",
+      "chinese_name": "洛威拿",
+      "slug": "rottweiler",
+      "introduce_zh": "洛威拿是一種自信、沉著且勇敢的犬種，對家人極其忠誠和保護，但對陌生人可能保持警惕。牠們聰明且渴望工作，需要早期社會化和持續的訓練。在歷史上，洛威拿主要被用作趕牛犬和護衛犬，為屠夫拉車和保護牲畜。現代牠們則廣泛被訓練為警犬、軍犬、搜救犬，同時也是優秀的護衛犬和家庭伴侶犬。",
+      "introduce_en": "The Rottweiler is a confident, composed, and courageous breed, fiercely loyal and protective of its family, but can be wary of strangers. They are intelligent and possess a strong desire to work, requiring early socialization and consistent training. Historically, Rottweilers were primarily used as drover and guard dogs, pulling carts for butchers and protecting livestock. Today, they are widely trained as police dogs, military dogs, and search and rescue dogs, while also serving as excellent guard dogs and family companions.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Collie Rough",
+      "chinese_name": "粗毛牧羊犬",
+      "slug": "rough-collie",
+      "introduce_zh": "性格溫和、友善、聰明且忠誠，對家庭成員（尤其是兒童）極具耐心，是非常好的家庭伴侶犬。最初作為牧羊犬，負責驅趕和保護羊群。現代主要作為家庭伴侶犬、展示犬及治療犬。",
+      "introduce_en": "Known for their gentle, friendly, intelligent, and loyal nature, they are exceedingly patient with family members, particularly children, making them excellent family companions. Originally bred as a herding dog, they were responsible for driving and protecting flocks. Today, they primarily serve as family companions, show dogs, and therapy dogs.",
+      "origin_zh": "蘇格蘭（英國）",
+      "origin_en": "Scotland (UK)"
+    },
+    {
+      "english_name": "Saluki",
+      "chinese_name": "薩路基獵犬",
+      "slug": "saluki",
+      "introduce_zh": "性格優雅、高貴且有些內斂，對陌生人可能保持距離，但對家人深情忠誠。牠們擁有強烈的追逐本能。主要用於狩獵瞪羚及其他快速奔跑的獵物，依靠其卓越的速度和視力。現代則多為伴侶犬，也常活躍於犬類運動如誘餌追逐賽。",
+      "introduce_en": "Salukis possess an elegant, dignified, and somewhat reserved temperament. While they may be aloof with strangers, they are deeply affectionate and loyal to their families. They have a strong prey drive. Historically, they were primarily used for hunting gazelles and other fast-running game, relying on their exceptional speed and keen eyesight. In modern times, they are often cherished as companion dogs and are active participants in canine sports such as lure coursing.",
+      "origin_zh": "中東 (中東地區，尤其是古埃及和美索不達米亞)",
+      "origin_en": "Middle East (the Middle East, especially ancient Egypt and Mesopotamia)"
+    },
+    {
+      "english_name": "Samoyed",
+      "chinese_name": "薩摩耶犬",
+      "slug": "samoyed",
+      "introduce_zh": "友善、溫和、聰明且活潑，對人類和兒童都非常友善，充滿活力且喜歡與人互動。最初用於馴鹿放牧、拉雪橇和狩獵，現代主要作為伴侶犬或展示犬。",
+      "introduce_en": "Friendly, gentle, intelligent, and lively, Samoyeds are exceptionally amiable towards humans and children. They are full of energy and thoroughly enjoy interacting with people. While originally utilized for reindeer herding, sled pulling, and hunting, they are now predominantly cherished as companion dogs or distinguished show dogs.",
+      "origin_zh": "西伯利亞，俄羅斯",
+      "origin_en": "Siberia, Russia"
+    },
+    {
+      "english_name": "Schipperke",
+      "chinese_name": "史奇伯克犬",
+      "slug": "schipperke",
+      "introduce_zh": "牠們是警覺、好奇、自信且獨立的犬種。對家庭極為忠誠並具有保護慾，精力充沛且聰明。歷史上主要用於船隻和住家捕鼠，也曾是比利時船夫和工匠的守護犬；現代則多作為伴侶犬和展示犬。",
+      "introduce_en": "They are an alert, curious, confident, and independent breed. Extremely loyal and protective of their families, they are also energetic and intelligent. Historically, their primary role was ratting on boats and in homes, and they also served as watchdogs for Belgian boatmen and craftsmen. Today, they are most commonly seen as companion and show dogs.",
+      "origin_zh": "比利時",
+      "origin_en": "Belgium"
+    },
+    {
+      "english_name": "Giant Schnauzer",
+      "chinese_name": "巨型雪納瑞",
+      "slug": "schnauzer-giant",
+      "introduce_zh": "巨型雪納瑞聰明、勇敢且對家人極為忠誠，但個性堅定且警戒心高，對陌生人會保持距離，需要有經驗的飼主進行早期社會化及穩定訓練。最初是德國農民用來驅趕牛群、守護農場和市集的犬隻。現代多作為工作犬，如警犬、軍犬、護衛犬，也是優秀的家庭伴侶犬。",
+      "introduce_en": "Giant Schnauzers are intelligent, brave, and extremely loyal to their families. However, they possess a strong will and high vigilance, tending to be reserved with strangers. They require an experienced owner for early socialization and consistent training. They were originally bred by German farmers to herd cattle and guard farms and markets. In modern times, they are often utilized as working dogs, such as police, military, and protection dogs, and also make excellent family companions.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Miniature Schnauzer",
+      "chinese_name": "迷你雪納瑞",
+      "slug": "schnauzer-miniature",
+      "introduce_zh": "迷你雪納瑞聰明、活潑且友善，對家人極為忠誠並具備高度警覺性。牠們精力充沛，好奇心強，是出色的伴侶犬，但有時會有些固執。最初被培育來捕捉農場害蟲和看家護院，現今迷你雪納瑞主要作為忠誠的家庭伴侶犬和優秀的展示犬。",
+      "introduce_en": "Miniature Schnauzers are intelligent, lively, and friendly, extremely loyal to their families, and possess a high degree of alertness. They are full of energy and highly inquisitive, making them excellent companion dogs, though they can be somewhat stubborn at times. Originally bred to control vermin on farms and serve as watchdogs, Miniature Schnauzers today are primarily cherished as loyal family companions and excel in the show ring.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Italian Segugio",
+      "chinese_name": "義大利塞古吉犬",
+      "slug": "segugio-italian",
+      "introduce_zh": "這是一種熱情、堅韌且聰明的嗅覺獵犬，對家人忠誠且充滿感情，但擁有強烈的狩獵本能和獨立性。主要用於狩獵野兔和野豬，尤其擅長在崎嶇的地形中追蹤獵物。",
+      "introduce_en": "This is a passionate, tenacious, and intelligent scenthound, loyal and affectionate towards its family, but possessing strong hunting instincts and independence. It is primarily used for hunting hares and wild boar, and is particularly skilled at tracking prey in rough terrain.",
+      "origin_zh": "義大利",
+      "origin_en": "Italy"
+    },
+    {
+      "english_name": "English Setter",
+      "chinese_name": "英國塞特犬",
+      "slug": "setter-english",
+      "introduce_zh": "英國塞特犬以其溫和、友善和聰明的性格而聞名，對家庭成員極為忠誠且耐心，但也非常活潑好動，需要大量的運動。牠們最初是作為指示獵犬培育，用於協助獵人尋找並「設定」鳥類獵物，現代則多作為忠實的家庭伴侶犬和展示犬，也仍保留其狩獵本能。",
+      "introduce_en": "The English Setter is renowned for its gentle, friendly, and intelligent temperament, being extremely loyal and patient with family members. However, they are also very lively and active, requiring a substantial amount of exercise. Originally bred as gundogs, specifically setters, they were developed to assist hunters in locating and \"setting\" game birds. Today, they are cherished as loyal family companions and show dogs, yet they still retain their innate hunting instincts.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Gordon Setter",
+      "chinese_name": "戈登塞特犬",
+      "slug": "setter-gordon",
+      "introduce_zh": "戈登塞特犬忠誠、聰明、自信且精力充沛。牠們對家人熱情友善，但也可能有些固執，需要從小進行適當的訓練和社交。最初被培育為狩獵犬，特別是用於追蹤和指示山鶉、雉雞等鳥類。現代仍是優秀的獵犬，同時也是受歡迎的家庭伴侶犬和表演犬。",
+      "introduce_en": "Gordon Setters are loyal, intelligent, confident, and energetic. They are affectionate and friendly towards their families, but can also be somewhat stubborn, requiring proper training and socialization from a young age. Originally bred as gun dogs, specifically for tracking and pointing game birds such as partridges and pheasants. Today, they remain excellent gun dogs, and are also popular family companions and show dogs.",
+      "origin_zh": "蘇格蘭",
+      "origin_en": "Scotland"
+    },
+    {
+      "english_name": "Irish Setter",
+      "chinese_name": "愛爾蘭雪達犬",
+      "slug": "setter-irish",
+      "introduce_zh": "熱情、友善、精力充沛且聰明，需要大量運動和訓練。牠們通常與人親近，但也可能表現出獨立和頑皮的一面。最初被培育為獵犬，擅長尋找並指示鳥類獵物；現代則常作為活躍的伴侶犬、展覽犬或參與犬類運動。",
+      "introduce_en": "Enthusiastic, friendly, energetic, and intelligent, Irish Setters require ample exercise and training. They are typically affectionate with people but can also display an independent and mischievous streak. Originally bred as gundogs, excelling at finding and pointing game birds, today they are often seen as active companion dogs, show dogs, or participants in various dog sports.",
+      "origin_zh": "愛爾蘭",
+      "origin_en": "Ireland"
+    },
+    {
+      "english_name": "Sharpei",
+      "chinese_name": "沙皮狗",
+      "slug": "sharpei",
+      "introduce_zh": "沙皮狗性格獨立、忠誠且平靜，對家人非常深情，但對陌生人可能比較疏遠。牠們聰明且自信。歷史上，沙皮狗被用於打鬥、狩獵野豬和看守農場。現代則主要作為伴侶犬。",
+      "introduce_en": "The Sharpei is an independent, loyal, and calm breed. They are deeply affectionate towards their family but can be reserved or aloof with strangers. They are intelligent and confident. Historically, Sharpei were utilized for fighting, hunting wild boar, and guarding farms. Today, they primarily serve as companion dogs.",
+      "origin_zh": "中國",
+      "origin_en": "China"
+    },
+    {
+      "english_name": "English Sheepdog",
+      "chinese_name": "英國古代牧羊犬",
+      "slug": "sheepdog-english",
+      "introduce_zh": "性格溫和、友善、忠誠且聰明，有時會顯得活潑頑皮。牠們對家人充滿愛心，尤其是對兒童很有耐心。最初被培育來牧放牛羊，協助農夫將牲畜從農場驅趕至市場。現代則主要作為家庭伴侶犬和表演犬。",
+      "introduce_en": "The English Sheepdog is known for its gentle, friendly, loyal, and intelligent temperament, often displaying a lively and playful side. They are deeply affectionate towards their families, showing particular patience with children. Originally bred to herd cattle and sheep, assisting farmers in driving livestock from farms to market, they are now primarily cherished as family companions and show dogs.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Indian Sheepdog",
+      "chinese_name": "印度牧羊犬",
+      "slug": "sheepdog-indian",
+      "introduce_zh": "牠們通常聰明、獨立且極具保護性，對家庭忠誠。牠們強壯且堅韌，需要有經驗的飼主。主要用於保護牲畜（如羊、山羊）免受掠食者侵害，同時也作為看門狗保護家庭和財產。",
+      "introduce_en": "They are typically intelligent, independent, and fiercely protective, displaying deep loyalty to their families. These strong and resilient dogs require an experienced owner. Their primary role is to protect livestock (such as sheep and goats) from predators, while also serving as guardian dogs for homes and property.",
+      "origin_zh": "印度（特別是喜馬拉雅地區）",
+      "origin_en": "India (especially the Himalayan region)"
+    },
+    {
+      "english_name": "Shetland Sheepdog",
+      "chinese_name": "喜樂蒂牧羊犬",
+      "slug": "sheepdog-shetland",
+      "introduce_zh": "喜樂蒂牧羊犬聰明、忠誠且活潑，容易訓練並與家人建立深厚感情。牠們通常對陌生人較為保留，但對熟悉的人友善且充滿熱情。最初用於牧羊及看守農場，保護農作物免受鳥類侵害。現代則主要作為受歡迎的伴侶犬、家庭寵物，並在服從、敏捷等犬類運動中表現出色。",
+      "introduce_en": "Shetland Sheepdogs are intelligent, loyal, and lively. They are highly trainable and form deep bonds with their families. While typically reserved with strangers, they are warm and enthusiastic with those they know. Originally bred for herding sheep and guarding farms, including protecting crops from birds, they are now primarily cherished as popular companion dogs and family pets. They also excel in canine sports such as obedience and agility.",
+      "origin_zh": "蘇格蘭，設得蘭群島",
+      "origin_en": "Scotland, Shetland Islands"
+    },
+    {
+      "english_name": "Shiba",
+      "chinese_name": "柴犬",
+      "slug": "shiba",
+      "introduce_zh": "活潑、警惕、獨立且聰明，對家人極為忠誠，但對陌生人可能較為保留，有時會顯現固執的一面。歷史上主要用於狩獵小型獵物，例如鳥類和兔子；現代主要作為受歡迎的家庭伴侶犬。",
+      "introduce_en": "Lively, alert, independent, and intelligent, they are fiercely loyal to their family but can be reserved with strangers and may exhibit a stubborn streak. Historically, they were primarily employed for hunting small game, such as birds and rabbits; today, they are predominantly cherished as popular family companion dogs.",
+      "origin_zh": "日本",
+      "origin_en": "Japan"
+    },
+    {
+      "english_name": "Shihtzu",
+      "chinese_name": "西施犬",
+      "slug": "shihtzu",
+      "introduce_zh": "西施犬個性活潑開朗、友善溫和且充滿愛心，非常喜歡與人互動並成為家庭的一份子。牠們既俏皮又迷人，但有時也帶點固執。歷史上，西施犬是中國皇室的伴侶犬和「袖珍犬」，主要用於陪伴貴族。現今，牠們仍然是極受歡迎的家庭伴侶犬和寵物。",
+      "introduce_en": "The Shih Tzu is known for its lively, outgoing, friendly, gentle, and affectionate personality. They thoroughly enjoy interacting with people and becoming a cherished member of the family. They are both playful and charming, though they can sometimes exhibit a touch of stubbornness. Historically, Shih Tzus served as companion dogs and \"lapdogs\" for Chinese royalty, primarily to provide companionship to the nobility. Today, they remain highly popular family companions and cherished pets.",
+      "origin_zh": "中國西藏",
+      "origin_en": "Tibet, China"
+    },
+    {
+      "english_name": "Blenheim Spaniel",
+      "chinese_name": "布倫海姆獵犬",
+      "slug": "spaniel-blenheim",
+      "introduce_zh": "性格溫和、友善、富有感情且活潑好玩。牠們通常熱衷於取悅主人，是出色的家庭伴侶犬。歷史上主要作為貴族的伴侶犬，特別是女士的玩賞犬，也曾用於協助狩獵小型鳥類。現代則幾乎完全作為家庭寵物和伴侶犬。",
+      "introduce_en": "The Blenheim Spaniel possesses a gentle, friendly, affectionate, and playful temperament. They are typically eager to please their owners, making them excellent family companions. Historically, they primarily served as companions for the nobility, especially as lapdogs for ladies, and were also occasionally used to assist in hunting small birds. Nowadays, they are almost exclusively cherished as family pets and companion dogs.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Brittany Spaniel",
+      "chinese_name": "布列塔尼獵犬",
+      "slug": "spaniel-brittany",
+      "introduce_zh": "聰明、活潑且友善，精力充沛且熱衷於工作，需要足夠的運動和心智刺激。最初作為指向和尋回獵犬，現代仍是優秀的狩獵夥伴，同時也是受歡迎的家庭寵物和多種犬類運動的參與者。",
+      "introduce_en": "Intelligent, lively, and friendly, the Brittany is high-energy and eager to work, requiring ample exercise and mental stimulation. Originally bred as a pointing and retrieving gundog, they remain excellent hunting companions today, while also being popular family pets and excelling in various dog sports.",
+      "origin_zh": "法國",
+      "origin_en": "France"
+    },
+    {
+      "english_name": "Cocker Spaniel",
+      "chinese_name": "可卡犬",
+      "slug": "spaniel-cocker",
+      "introduce_zh": "溫和友善、活潑聰明，對家人忠誠且充滿熱情，容易訓練，喜歡與人互動和玩耍。最初作為獵犬，特別用於獵捕山鷸；現代主要作為受歡迎的家庭伴侶犬和表演犬。",
+      "introduce_en": "Known for their gentle and friendly disposition, Cocker Spaniels are lively, intelligent, and deeply loyal to their families, displaying an enthusiastic nature. They are highly trainable and enjoy interacting and playing with people. Originally bred as gundogs, specifically for hunting woodcock, they are now primarily popular family companions and accomplished show dogs.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Irish Spaniel",
+      "chinese_name": "愛爾蘭水獵犬",
+      "slug": "spaniel-irish",
+      "introduce_zh": "愛爾蘭水獵犬聰明、好奇且精力充沛，對家人忠誠。牠們也可能帶有些固執和愛惡作劇的性格。主要被培育作為優秀的水鳥獵犬，擅長從水中和陸地尋回獵物。現代也常作為活躍的伴侶犬和表演犬。",
+      "introduce_en": "The Irish Water Spaniel is intelligent, curious, and energetic, loyal to its family. They may also exhibit a stubborn and mischievous nature. Primarily bred as excellent waterfowl retrievers, they are adept at retrieving game from both water and land. Today, they are also commonly cherished as active companion dogs and show dogs.",
+      "origin_zh": "愛爾蘭",
+      "origin_en": "Ireland"
+    },
+    {
+      "english_name": "Japanese Spaniel",
+      "chinese_name": "日本獚",
+      "slug": "spaniel-japanese",
+      "introduce_zh": "牠們是迷人、聰明、溫柔且深情的犬種，性格活潑但不會過於好動，非常適合居家生活。歷史上是日本貴族和皇室的伴侶犬，現今仍是受歡迎的家庭伴侶犬。",
+      "introduce_en": "The Japanese Spaniel is a charming, intelligent, gentle, and affectionate breed. They possess a lively yet moderate energy level, making them ideally suited for domestic living. Historically, they were cherished companions of Japanese nobility and royalty, and today they continue to be popular family companions.",
+      "origin_zh": "日本",
+      "origin_en": "Japan"
+    },
+    {
+      "english_name": "Sussex Spaniel",
+      "chinese_name": "薩塞克斯獵犬",
+      "slug": "spaniel-sussex",
+      "introduce_zh": "牠們通常性格平靜、友善且深情，但同時也保有獵犬的堅韌與獨立性，對家庭成員忠誠。牠們最初被培育為獵犬，專門在濃密灌木叢中驅趕獵物，因其低矮身軀和洪亮叫聲而聞名；現代多作為伴侶犬或展示犬。",
+      "introduce_en": "They typically possess a calm, friendly, and affectionate temperament, yet also retain the tenacity and independence characteristic of a gundog, showing loyalty to their family members. Originally bred as gundogs specifically to flush game from dense cover, they are known for their low-slung bodies and resonant bark. Today, they primarily serve as companion or show dogs.",
+      "origin_zh": "英國 (薩塞克斯郡)",
+      "origin_en": "United Kingdom (Sussex)"
+    },
+    {
+      "english_name": "Welsh Spaniel",
+      "chinese_name": "威爾斯激飛獵犬",
+      "slug": "spaniel-welsh",
+      "introduce_zh": "熱情友善、活潑好動、聰明且樂於取悅主人。牠們通常對家人忠誠，與孩子和其他寵物相處融洽。最初作為獵犬，主要用途是將隱藏的獵物（特別是鳥類）從灌木叢中「激飛」出來，供獵人射擊。現代牠們除了仍用於狩獵外，也是優秀的家庭伴侶犬和運動犬。",
+      "introduce_en": "The Welsh Spaniel is enthusiastic and friendly, lively and active, intelligent and eager to please. They are typically loyal to their families, getting along well with children and other pets. Originally bred as a gundog, their primary purpose was to \"flush out\" hidden game (especially birds) from the undergrowth for hunters. Today, in addition to their continued use in hunting, they also make excellent family companions and sport dogs.",
+      "origin_zh": "威爾斯 (英國)",
+      "origin_en": "Wales (UK)"
+    },
+    {
+      "english_name": "Indian Spitz",
+      "chinese_name": "印度狐狸犬",
+      "slug": "spitz-indian",
+      "introduce_zh": "印度狐狸犬聰明活潑，對家人忠誠友善且適應力強。牠們容易訓練，但對陌生人可能保持警惕，有時也較愛吠叫。主要作為家庭伴侶犬，因其良好的適應能力和友善性格，非常適合居家生活。",
+      "introduce_en": "The Indian Spitz is intelligent and lively, loyal and friendly towards its family, and highly adaptable. They are easy to train, but may be wary of strangers and can sometimes be prone to barking. Primarily serving as family companion dogs, their excellent adaptability and friendly temperament make them very well-suited for home living.",
+      "origin_zh": "印度",
+      "origin_en": "India"
+    },
+    {
+      "english_name": "Japanese Spitz",
+      "chinese_name": "日本狐狸犬",
+      "slug": "spitz-japanese",
+      "introduce_zh": "聰明、活潑且忠誠，對家人友善且警惕，是很棒的家庭伴侶犬。牠們喜歡與人互動，但對陌生人可能較為保留。主要作為伴侶犬和看門犬。",
+      "introduce_en": "Intelligent, lively, and loyal, the Japanese Spitz is friendly and alert towards its family, making it a wonderful family companion dog. They enjoy human interaction but may be reserved with strangers. This breed primarily serves as a companion dog and a watchdog.",
+      "origin_zh": "日本",
+      "origin_en": "Japan"
+    },
+    {
+      "english_name": "English Springer",
+      "chinese_name": "英國史賓格犬",
+      "slug": "springer-english",
+      "introduce_zh": "牠們是友善、熱情且聰明的犬種，充滿活力且渴望取悅主人。個性溫順，對家庭成員忠誠，但需要足夠的活動量以保持身心健康。最初作為獵犬，主要用途是「激飛」或「躍起」獵物（如鳥類和小型動物）供獵人射擊。現代牠們也是優秀的家庭寵物、運動犬（敏捷、服從）、搜救犬，並仍活躍於狩獵場。",
+      "introduce_en": "They are friendly, enthusiastic, and intelligent dogs, full of energy and eager to please their owners. They have a gentle disposition and are loyal to family members, but require sufficient exercise to maintain their physical and mental well-being. Originally bred as gundogs, their primary role was to \"flush\" or \"spring\" game (such as birds and small animals) for hunters to shoot. Today, they also excel as wonderful family pets, sporting dogs (in activities like agility and obedience), search and rescue dogs, and remain active in the hunting field.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Stbernard",
+      "chinese_name": "聖伯納犬",
+      "slug": "stbernard",
+      "introduce_zh": "性格溫和、友善且耐心，對小孩特別寬容。牠們雖然體型龐大，但通常行為沉穩且忠誠。最初被培育為阿爾卑斯山區的搜救犬，主要是在聖伯納山口協助尋找並拯救迷路或受困的旅客。現代則多作為家庭伴侶犬和展示犬。",
+      "introduce_en": "Known for their gentle, friendly, and patient temperament, St. Bernards are particularly tolerant with children. Despite their immense size, they are typically calm and loyal. They were originally bred as search and rescue dogs in the Alps, primarily assisting in finding and rescuing lost or stranded travelers at the Great St. Bernard Pass. Today, they are mostly cherished as family companions and show dogs.",
+      "origin_zh": "瑞士阿爾卑斯山區",
+      "origin_en": "swiss alps"
+    },
+    {
+      "english_name": "American Terrier",
+      "chinese_name": "美國史特富郡梗",
+      "slug": "terrier-american",
+      "introduce_zh": "勇敢、自信且忠誠，對家人充滿愛心。牠們聰明且渴望取悅主人，但若無適當訓練和社會化，可能對其他動物表現出支配性。歷史上主要用於鬥犬及農場工作；現代則廣泛作為伴侶犬、家庭寵物，也常訓練為工作犬或參與犬類運動。",
+      "introduce_en": "Brave, confident, and loyal, American Terriers are deeply affectionate towards their family. They are intelligent and eager to please, though without proper training and socialization, they may exhibit dominant behavior towards other animals. Historically, they were primarily used for dog fighting and farm work. Today, they are widely embraced as companion dogs and family pets, and are often trained as working dogs or participate in various dog sports.",
+      "origin_zh": "美國",
+      "origin_en": "USA"
+    },
+    {
+      "english_name": "Andalusian Terrier",
+      "chinese_name": "查無此犬種資訊",
+      "slug": "terrier-andalusian",
+      "introduce_zh": "查無此犬種的官方習性描述，可能非國際認可犬種或為地區性名稱。查無此犬種的官方用途記載。",
+      "introduce_en": "Official descriptions of the Andalusian Terrier's temperament or characteristics are not available. It is possible that this is not an internationally recognized breed, or that its name is regional. Furthermore, no official records detailing the breed's historical or intended purpose have been found.",
+      "origin_zh": "查無此犬種資訊",
+      "origin_en": "No information found for this dog breed"
+    },
+    {
+      "english_name": "Australian Terrier",
+      "chinese_name": "澳洲梗",
+      "slug": "terrier-australian",
+      "introduce_zh": "澳洲梗活潑、自信且友善，對主人忠誠並充滿愛意。牠們勇敢、警惕，但有時會有些固執與獨立。最初被培育來捕獵害蟲，如老鼠和蛇，並看守農場。現代則主要作為受歡迎的家庭伴侶犬和寵物。",
+      "introduce_en": "The Australian Terrier is lively, confident, and friendly, displaying loyalty and affection towards their owners. They are courageous and alert, though they can sometimes be somewhat stubborn and independent. Originally bred to hunt vermin such as rats and snakes, and to guard farms, today they primarily serve as popular family companions and pets.",
+      "origin_zh": "澳洲",
+      "origin_en": "Australia"
+    },
+    {
+      "english_name": "Bedlington Terrier",
+      "chinese_name": "貝林登梗",
+      "slug": "terrier-bedlington",
+      "introduce_zh": "性格獨特，結合了溫和的羊羔外表與梗犬的勇猛堅韌。牠們聰明、活潑且忠誠，對家人充滿愛意，但也可能對陌生人或小型動物表現出警戒心或狩獵本能。最初被培育來捕捉害獸，如獾、狐狸和老鼠。現代主要作為伴侶犬、展示犬，仍保有其捕獵能力。",
+      "introduce_en": "The Bedlington Terrier possesses a distinctive temperament, blending a gentle, lamb-like exterior with the courageous and tenacious spirit of a terrier. They are intelligent, lively, and loyal, displaying deep affection for their family. However, they may exhibit wariness towards strangers and a strong prey drive towards small animals. Originally bred to hunt vermin such as badgers, foxes, and rats, they are primarily companion and show dogs today, yet still retain their inherent hunting capabilities.",
+      "origin_zh": "英國諾森伯蘭郡",
+      "origin_en": "Northumberland, UK"
+    },
+    {
+      "english_name": "Border Terrier",
+      "chinese_name": "邊境梗",
+      "slug": "terrier-border",
+      "introduce_zh": "牠們活潑、聰明、勇敢且精力充沛，對家人忠誠親熱，但對陌生人可能保持警惕，也帶有梗犬特有的固執。最初被培育用於追捕狐狸及其他小型害獸，現今則多作為活潑的家庭寵物與伴侶犬，也常見於犬展。",
+      "introduce_en": "They are lively, intelligent, brave, and energetic. Loyal and affectionate towards their family, they may be wary of strangers, and also possess the characteristic terrier tenacity. Originally bred for chasing foxes and other small vermin, today they predominantly serve as lively family pets and companion dogs, and are also commonly seen in the show ring.",
+      "origin_zh": "英國與蘇格蘭邊境地區",
+      "origin_en": "UK-Scottish border region"
+    },
+    {
+      "english_name": "Boston Terrier",
+      "chinese_name": "波士頓梗",
+      "slug": "terrier-boston",
+      "introduce_zh": "波士頓梗是一種友善、活潑、聰明且溫和的犬種，對主人非常忠誠，能與兒童和其他寵物相處融洽。牠們充滿活力且好奇心強。最初被培育為鬥犬，但隨著鬥犬活動的禁止，牠們很快轉型為廣受歡迎的伴侶犬和居家寵物，因其溫和的性格和適應性而聞名。",
+      "introduce_en": "The Boston Terrier is a friendly, lively, intelligent, and gentle breed, known for its deep loyalty to its owners and its ability to get along harmoniously with children and other pets. They possess a vibrant energy and a strong sense of curiosity. Initially bred as fighting dogs, they quickly transitioned into widely popular companion animals and household pets following the prohibition of dog fighting, renowned for their gentle nature and remarkable adaptability.",
+      "origin_zh": "美國",
+      "origin_en": "USA"
+    },
+    {
+      "english_name": "Cairn Terrier",
+      "chinese_name": "凱恩梗",
+      "slug": "terrier-cairn",
+      "introduce_zh": "牠們是活潑、勇敢且好奇的狗狗，對家人忠誠且充滿愛心，有時會展現出獨立和固執的一面。最初用於在蘇格蘭高地追捕小型害獸，例如老鼠、狐狸和水獺；現代主要作為忠實的伴侶犬和家庭寵物。",
+      "introduce_en": "They are lively, brave, and curious dogs, loyal and loving towards their families, though they can sometimes display an independent and stubborn streak. Originally bred in the Scottish Highlands to hunt small vermin such as rats, foxes, and otters, today they primarily serve as faithful companion dogs and family pets.",
+      "origin_zh": "蘇格蘭",
+      "origin_en": "Scotland"
+    },
+    {
+      "english_name": "Dandie Terrier",
+      "chinese_name": "丹地丁蒙梗",
+      "slug": "terrier-dandie",
+      "introduce_zh": "聰明、獨立且堅決，同時對家人深情而忠誠。牠們具有高貴但活潑的特質。最初用於獵捕獾和水獺。現代主要作為伴侶犬和展示犬。",
+      "introduce_en": "Intelligent, independent, and resolute, yet deeply affectionate and loyal to their families. They possess a noble but lively disposition. Originally bred for hunting badgers and otters, they primarily serve as companion and show dogs today.",
+      "origin_zh": "蘇格蘭",
+      "origin_en": "Scotland"
+    },
+    {
+      "english_name": "Fox Terrier",
+      "chinese_name": "狐狸梗",
+      "slug": "terrier-fox",
+      "introduce_zh": "狐狸梗活潑好動、警覺性高且勇敢，同時也聰明而充滿好奇心，但有時會表現出固執和愛爭鬥的一面。最初培育用於協助獵捕狐狸，將其從地洞中驅趕出來。現代則多作為伴侶犬和展覽犬，同時仍保留其獵捕小型害獸的本能。",
+      "introduce_en": "The Fox Terrier is lively, energetic, highly alert, and courageous. They are also intelligent and curious, though they can sometimes exhibit a stubborn and feisty streak. They were originally bred to assist in fox hunting, flushing them from their underground dens. Today, they are primarily kept as companion and show dogs, while still retaining their natural instinct to hunt small vermin.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Irish Terrier",
+      "chinese_name": "愛爾蘭梗",
+      "slug": "terrier-irish",
+      "introduce_zh": "勇敢、活潑且充滿自信，對家人極其忠誠和深情，但也可能有些固執或好鬥。歷史上主要用於狩獵害蟲（如老鼠、水獺、獾），以及作為農場犬和警戒犬。現代則多為伴侶犬，並擅長於犬類運動。",
+      "introduce_en": "Brave, spirited, and self-assured, the Irish Terrier is profoundly loyal and affectionate towards its family. However, they can also exhibit a degree of stubbornness or a feisty disposition. Historically, their primary roles included hunting vermin such as rats, otters, and badgers, alongside serving as farm dogs and vigilant watchdogs. Today, they are often cherished companion dogs and excel in a variety of canine sports.",
+      "origin_zh": "愛爾蘭",
+      "origin_en": "Ireland"
+    },
+    {
+      "english_name": "Kerryblue Terrier",
+      "chinese_name": "凱利藍梗",
+      "slug": "terrier-kerryblue",
+      "introduce_zh": "聰明、活潑且忠誠，有時帶點固執和強烈的捕獵本能，對家人友善但對陌生人保持警惕。最初用於農場工作，如驅趕牛羊、捕獵害蟲和看守家園；現代則主要作為家庭伴侶犬、表演犬及服從性訓練犬。",
+      "introduce_en": "Intelligent, lively, and loyal, the Kerry Blue Terrier can sometimes exhibit a stubborn streak and a strong prey drive. They are affectionate with their family but typically reserved with strangers. Originally bred for various farm duties, including herding livestock, vermin control, and guarding the homestead, they primarily serve today as cherished family companions, accomplished show dogs, and keen participants in obedience trials.",
+      "origin_zh": "愛爾蘭（克里郡）",
+      "origin_en": "Ireland (County Kerry)"
+    },
+    {
+      "english_name": "Lakeland Terrier",
+      "chinese_name": "湖畔梗",
+      "slug": "terrier-lakeland",
+      "introduce_zh": "湖畔梗活潑、自信且大膽，擁有典型梗犬的堅韌性格，但對家人友善。牠們聰明且警覺。最初用於在崎嶇的湖區地形中獵捕狐狸和其他害獸。現代主要作為伴侶犬和表演犬。",
+      "introduce_en": "Lively, confident, and bold, the Lakeland Terrier possesses the typical terrier grit, yet is friendly with its family. They are intelligent and alert. Originally bred to hunt foxes and other vermin in the rugged terrain of the Lake District, today they primarily serve as companion and show dogs.",
+      "origin_zh": "英國 (湖區)",
+      "origin_en": "United Kingdom (Lake District)"
+    },
+    {
+      "english_name": "Norfolk Terrier",
+      "chinese_name": "諾福克梗",
+      "slug": "terrier-norfolk",
+      "introduce_zh": "友善、活潑、勇敢且聰明，對主人忠誠並充滿好奇心，具有典型的梗犬性格。最初作為農場犬用來捕獵小型害獸，如老鼠和狐狸；現今主要作為忠實的伴侶犬和優秀的展示犬。",
+      "introduce_en": "Friendly, lively, brave, and intelligent, the Norfolk Terrier is loyal to its owners and full of curiosity, embodying the typical terrier temperament. Originally bred as a farm dog to hunt small vermin such as rats and foxes, today it primarily serves as a devoted companion dog and an excellent show dog.",
+      "origin_zh": "英國 (英格蘭)",
+      "origin_en": "United Kingdom (England)"
+    },
+    {
+      "english_name": "Norwich Terrier",
+      "chinese_name": "諾里奇梗",
+      "slug": "terrier-norwich",
+      "introduce_zh": "牠們是活潑、堅韌且無畏的犬種，同時也以其友善和充滿愛心的性格聞名，非常適合家庭生活。雖然體型小巧，但充滿活力且警惕。最初被培育來捕獵農場和馬厩中的害蟲（如老鼠和狐狸），是一種優秀的工作梗犬；如今主要作為伴侶犬和展示犬。",
+      "introduce_en": "They are a lively, sturdy, and fearless breed, yet equally celebrated for their friendly and affectionate nature, making them wonderfully suited for family life. Despite their small size, they are full of energy and highly alert. Originally bred to hunt vermin (such as rats and foxes) on farms and in stables, they proved to be exceptional working terriers. Today, they primarily serve as cherished companion and show dogs.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Patterdale Terrier",
+      "chinese_name": "帕特戴爾梗",
+      "slug": "terrier-patterdale",
+      "introduce_zh": "精力充沛、勇敢且堅韌不拔，對主人忠誠且渴望取悅，但也可能對其他動物表現出支配性。最初被培育用於在崎嶇地形中追捕害獸，特別是狐狸。現代仍常用於工作犬，也是活躍家庭的優秀伴侶犬。",
+      "introduce_en": "Energetic, brave, and tenacious, the Patterdale Terrier is loyal to its owners and eager to please, though it may exhibit dominance towards other animals. Originally bred for pursuing vermin, particularly foxes, in rugged terrain. They remain commonly used as working dogs today and also make excellent companions for active families.",
+      "origin_zh": "英國（湖區）",
+      "origin_en": "UK (Lake District)"
+    },
+    {
+      "english_name": "Russell Terrier",
+      "chinese_name": "羅素梗",
+      "slug": "terrier-russell",
+      "introduce_zh": "羅素梗聰明、精力充沛且堅韌，警覺性高，充滿自信。他們通常友善且活潑，但保有梗犬特有的旺盛捕獵本能和堅定意志。最初培育用於獵捕狐狸和其他害獸，會鑽入地下洞穴驅趕獵物。現代則多作為活潑的家庭伴侶犬，也擅長敏捷訓練和其他犬類運動。",
+      "introduce_en": "The Russell Terrier is intelligent, energetic, and tenacious, possessing high alertness and confidence. They are typically friendly and lively, but retain the strong prey drive and resolute will characteristic of terriers. Originally bred for hunting foxes and other vermin, they would go to ground into underground dens to flush out quarry. Nowadays, they are often cherished as lively family companions and also excel in agility training and other canine sports.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Scottish Terrier",
+      "chinese_name": "蘇格蘭梗",
+      "slug": "terrier-scottish",
+      "introduce_zh": "獨立、自信且勇敢，對陌生人可能保持警惕，但對家人忠誠且深情。牠們聰明、警覺，但也可能固執。最初被培育來獵捕獾、狐狸和嚙齒類動物等害獸，現今主要作為伴侶犬和展示犬。",
+      "introduce_en": "Independent, confident, and courageous, Scottish Terriers can be reserved with strangers but are fiercely loyal and deeply affectionate towards their families. Intelligent and alert, they are also known for their stubborn streak. Originally developed to hunt vermin such as badgers, foxes, and other rodents, they are now primarily cherished as companion and show dogs.",
+      "origin_zh": "蘇格蘭（英國）",
+      "origin_en": "Scotland (UK)"
+    },
+    {
+      "english_name": "Sealyham Terrier",
+      "chinese_name": "錫利悍梗",
+      "slug": "terrier-sealyham",
+      "introduce_zh": "錫利悍梗是一種自信、外向且警覺的犬種，牠們聰明、堅韌且忠誠於家人，但也可能帶有些許固執。最初培育用於獵捕獾、狐狸和水獺等小型穴居動物；現今主要作為家庭伴侶犬和展覽犬。",
+      "introduce_en": "The Sealyham Terrier is a confident, outgoing, and alert breed. They are intelligent, tenacious, and loyal to their families, though they can also be somewhat stubborn. Originally bred to hunt small burrowing animals such as badgers, foxes, and otters, today they primarily serve as family companions and show dogs.",
+      "origin_zh": "威爾斯，英國",
+      "origin_en": "Wales, UK"
+    },
+    {
+      "english_name": "Silky Terrier",
+      "chinese_name": "絲毛梗",
+      "slug": "terrier-silky",
+      "introduce_zh": "聰明、活潑、友善且充滿自信，牠們對家人忠誠且充滿愛意，同時警惕陌生人。最初被培育為伴侶犬和捕鼠犬，現代主要作為家庭伴侶犬及展示犬。",
+      "introduce_en": "Intelligent, lively, friendly, and self-confident, they are loyal and affectionate to their families, while reserved towards strangers. Originally bred as companion dogs and ratters, they primarily serve today as family companions and show dogs.",
+      "origin_zh": "澳洲",
+      "origin_en": "Australia"
+    },
+    {
+      "english_name": "Tibetan Terrier",
+      "chinese_name": "西藏梗",
+      "slug": "terrier-tibetan",
+      "introduce_zh": "聰明、活潑且友善，對家人非常忠誠和深情，但對陌生人可能保持警惕。牠們警覺性高，是不錯的看門犬。在西藏被視為「聖犬」和「幸運符」，主要作為寺廟僧侶的伴侶犬、牧羊犬（協助看管羊群）以及守衛犬。現代則主要作為家庭伴侶犬和展覽犬。",
+      "introduce_en": "Intelligent, lively, and friendly, they are deeply loyal and affectionate towards their families, though they may be wary of strangers. Their high alertness makes them good watchdogs. In Tibet, they were regarded as \"holy dogs\" and \"lucky charms,\" primarily serving as companion dogs for temple monks, herding dogs (assisting in tending sheep flocks), and guard dogs. Today, they are mainly kept as family companion dogs and show dogs.",
+      "origin_zh": "西藏 (Tibet)",
+      "origin_en": "Tibet"
+    },
+    {
+      "english_name": "Toy Terrier",
+      "chinese_name": "英國玩具梗",
+      "slug": "terrier-toy",
+      "introduce_zh": "英國玩具梗聰明、活潑且警惕，對家人友善深情，但對陌生人可能較為保留。牠們擁有真正的梗犬精神，勇敢且堅韌。歷史上主要用於捕鼠和捕殺害蟲。現代則主要作為受歡迎的伴侶犬和展示犬。",
+      "introduce_en": "The English Toy Terrier is intelligent, lively, and alert, friendly and affectionate towards its family, but can be reserved with strangers. They possess true terrier spirit, being courageous and tenacious. Historically, they were primarily used for ratting and vermin control. Today, they primarily serve as popular companion and show dogs.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Welsh Terrier",
+      "chinese_name": "威爾斯梗",
+      "slug": "terrier-welsh",
+      "introduce_zh": "活潑、友善且充滿自信，牠們聰明、警覺，但也可能固執且精力充沛，需要足夠的活動量。最初被培育用於捕獵獾、狐狸和水獺等害獸，現在則多作為活躍的家庭伴侶犬和表演犬。",
+      "introduce_en": "Lively, friendly, and confident, they are intelligent and alert, though they can also be stubborn and energetic, requiring ample exercise. Originally bred to hunt vermin such as badgers, foxes, and otters, today they are primarily valued as active family companions and show dogs.",
+      "origin_zh": "威爾斯，英國",
+      "origin_en": "Wales, UK"
+    },
+    {
+      "english_name": "Westhighland Terrier",
+      "chinese_name": "西高地白梗",
+      "slug": "terrier-westhighland",
+      "introduce_zh": "聰明、自信且活潑，天生具有梗犬的勇敢與好奇心。牠們友善但有時也帶有固執的一面。最初用於捕獵老鼠、狐狸和獾等害獸。現代主要作為優秀的家庭伴侶犬。",
+      "introduce_en": "Intelligent, confident, and spirited, the West Highland Terrier possesses the inherent terrier courage and curiosity. They are friendly companions yet can sometimes display a stubborn streak. Originally bred to hunt vermin such as rats, foxes, and badgers, they primarily serve today as excellent family companion dogs.",
+      "origin_zh": "蘇格蘭",
+      "origin_en": "Scotland"
+    },
+    {
+      "english_name": "Wheaten Terrier",
+      "chinese_name": "軟毛麥町梗",
+      "slug": "terrier-wheaten",
+      "introduce_zh": "性格友善、活潑且聰明，對人類和其他動物通常很熱情，但也帶有梗犬特有的固執和充沛精力。最初在愛爾蘭的農場中用於捕鼠、牧羊和看家護院；現代主要作為家庭伴侶犬和表演犬。",
+      "introduce_en": "Friendly, lively, and intelligent, the Wheaten Terrier is typically enthusiastic towards both humans and other animals. However, they also possess the characteristic terrier stubbornness and abundant energy. Originally bred on Irish farms for ratting, herding, and guarding duties, they are now primarily cherished as family companion dogs and show dogs.",
+      "origin_zh": "愛爾蘭",
+      "origin_en": "Ireland"
+    },
+    {
+      "english_name": "Yorkshire Terrier",
+      "chinese_name": "約克夏梗犬",
+      "slug": "terrier-yorkshire",
+      "introduce_zh": "聰明、自信且精力充沛，對家人忠誠深情，儘管體型嬌小卻常展現出勇敢和堅毅的梗犬特質。最初被培育來捕捉紡織廠和礦井中的老鼠，現代主要作為忠實的伴侶犬和展覽犬。",
+      "introduce_en": "Yorkshire Terriers are intelligent, confident, and energetic, and are loyal and deeply affectionate towards their families. Despite their small stature, they often display the brave and tenacious characteristics typical of a terrier. Originally bred to catch rats in textile mills and mines, they are now primarily cherished as loyal companion dogs and admired as show dogs.",
+      "origin_zh": "英國 (約克郡)",
+      "origin_en": "United Kingdom (Yorkshire)"
+    },
+    {
+      "english_name": "Tervuren",
+      "chinese_name": "比利時特弗倫牧羊犬",
+      "slug": "tervuren",
+      "introduce_zh": "聰明、警惕且精力充沛，對主人極度忠誠並具有保護慾，需要足夠的運動和心智刺激。最初作為牧羊犬使用，現代則常見於警犬、搜救犬、競技犬及活躍家庭的伴侶犬。",
+      "introduce_en": "Intelligent, alert, and energetic, the Tervuren is fiercely loyal and protective of its owners, requiring ample exercise and mental stimulation. Originally used as a herding dog, they are now commonly seen as police dogs, search and rescue dogs, performance dogs, and companions for active families.",
+      "origin_zh": "比利時",
+      "origin_en": "Belgium"
+    },
+    {
+      "english_name": "Vizsla",
+      "chinese_name": "威斯拉犬",
+      "slug": "vizsla",
+      "introduce_zh": "威斯拉犬活潑、聰明、友善且深情，渴望人類陪伴，對主人非常忠誠。牠們精力充沛且敏感，需要大量的運動和心理刺激。最初作為多功能獵犬培育，擅長指示和取回獵物，特別是鳥類。現代仍是優秀的狩獵犬，同時也廣受歡迎作為活躍的家庭伴侶犬、運動犬和治療犬。",
+      "introduce_en": "Vizslas are vivacious, intelligent, friendly, and deeply affectionate dogs. They crave human companionship and are fiercely loyal to their owners. These high-energy and sensitive dogs require extensive exercise and significant mental stimulation. Originally bred as versatile gundogs, they excel at both pointing and retrieving game, particularly fowl. Today, they remain superb hunting dogs, and are also highly popular as active family companions, performance dogs, and therapy dogs.",
+      "origin_zh": "匈牙利",
+      "origin_en": "Hungary"
+    },
+    {
+      "english_name": "Spanish Waterdog",
+      "chinese_name": "西班牙水犬",
+      "slug": "waterdog-spanish",
+      "introduce_zh": "這是一種聰明、忠誠且工作熱情高的犬種，活潑敏捷，對家人有很強的保護欲。牠們需要足夠的運動和智力刺激，對陌生人可能較為保留。傳統上被用於牧羊、牧牛和牧山羊等多種農場工作，也擅長水上工作，如協助漁民捕魚和獵捕水禽。現代牠們也是出色的伴侶犬和工作犬。",
+      "introduce_en": "The Spanish Waterdog is an intelligent, loyal, and highly driven breed. They are lively and agile, possessing a strong protective instinct towards their family. They require ample exercise and mental stimulation, and can be reserved with strangers. Traditionally, they were employed in diverse farm tasks, including herding sheep, cattle, and goats. They also excel at water work, such as assisting fishermen with netting fish and retrieving waterfowl. Today, they serve as excellent companion dogs and versatile working dogs.",
+      "origin_zh": "西班牙 (Spain)",
+      "origin_en": "Spain"
+    },
+    {
+      "english_name": "Weimaraner",
+      "chinese_name": "魏瑪獵犬",
+      "slug": "weimaraner",
+      "introduce_zh": "聰明、精力充沛且非常忠誠，對主人有很強的依戀，因此常被稱為「魔鬼氈狗」。牠們需要大量的運動和精神刺激。最初是為狩獵大型獵物（如野豬、熊和鹿）而培育的多功能獵犬，後來也用於狩獵小型獵物。現代則多作為伴侶犬、運動犬或繼續用於狩獵。",
+      "introduce_en": "Intelligent, energetic, and intensely loyal, Weimaraners form a strong bond with their owners, earning them the nickname 'Velcro dogs.' They require significant physical activity and mental stimulation. Originally developed as versatile gun dogs for hunting large game such as wild boar, bear, and deer, their utility later extended to smaller prey. Today, they primarily excel as devoted companion dogs, capable performance dogs in various dog sports, and continue to serve as active hunting partners.",
+      "origin_zh": "德國",
+      "origin_en": "Germany"
+    },
+    {
+      "english_name": "Whippet",
+      "chinese_name": "惠比特犬",
+      "slug": "whippet",
+      "introduce_zh": "惠比特犬性格溫和友善、深情黏人，在家中通常安靜沉穩；但在戶外則充滿活力，喜歡奔跑追逐，動作敏捷。惠比特犬最初被培育用於狩獵小型獵物如兔子，並在賽跑中展現其驚人速度；現代多作為家庭伴侶犬，也參與犬隻競賽或敏捷運動。",
+      "introduce_en": "Whippets possess a gentle and friendly temperament, are deeply affectionate and devoted, and are typically quiet and calm indoors. However, when outdoors, they are full of energy, love to run and chase, and display great agility. Originally bred for hunting small game such as rabbits, Whippets are renowned for their astonishing speed in racing. Today, they are largely cherished as family companion dogs, and also actively participate in dog competitions or agility sports.",
+      "origin_zh": "英國",
+      "origin_en": "U.K."
+    },
+    {
+      "english_name": "Irish Wolfhound",
+      "chinese_name": "愛爾蘭獵狼犬",
+      "slug": "wolfhound-irish",
+      "introduce_zh": "愛爾蘭獵狼犬通常性情溫和、沉穩且忠誠。牠們對家人友善，但由於其巨大的體型，需要足夠的空間和適當的訓練。歷史上主要用於獵捕狼、鹿等大型獵物，現代則多作為忠實的家庭伴侶犬和展示犬。",
+      "introduce_en": "The Irish Wolfhound typically possesses a gentle, calm, and loyal temperament. They are friendly towards their families, but due to their immense size, they require ample space and proper training. Historically, they were primarily used for hunting large game such as wolves and deer. In modern times, they are largely cherished as loyal family companions and show dogs.",
+      "origin_zh": "愛爾蘭",
+      "origin_en": "Ireland"
+    }
+  ],
+  "slug_update_info": {
+    "updated_at": "2025-12-18 07:35:55",
+    "total_breeds": 165,
+    "updated_with_slug": 165,
+    "missing_slug": 0,
+    "missing_slug_breeds": []
+  },
+  "merge_info": {
+    "merged_at": "2025-12-18 15:41:58",
+    "total_breeds": 165,
+    "processed": 165,
+    "note": "temperament 和 purpose 已合併為 introduce_zh，直接連接無分隔符號"
+  },
+  "translation_info": {
+    "translated_at": "2025-12-18 16:12:01",
+    "total_breeds": 165,
+    "successful_translations": 165,
+    "failed_translations": 0,
+    "failed_breeds": [],
+    "note": "已將 introduce_zh 翻譯為 introduce_en"
+  },
+  "origin_processing_info": {
+    "processed_at": "2025-12-18 16:22:00",
+    "total_breeds": 165,
+    "successful_translations": 165,
+    "failed_translations": 0,
+    "failed_breeds": [],
+    "note": "已將 origin 重命名為 origin_zh 並翻譯為 origin_en"
+  }
+}

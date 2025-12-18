@@ -9,6 +9,8 @@ dependencies = [
     "django-redis>=6.0.0",
     "djangorestframework>=3.16.1",
     "djangorestframework-simplejwt>=5.5.1",
+    "google-generativeai>=0.8.6",
+    "googletrans==4.0.0rc1",
     "psycopg2-binary>=2.9.11",
     "python-decouple>=3.8",
     "redis>=7.1.0",

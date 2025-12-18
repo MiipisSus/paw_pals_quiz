@@ -2,18 +2,16 @@ from django.http import JsonResponse
 from django.middleware.csrf import get_token
 from rest_framework.views import APIView, Response
 from rest_framework.permissions import IsAuthenticated
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework import status
 
 from uuid import uuid4
 from datetime import datetime
 
-from .models import Breed, User
 from .serializers import QuestionInputSerializer, QuestionSerializer, AnswerInputSerializer, AnswerSerializer, \
     StartGameSerializer, EndGameInputSerializer, EndGameSerializer, RoundRecordSerializer
 from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, RoundRecordService
     
-
-def csrf_token(request):
-    return JsonResponse({"csrfToken": get_token(request)})
 
 class QuestionView(APIView):
     def post(self, request, *args, **kwargs):
@@ -171,3 +169,26 @@ class EndGameView(APIView):
         
         serializer = EndGameSerializer(game_session)
         return Response(serializer.data)
+
+
+class LogoutView(APIView):
+    permission_classes = [IsAuthenticated]
+    
+    def post(self, request):
+        try:
+            refresh_token = request.data.get("refresh_token")
+            
+            if refresh_token:
+                token = RefreshToken(refresh_token)
+                token.blacklist()
+            
+            return Response(
+                {"message": "Successfully logged out"}, 
+                status=status.HTTP_200_OK
+            )
+        except Exception as e:
+            print(e)
+            return Response(
+                {"error": "Invalid token"}, 
+                status=status.HTTP_400_BAD_REQUEST
+            )

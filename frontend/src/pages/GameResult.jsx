@@ -17,7 +17,7 @@ function GameResult() {
 
   return (
     <div className="center w-screen h-screen">
-      <div className="relative flex flex-col w-8/10 h-9/10 bg-gray-100  rounded-4xl shadow-2xl overflow-hidden">
+      <div className="relative flex flex-col w-6/10 h-9/10 bg-gray-100  rounded-4xl shadow-2xl overflow-hidden">
         <div className="center flex-col gap-4 relative bg-darker-primary w-full h-4/10 ">
           <div className="p-4 bg-white rounded-full shadow-md">
             <Trophy className="text-darker-primary size-10" />

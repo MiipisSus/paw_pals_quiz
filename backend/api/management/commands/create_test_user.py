@@ -21,7 +21,7 @@ class Command(BaseCommand):
                 self.style.SUCCESS(f'已刪除 {deleted_count} 筆現有使用者資料')
             )
 
-        username = 'test'
+        username = 'test@example.com'
         password = 'test'
 
         try:
@@ -35,7 +35,7 @@ class Command(BaseCommand):
             # 創建新使用者
             user = User.objects.create_user(
                 username=username,
-                password=password
+                password=password,
             )
             
             self.stdout.write(f'✓ 創建使用者: {username} (ID: {user.id})')

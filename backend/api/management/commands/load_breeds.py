@@ -6,14 +6,14 @@ from api.models import Breed
 
 
 class Command(BaseCommand):
-    help = '從 breeds.json 載入品種資料到資料庫'
+    help = '從 breed_info.json 載入完整品種資料到資料庫'
 
     def add_arguments(self, parser):
         parser.add_argument(
             '--file',
             type=str,
-            default='breeds.json',
-            help='JSON 檔案路径 (預設: breeds.json)'
+            default='breed_info.json',
+            help='JSON 檔案路径 (預設: breed_info.json)'
         )
         parser.add_argument(
             '--clear',
@@ -46,63 +46,63 @@ class Command(BaseCommand):
                 data = json.load(f)
 
             # 取得品種資料
-            breeds_data = data.get('message', {})
+            breeds_data = data.get('breed_info', [])
             if not breeds_data:
-                raise CommandError('JSON 檔案中找不到 "message" 欄位')
+                raise CommandError('JSON 檔案中找不到 "breed_info" 欄位')
 
             # 處理品種資料
             created_count = 0
             updated_count = 0
             error_count = 0
 
-            for breed_key, sub_breeds in breeds_data.items():
+            for breed_data in breeds_data:
                 try:
-                    # 如果沒有子品種，直接創建主品種
-                    if not sub_breeds:
-                        slug = breed_key
-                        name_en = breed_key.replace('-', ' ').title()
-                        
-                        breed, created = Breed.objects.get_or_create(
-                            slug=slug,
-                            defaults={
-                                'name_en': name_en,
-                                'name_zh': None
-                            }
+                    slug = breed_data.get('slug')
+                    english_name = breed_data.get('english_name')
+                    chinese_name = breed_data.get('chinese_name')
+                    introduction_zh = breed_data.get('introduce_zh', '')
+                    introduction_en = breed_data.get('introduce_en', '')
+                    origin_zh = breed_data.get('origin_zh', '')
+                    origin_en = breed_data.get('origin_en', '')
+                    
+                    if not slug or not english_name:
+                        self.stdout.write(
+                            self.style.WARNING(f'⚠ 跳過不完整的資料: slug={slug}, english_name={english_name}')
                         )
+                        continue
+                    
+                    breed, created = Breed.objects.get_or_create(
+                        slug=slug,
+                        defaults={
+                            'name_en': english_name,
+                            'name_zh': chinese_name,
+                            'introduction_zh': introduction_zh,
+                            'introduction_en': introduction_en,
+                            'origin_zh': origin_zh,
+                            'origin_en': origin_en,
+                        }
+                    )
+                    
+                    # 如果記錄已存在，更新其他欄位
+                    if not created:
+                        breed.name_en = english_name
+                        breed.name_zh = chinese_name
+                        breed.introduction_zh = introduction_zh
+                        breed.introduction_en = introduction_en
+                        breed.origin_zh = origin_zh
+                        breed.origin_en = origin_en
+                        breed.save()
                         
-                        if created:
-                            created_count += 1
-                            self.stdout.write(f'✓ 創建: {slug} -> {name_en}')
-                        else:
-                            updated_count += 1
-                            self.stdout.write(f'○ 已存在: {slug}')
-
-                    # 如果有子品種，為每個子品種創建記錄
+                        updated_count += 1
+                        self.stdout.write(f'↻ 更新: {slug} -> {english_name}')
                     else:
-                        for sub_breed in sub_breeds:
-                            slug = f"{breed_key}-{sub_breed}"
-                            # 格式化名稱："sub_breed breed_key" 
-                            name_en = f"{sub_breed.replace('-', ' ').title()} {breed_key.replace('-', ' ').title()}"
-                            
-                            breed, created = Breed.objects.get_or_create(
-                                slug=slug,
-                                defaults={
-                                    'name_en': name_en,
-                                    'name_zh': None
-                                }
-                            )
-                            
-                            if created:
-                                created_count += 1
-                                self.stdout.write(f'✓ 創建: {slug} -> {name_en}')
-                            else:
-                                updated_count += 1
-                                self.stdout.write(f'○ 已存在: {slug}')
+                        created_count += 1
+                        self.stdout.write(f'✓ 創建: {slug} -> {english_name}')
 
                 except Exception as e:
                     error_count += 1
                     self.stdout.write(
-                        self.style.ERROR(f'✗ 處理 {breed_key} 時發生錯誤: {str(e)}')
+                        self.style.ERROR(f'✗ 處理品種資料時發生錯誤: {str(e)}')
                     )
 
             # 顯示總結

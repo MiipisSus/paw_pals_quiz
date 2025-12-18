@@ -19,7 +19,7 @@ class BreedSerializer(serializers.ModelSerializer):
     
 
 class QuestionInputSerializer(serializers.Serializer):
-    game_session_id = serializers.UUIDField()
+    game_session_id = serializers.CharField()
     
     
 class QuestionSerializer(serializers.ModelSerializer):
@@ -47,7 +47,7 @@ class RoundRecordSerializer(serializers.ModelSerializer):
 
 
 class AnswerInputSerializer(serializers.Serializer):
-    game_session_id = serializers.UUIDField()
+    game_session_id = serializers.CharField()
     question_id = serializers.UUIDField()
     selected_slug = serializers.CharField(max_length=100)
     choices = serializers.ListField()
@@ -61,12 +61,12 @@ class AnswerSerializer(serializers.Serializer):
 
 class StartGameSerializer(serializers.Serializer):
     is_guest = serializers.BooleanField(required=False, default=False)
-    game_session_id = serializers.UUIDField()
+    game_session_id = serializers.CharField()
     total_rounds = serializers.IntegerField()
 
 
 class EndGameInputSerializer(serializers.Serializer):
-    game_session_id = serializers.UUIDField()
+    game_session_id = serializers.CharField()
     
 class EndGameSerializer(serializers.ModelSerializer):
     round_records = RoundRecordSerializer(many=True)

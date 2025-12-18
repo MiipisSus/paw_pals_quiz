@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-import HomeButton from "../components/HomeButton.jsx";
 import LanguageButton from "../components/LanguageButton.jsx";
+import StatesViewSwitcher from "../components/StatesViewSwitcher.jsx";
 
-function MainLayout() {
+function HomeLayout() {
   return (
     <>
       <div className="fixed flex justify-between w-full p-4 bg-transparent">
-        <HomeButton />
+        <StatesViewSwitcher />
         <LanguageButton />
       </div>
       <main className="">
@@ -16,4 +16,4 @@ function MainLayout() {
   );
 }
 
-export default MainLayout;
+export default HomeLayout;

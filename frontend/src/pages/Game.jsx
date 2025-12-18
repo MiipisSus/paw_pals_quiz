@@ -113,10 +113,11 @@ function Game() {
         </div>
         <div className="center flex-col w-1/2">
           <div className="flex gap-4 px-6 my-6 mb-auto ml-auto">
-            <p className="px-2 py-1 bg-darker-primary text-white font-bold rounded-lg">
+            <p className="px-2 py-1 bg-darker-accent text-white font-bold rounded-lg">
               Round<span className="ml-3">{rounds}</span>
+              <span className="text-white/50 text-sm">/{totalRounds}</span>
             </p>
-            <p className="center px-2 py-1 bg-white text-darker-primary border font-bold rounded-lg shadow-sm shadow-darker-primary/50">
+            <p className="center px-2 py-1 bg-white text-darker-primary border font-bold rounded-lg">
               <Trophy className="inline-block size-5" />
               <span className="ml-3">{score}</span>
             </p>
@@ -125,7 +126,7 @@ function Game() {
             <h2 className="mb-2 text-3xl text-brown font-bold">
               Who's the <span className="text-darker-accent">Dog?</span>
             </h2>
-            <h3 className="text-md text-light-brown font-semibold">
+            <h3 className="text-md text-gray-400 font-semibold">
               Look at the photo and pick the breed!
             </h3>
           </div>
@@ -134,6 +135,7 @@ function Game() {
               ? currentChoices.map((choice, index) => (
                   <button
                     key={index}
+                    disabled={isAnswerCorrect !== null}
                     className={`text-white font-semibold p-3 rounded-lg shadow-sm ${
                       isAnswerCorrect !== null
                         ? choice.slug === correctAnswer
@@ -141,9 +143,11 @@ function Game() {
                           : choice.slug === selectedChoice?.slug
                           ? "bg-red-500"
                           : "bg-gray-200 cursor-not-allowed"
-                        : "bg-darker-primary"
+                        : "bg-darker-primary cursor-pointer"
                     }`}
-                    onClick={() => handleSubmitAnswer(choice)}
+                    onClick={() =>
+                      isAnswerCorrect === null && handleSubmitAnswer(choice)
+                    }
                   >
                     {choice.name}
                   </button>
