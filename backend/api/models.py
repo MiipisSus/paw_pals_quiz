@@ -33,7 +33,7 @@ class Question(models.Model):
 
 
 class PlayerInfo(models.Model):
-    nickname = models.CharField(max_length=100)
+    nickname = models.CharField(max_length=100, default='Doggo Lover')
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='player_info')
 
 

@@ -4,12 +4,13 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-from .views import QuestionView, AnswerView, StartGameView, EndGameView, LogoutView, PlayerInfoView
+from .views import QuestionView, AnswerView, StartGameView, EndGameView, LogoutView, PlayerInfoView, RegisterView
 
 
 urlpatterns = [
     path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('register/', RegisterView.as_view(), name='register'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('question/', QuestionView.as_view()),
     path('answer/', AnswerView.as_view()),

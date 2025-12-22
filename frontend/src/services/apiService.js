@@ -169,6 +169,25 @@ export async function logoutUser() {
   return { success: true };
 }
 
+export async function registerUser(username, password) {
+  const response = await fetch(`${BASE_URL}register/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({ username, password }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message || "Registration failed");
+  }
+
+  const data = await response.json();
+  return data;
+}
+
 export async function refreshToken() {
   const refreshToken = tokenManager.getRefreshToken();
 

@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from django.db import models
+from django.contrib.auth.models import User
 from .models import Breed, Question, RoundRecord, GameSession, PlayerInfo, RoundRecordBreedChoice
 
 
@@ -141,3 +142,17 @@ class PlayerInfoSerializer(serializers.ModelSerializer):
             return 0.0
         
         return round((total_correct / total_questions) * 100, 2)
+    
+    
+class UserInputSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'password']
+        
+
+class UserSerializer(serializers.ModelSerializer):
+    nickname = serializers.CharField(source='playerinfo.nickname')
+    
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'nickname']

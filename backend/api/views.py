@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from rest_framework.views import APIView, Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -7,7 +8,8 @@ from uuid import uuid4
 from datetime import datetime
 
 from .serializers import QuestionInputSerializer, QuestionSerializer, AnswerInputSerializer, AnswerSerializer, \
-    StartGameSerializer, EndGameInputSerializer, EndGameSerializer, PlayerInfoSerializer
+    StartGameSerializer, EndGameInputSerializer, EndGameSerializer, PlayerInfoSerializer, UserInputSerializer, \
+        UserSerializer
 from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, RoundRecordService, BreedService
     
 
@@ -220,3 +222,18 @@ class PlayerInfoView(APIView):
         
         serializer = PlayerInfoSerializer(player_info)
         return Response(serializer.data)
+    
+
+class RegisterView(APIView):
+    def post(self, request):
+        serializer = UserInputSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        
+        user = User.objects.create_user(
+            username=serializer.validated_data['username'],
+            password=serializer.validated_data['password']
+        )
+        
+        data = UserSerializer(user).data
+        
+        return Response(data, status=status.HTTP_201_CREATED)
