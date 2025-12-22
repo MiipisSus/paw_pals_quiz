@@ -22,7 +22,7 @@ function Game() {
     setRoundRecords,
   } = useGame();
   const navigate = useNavigate();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const [questionId, setQuestionId] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -41,12 +41,23 @@ function Game() {
     }
   }, [gameSessionId]);
 
+  useEffect(() => {
+    if (gameSessionId && questionId && isAnswerCorrect === null) {
+      // 只在未答題時才允許語言切換並重新獲取題目
+      handleQuestionFetch();
+    }
+    // 如果已答題，語言切換不會重新獲取題目
+    // 避免影響當前回合的答題記錄
+  }, [i18n.language]);
+
   async function handleQuestionFetch() {
     try {
       setIsLoading(true);
       setSelectedChoice(null);
       setCorrectAnswer(null);
       setIsAnswerCorrect(null);
+      setCurrentIntroduction(null);
+      setCurrentOrigin(null);
 
       const question = await fetchQuestion(gameSessionId);
       setCurrentImage(question.image_url);

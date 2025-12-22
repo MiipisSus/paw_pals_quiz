@@ -49,10 +49,15 @@ class GameSession(models.Model):
 class RoundRecord(models.Model):
     game_session = models.ForeignKey(GameSession, on_delete=models.CASCADE, related_name='round_records')
     question = models.ForeignKey(Question, on_delete=models.CASCADE, related_name='round_records')
-    choices = models.JSONField(default=list)
     selected_slug = models.CharField(max_length=100)
     correct_slug = models.CharField(max_length=100)
     is_correct = models.BooleanField()
     score = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
+
+class RoundRecordBreedChoice(models.Model):
+    round_record = models.ForeignKey(RoundRecord, on_delete=models.CASCADE, related_name='choices')
+    breed = models.ForeignKey(Breed, on_delete=models.SET_NULL, null=True, blank=True)
+    slug = models.CharField(max_length=100)

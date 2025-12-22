@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from django.db import models
-from .models import Breed, Question, RoundRecord, GameSession, PlayerInfo
+from .models import Breed, Question, RoundRecord, GameSession, PlayerInfo, RoundRecordBreedChoice
 
 
 class BreedSerializer(serializers.ModelSerializer):
@@ -55,19 +55,34 @@ class QuestionSerializer(serializers.ModelSerializer):
         return self.context.get('choices', [])
 
 
+class RoundRecordBreedChoiceSerializer(serializers.ModelSerializer):
+    name = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = RoundRecordBreedChoice
+        fields = ['slug', 'name']
+        
+    def get_name(self, obj: RoundRecordBreedChoice):
+        request = self.context.get('request')
+        lang = request.GET.get('lang') if request else None
+        if lang == 'zh':
+            return obj.breed.name_zh
+        return obj.breed.name_en
+    
+    
 class RoundRecordSerializer(serializers.ModelSerializer):
     image_url = serializers.CharField(source='question.image_url')
+    choices = RoundRecordBreedChoiceSerializer(many=True, read_only=True)
     
     class Meta:
         model = RoundRecord
         fields = ['image_url', 'choices', 'selected_slug', 'correct_slug', 'is_correct', 'score']
-
-
+        
+        
 class AnswerInputSerializer(serializers.Serializer):
     game_session_id = serializers.CharField()
     question_id = serializers.UUIDField()
     selected_slug = serializers.CharField(max_length=100)
-    choices = serializers.ListField()
     
     
 class AnswerSerializer(serializers.Serializer):

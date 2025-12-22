@@ -44,6 +44,10 @@ class QuestionView(APIView):
                 "choices": choices,
                 'image_url': question.image_url
             })
+        else:
+            RedisService.set(f"{game_session_id}_{question.id}", {
+                "choices": choices,
+            })
         
         return Response(serializer.data)
     
@@ -71,7 +75,10 @@ class AnswerView(APIView):
             
         score = 1 if is_correct else 0
         
-        choices = cached_data.get('choices', []) if cached_data else data.get('choices', [])
+        if cached_data:
+            choices = cached_data.get('choices', [])
+        else:
+            return Response({"error": "Round expired, please start a new round."}, status=400)
         
         if cached_data and 'image_url' in cached_data:
             image_url = cached_data.get('image_url')
@@ -141,6 +148,7 @@ class StartGameView(APIView):
 
 class EndGameView(APIView):
     def post(self, request, *args, **kwargs):
+        lang = request.GET.get('lang', 'en')
         serializer = EndGameInputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
@@ -151,18 +159,24 @@ class EndGameView(APIView):
             if not session_data:
                 return Response({"error": "Invalid or expired game session"}, status=400)
             
+            round_records = session_data.get('round_records', [])
+            if round_records:
+                for record in round_records:
+                    record['choices'] = RoundRecordService.process_record_choices(record['choices'], lang=lang)
+            
             response_data = {
                 'id': data.get('game_session_id'),
                 'score': session_data.get('score', 0),
                 'started_at': session_data.get('started_at'),
                 'ended_at': str(datetime.now()),
-                'rounds': len(session_data.get('round_records', [])),
-                'round_records': session_data.get('round_records', []),
+                'rounds': len(round_records),
+                'round_records': round_records,
             }
             
             GuestGameSessionService.delete_session(game_session_id=data.get('game_session_id'))
 
             return Response(response_data)
+        
         if not GameSessionService.is_session_owned_by_user(data.get('game_session_id'), request.user.id):
             return Response({"error": "Invalid game session or access denied"}, status=403)
         
@@ -171,7 +185,7 @@ class EndGameView(APIView):
         except Exception as e:
             return Response({"error": "Failed to end game session"}, status=500)
         
-        serializer = EndGameSerializer(game_session)
+        serializer = EndGameSerializer(game_session, context={'request': request})
         return Response(serializer.data)
 
 
