@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from .models import Breed, Question, RoundRecord, GameSession
+from django.db import models
+from .models import Breed, Question, RoundRecord, GameSession, PlayerInfo
 
 
 class BreedSerializer(serializers.ModelSerializer):
@@ -85,6 +86,7 @@ class StartGameSerializer(serializers.Serializer):
 class EndGameInputSerializer(serializers.Serializer):
     game_session_id = serializers.CharField()
     
+
 class EndGameSerializer(serializers.ModelSerializer):
     round_records = RoundRecordSerializer(many=True)
     rounds = serializers.SerializerMethodField()
@@ -96,3 +98,31 @@ class EndGameSerializer(serializers.ModelSerializer):
     def get_rounds(self, obj: GameSession):
         return obj.round_records.count()
 
+
+class PlayerInfoSerializer(serializers.ModelSerializer):
+    nickname = serializers.CharField(max_length=100)
+    total_game_sessions = serializers.SerializerMethodField()
+    total_score = serializers.SerializerMethodField()
+    avg_accuracy = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = PlayerInfo
+        fields = ['nickname', 'total_game_sessions', 'total_score', 'avg_accuracy']
+        
+    def get_total_game_sessions(self, obj: PlayerInfo):
+        return obj.user.game_sessions.count()
+    
+    def get_total_score(self, obj: PlayerInfo):
+        return obj.user.game_sessions.aggregate(total_score=models.Sum('score'))['total_score'] or 0
+    
+    def get_avg_accuracy(self, obj: PlayerInfo):
+        game_sessions = obj.user.game_sessions.all()
+        if not game_sessions.exists():
+            return 0.0
+        total_questions = game_sessions.aggregate(total_questions=models.Count('round_records'))['total_questions'] or 0
+        total_correct = game_sessions.aggregate(total_correct=models.Count('round_records', filter=models.Q(round_records__is_correct=True)))['total_correct'] or 0
+        
+        if total_questions == 0:
+            return 0.0
+        
+        return round((total_correct / total_questions) * 100, 2)

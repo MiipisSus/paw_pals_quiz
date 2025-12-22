@@ -5,6 +5,7 @@ import Home from "./pages/Home.jsx";
 import Game from "./pages/Game.jsx";
 import GameResult from "./pages/GameResult.jsx";
 import Login from "./pages/Login.jsx";
+import UserInfo from "./pages/UserInfo.jsx";
 import { GameProvider } from "./contexts/GameContext.jsx";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route path="/game" element={<Game />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/user-info" element={<UserInfo />} />
           </Route>
           <Route path="/game-result" element={<GameResult />} />
         </Routes>

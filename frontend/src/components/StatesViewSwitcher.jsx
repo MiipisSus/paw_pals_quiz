@@ -1,14 +1,23 @@
-import { useNavigate, useLocation } from "react-router-dom";
-import { Globe, User, ChartBar } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { User, ChartBar } from "lucide-react";
+import { tokenManager } from "../services/apiService";
 
 function StatesViewSwitcher() {
   const navigate = useNavigate();
+
+  const handleUserButtonClick = () => {
+    if (tokenManager.isAuthenticated()) {
+      navigate("/user-info");
+    } else {
+      navigate("/login");
+    }
+  };
 
   return (
     <div className="flex flex-col gap-4">
       <button
         className="size-fit p-3 text-white bg-darker-accent rounded-full cursor-pointer"
-        onClick={() => navigate("/")}
+        onClick={handleUserButtonClick}
       >
         <User className="size-7" />
       </button>

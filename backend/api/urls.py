@@ -4,7 +4,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,
 )
 
-from .views import QuestionView, AnswerView, StartGameView, EndGameView, LogoutView
+from .views import QuestionView, AnswerView, StartGameView, EndGameView, LogoutView, PlayerInfoView
 
 
 urlpatterns = [
@@ -15,4 +15,5 @@ urlpatterns = [
     path('answer/', AnswerView.as_view()),
     path('start-game/', StartGameView.as_view()),
     path('end-game/', EndGameView.as_view()),
+    path('player-info/', PlayerInfoView.as_view()),
 ]

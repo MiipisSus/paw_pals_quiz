@@ -7,7 +7,7 @@ from uuid import uuid4
 from datetime import datetime
 
 from .serializers import QuestionInputSerializer, QuestionSerializer, AnswerInputSerializer, AnswerSerializer, \
-    StartGameSerializer, EndGameInputSerializer, EndGameSerializer
+    StartGameSerializer, EndGameInputSerializer, EndGameSerializer, PlayerInfoSerializer
 from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, RoundRecordService, BreedService
     
 
@@ -97,8 +97,6 @@ class AnswerView(APIView):
             }
             
             session_data['round_records'].append(round_record)
-            
-            breed = BreedService.get_breed_by_slug(correct_slug)
 
             GuestGameSessionService.update_session_data(game_session_id=data.get('game_session_id'), data=session_data)
 
@@ -112,6 +110,7 @@ class AnswerView(APIView):
                 choices=choices
             )
             
+        breed = BreedService.get_breed_by_slug(correct_slug)
         serializer = AnswerSerializer(
             {'breed': breed, 'correct_slug': correct_slug, 'is_correct': is_correct, 'score': score}, 
             context={'request': request})
@@ -197,3 +196,13 @@ class LogoutView(APIView):
                 {"error": "Invalid token"}, 
                 status=status.HTTP_400_BAD_REQUEST
             )
+            
+
+class PlayerInfoView(APIView):
+    permission_classes = [IsAuthenticated]
+    
+    def get(self, request):
+        player_info = request.user.player_info
+        
+        serializer = PlayerInfoSerializer(player_info)
+        return Response(serializer.data)
