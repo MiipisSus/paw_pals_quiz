@@ -127,9 +127,12 @@ function Login() {
           <p className="inline-block text-brown font-semibold">
             No account yet?
           </p>
-          <a href="#" className="text-darker-primary font-semibold">
+          <button
+            onClick={() => navigate("/register")}
+            className="text-darker-primary font-semibold"
+          >
             Sign up for free
-          </a>
+          </button>
         </div>
       </div>
     </div>

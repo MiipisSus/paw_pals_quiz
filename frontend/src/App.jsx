@@ -6,6 +6,7 @@ import Game from "./pages/Game.jsx";
 import GameResult from "./pages/GameResult.jsx";
 import Login from "./pages/Login.jsx";
 import UserInfo from "./pages/UserInfo.jsx";
+import Register from "./pages/Register.jsx";
 import { GameProvider } from "./contexts/GameContext.jsx";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="/game" element={<Game />} />
             <Route path="/login" element={<Login />} />
             <Route path="/user-info" element={<UserInfo />} />
+            <Route path="/register" element={<Register />} />
           </Route>
           <Route path="/game-result" element={<GameResult />} />
         </Routes>

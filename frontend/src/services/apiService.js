@@ -79,7 +79,8 @@ export async function startGameSession() {
 }
 
 export async function endGameSession(gameSessionId) {
-  const response = await authenticatedFetch(`${BASE_URL}end-game/`, {
+  const url = addLanguageParam(`${BASE_URL}end-game/`);
+  const response = await authenticatedFetch(url, {
     method: "POST",
     body: JSON.stringify({
       game_session_id: gameSessionId,
