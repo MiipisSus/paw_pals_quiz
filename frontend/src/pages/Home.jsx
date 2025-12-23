@@ -1,16 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { PawPrint } from "lucide-react";
 
 import { useGame } from "../contexts/GameContext.jsx";
-import { tokenManager, logoutUser } from "../services/apiService";
+import { useAuth } from "../contexts/AuthContext.jsx";
+import { logoutUser } from "../services/apiService";
 
 function Home() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const { setGameSessionId, setTotalRounds, startNewGame } = useGame();
-  const [isLoggedIn, setIsLoggedIn] = useState(tokenManager.isAuthenticated());
+  const { isAuthenticated, logout } = useAuth();
 
   const handleStartGame = async () => {
     try {
@@ -24,10 +25,10 @@ function Home() {
   const handleLogout = async () => {
     try {
       await logoutUser();
-      setIsLoggedIn(false);
+      logout(); // 使用 AuthContext 的 logout 函數
     } catch (error) {
       console.error(t("auth.logoutFailed"), error);
-      setIsLoggedIn(false);
+      logout(); // 即使 API 失敗也要清除本地狀態
     }
   };
 
@@ -44,7 +45,7 @@ function Home() {
           <h2 className="font-semibold text-brown/50">{t("home.slogan")}</h2>
         </div>
         <div className="center flex-col w-full gap-4">
-          {isLoggedIn ? (
+          {isAuthenticated ? (
             <>
               <button
                 className="w-1/2 py-3 bg-gray-200 text-gray-600 font-bold rounded-3xl cursor-pointer"

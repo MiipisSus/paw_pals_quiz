@@ -136,7 +136,7 @@ class UserInfoSerializer(serializers.ModelSerializer):
         fields = ['nickname', 'total_game_sessions', 'total_score', 'avg_accuracy', 'game_sessions']
         
     def get_game_sessions(self, obj: User):
-        game_sessions = obj.game_sessions.order_by('-started_at')
+        game_sessions = obj.game_sessions.filter(ended_at__isnull=False).order_by('-started_at')
         return GameSessionSerializer(game_sessions, many=True, context=self.context).data
         
     def get_total_game_sessions(self, obj: User):

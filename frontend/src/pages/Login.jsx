@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Mail, Lock } from "lucide-react";
 import { loginUser } from "../services/apiService";
+import { useAuth } from "../contexts/AuthContext";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -9,6 +10,11 @@ function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+  const { login } = useAuth();
+
+  // 獲取使用者原本想要訪問的頁面
+  const from = location.state?.from?.pathname || "/";
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,7 +31,11 @@ function Login() {
       const response = await loginUser(email, password);
       console.log("Login successful:", response);
 
-      navigate("/");
+      // 使用 Auth context 的 login 函數
+      login(response.access, response.refresh);
+
+      // 導向原本想要訪問的頁面，或預設首頁
+      navigate(from, { replace: true });
     } catch (error) {
       console.error("Login failed:", error);
       setError(error.message || "登入失敗，請檢查您的帳號密碼");

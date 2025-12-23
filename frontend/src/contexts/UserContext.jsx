@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, useMemo } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useMemo,
+  useCallback,
+} from "react";
 import { fetchUserInfo } from "../services/apiService";
 
 const UserContext = createContext();
@@ -10,14 +16,18 @@ export function UserProvider({ children }) {
   const [avgAccuracy, setAvgAccuracy] = useState(0.0);
   const [gameSessions, setGameSessions] = useState([]);
 
-  async function updateUserInfo() {
-    const userInfo = await fetchUserInfo();
-    setNickname(userInfo.nickname);
-    setTotalGameSessions(userInfo.total_game_sessions);
-    setTotalScore(userInfo.total_score);
-    setAvgAccuracy(userInfo.avg_accuracy);
-    setGameSessions(userInfo.game_sessions);
-  }
+  const updateUserInfo = useCallback(async () => {
+    try {
+      const userInfo = await fetchUserInfo();
+      setNickname(userInfo.nickname);
+      setTotalGameSessions(userInfo.total_game_sessions);
+      setTotalScore(userInfo.total_score);
+      setAvgAccuracy(userInfo.avg_accuracy);
+      setGameSessions(userInfo.game_sessions);
+    } catch (error) {
+      console.error("Failed to fetch user info:", error);
+    }
+  }, []);
 
   const value = useMemo(
     () => ({
@@ -33,7 +43,14 @@ export function UserProvider({ children }) {
       setGameSessions,
       updateUserInfo,
     }),
-    [nickname, totalGameSessions, totalScore, avgAccuracy]
+    [
+      nickname,
+      totalGameSessions,
+      totalScore,
+      avgAccuracy,
+      gameSessions,
+      updateUserInfo,
+    ]
   );
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

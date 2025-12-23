@@ -142,7 +142,7 @@ class StartGameView(APIView):
         serializer = StartGameSerializer(
             {'game_session_id': game_session_id,
              'is_guest': is_guest,
-             'total_rounds': 3}
+             'total_rounds': 10}
             )
         
         return Response(serializer.data)

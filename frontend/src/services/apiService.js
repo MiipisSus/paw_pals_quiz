@@ -64,7 +64,30 @@ async function authenticatedFetch(url, options = {}) {
     config.headers.Authorization = `Bearer ${token}`;
   }
 
-  return fetch(url, config);
+  let response = await fetch(url, config);
+
+  // 如果收到 401 錯誤，嘗試刷新 token
+  if (response.status === 401 && tokenManager.getRefreshToken()) {
+    try {
+      await refreshToken();
+
+      // 使用新的 access token 重新發送請求
+      const newToken = tokenManager.getAccessToken();
+      if (newToken) {
+        config.headers.Authorization = `Bearer ${newToken}`;
+        response = await fetch(url, config);
+      }
+    } catch (error) {
+      // Refresh token 也失效了，清除 tokens 並導向登入頁
+      tokenManager.clearAllTokens();
+
+      // 使用全域事件通知需要導向登入頁
+      window.dispatchEvent(new CustomEvent("token-expired"));
+      throw new Error("Authentication failed");
+    }
+  }
+
+  return response;
 }
 
 export async function startGameSession() {
