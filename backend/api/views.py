@@ -8,7 +8,7 @@ from uuid import uuid4
 from datetime import datetime
 
 from .serializers import QuestionInputSerializer, QuestionSerializer, AnswerInputSerializer, AnswerSerializer, \
-    StartGameSerializer, EndGameInputSerializer, EndGameSerializer, PlayerInfoSerializer, UserInputSerializer, \
+    StartGameSerializer, EndGameInputSerializer, EndGameSerializer, UserInfoSerializer, UserInputSerializer, \
         UserSerializer
 from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, RoundRecordService, BreedService
     
@@ -214,13 +214,13 @@ class LogoutView(APIView):
             )
             
 
-class PlayerInfoView(APIView):
+class UserInfoView(APIView):
     permission_classes = [IsAuthenticated]
     
     def get(self, request):
-        player_info = request.user.player_info
+        user = request.user
         
-        serializer = PlayerInfoSerializer(player_info)
+        serializer = UserInfoSerializer(user)
         return Response(serializer.data)
     
 

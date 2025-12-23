@@ -16,8 +16,8 @@ function Game() {
     gameSessionId,
     setScore,
     score,
-    setRounds,
-    rounds,
+    setCurrentRound,
+    currentRound,
     totalRounds,
     setRoundRecords,
   } = useGame();
@@ -60,7 +60,7 @@ function Game() {
       setCurrentImage(question.image_url);
       setCurrentChoices(question.choices);
       setQuestionId(question.id);
-      setRounds(question.current_round);
+      setCurrentRound(question.current_round);
     } catch (error) {
       console.error(t("game.fetchQuestionFailed"), error);
       setIsLoading(false);
@@ -83,8 +83,8 @@ function Game() {
       setCurrentIntroduction(response.breed.introduction);
       setCurrentOrigin(response.breed.origin);
       setScore((prevScore) => prevScore + response.score);
-      console.log(rounds, totalRounds);
-      if (rounds >= totalRounds) {
+      console.log(currentRound, totalRounds);
+      if (currentRound >= totalRounds) {
         setIsGameOver(true);
       }
       console.log(isGameOver);
@@ -162,7 +162,7 @@ function Game() {
           <div className="flex gap-4 px-6 my-6 mb-auto ml-auto">
             <p className="center px-2 py-1 bg-darker-accent text-white font-bold rounded-lg">
               {t("game.round")}
-              <span className="ml-3">{rounds}</span>
+              <span className="ml-3">{currentRound}</span>
               <span className="text-white/50 text-sm">/{totalRounds}</span>
             </p>
             <p className="center px-2 py-1 bg-white text-darker-primary border font-bold rounded-lg">

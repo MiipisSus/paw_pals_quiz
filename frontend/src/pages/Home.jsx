@@ -33,7 +33,7 @@ function Home() {
 
   return (
     <div className="center h-screen">
-      <div className="center flex-col gap-2 w-3/10 h-7/10 py-10 bg-white rounded-4xl shadow-2xl relative">
+      <div className="center flex-col gap-2 w-3/10 min-w-100 h-7/10 py-10 bg-white rounded-4xl shadow-2xl relative">
         <div className="center flex-col gap-2 mt-auto mb-10">
           <PawPrint className="size-20 p-3 mb-5 bg-accent text-primary rounded-full shadow-inner" />
           <h1 className="text-4xl font-extrabold text-center text-darker-primary">

@@ -188,6 +188,18 @@ export async function registerUser(username, password) {
   return data;
 }
 
+export async function fetchUserInfo() {
+  const response = await authenticatedFetch(`${BASE_URL}user/me/`, {
+    method: "GET",
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch user info");
+  }
+
+  return response.json();
+}
+
 export async function refreshToken() {
   const refreshToken = tokenManager.getRefreshToken();
 

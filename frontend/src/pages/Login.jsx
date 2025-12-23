@@ -36,7 +36,7 @@ function Login() {
 
   return (
     <div className="center h-screen">
-      <div className="flex justify-between items-center flex-col gap-2 w-3/10 h-8/10 px-10 py-10 bg-white rounded-4xl shadow-2xl">
+      <div className="flex justify-between items-center flex-col gap-2 w-3/10 min-w-120 h-8/10 px-10 py-10 bg-white rounded-4xl shadow-2xl">
         <div className="center flex-col">
           <h1 className="mt-8 text-brown text-3xl font-bold">
             WELCOME&nbsp;

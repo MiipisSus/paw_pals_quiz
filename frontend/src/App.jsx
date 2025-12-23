@@ -7,11 +7,11 @@ import GameResult from "./pages/GameResult.jsx";
 import Login from "./pages/Login.jsx";
 import UserInfo from "./pages/UserInfo.jsx";
 import Register from "./pages/Register.jsx";
-import { GameProvider } from "./contexts/GameContext.jsx";
+import { AppProvider } from "./contexts/AppProvider.jsx";
 
 function App() {
   return (
-    <GameProvider>
+    <AppProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomeLayout />}>
@@ -26,7 +26,7 @@ function App() {
           <Route path="/game-result" element={<GameResult />} />
         </Routes>
       </BrowserRouter>
-    </GameProvider>
+    </AppProvider>
   );
 }
 

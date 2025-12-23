@@ -115,24 +115,38 @@ class EndGameSerializer(serializers.ModelSerializer):
         return obj.round_records.count()
 
 
-class PlayerInfoSerializer(serializers.ModelSerializer):
-    nickname = serializers.CharField(max_length=100)
+class GameSessionSerializer(serializers.ModelSerializer):
+    round_record_count = serializers.IntegerField(source='round_records.count', read_only=True)
+    
+    class Meta:
+        model = GameSession
+        fields = ['id', 'user', 'score', 'started_at', 'avg_accuracy', 'round_record_count']
+        read_only_fields = ['created_at', 'updated_at']
+
+
+class UserInfoSerializer(serializers.ModelSerializer):
+    nickname = serializers.CharField(source='player_info.nickname')
     total_game_sessions = serializers.SerializerMethodField()
+    game_sessions = serializers.SerializerMethodField()
     total_score = serializers.SerializerMethodField()
     avg_accuracy = serializers.SerializerMethodField()
     
     class Meta:
-        model = PlayerInfo
-        fields = ['nickname', 'total_game_sessions', 'total_score', 'avg_accuracy']
+        model = User
+        fields = ['nickname', 'total_game_sessions', 'total_score', 'avg_accuracy', 'game_sessions']
         
-    def get_total_game_sessions(self, obj: PlayerInfo):
-        return obj.user.game_sessions.count()
+    def get_game_sessions(self, obj: User):
+        game_sessions = obj.game_sessions.order_by('-started_at')
+        return GameSessionSerializer(game_sessions, many=True, context=self.context).data
+        
+    def get_total_game_sessions(self, obj: User):
+        return obj.game_sessions.count()
     
-    def get_total_score(self, obj: PlayerInfo):
-        return obj.user.game_sessions.aggregate(total_score=models.Sum('score'))['total_score'] or 0
+    def get_total_score(self, obj: User):
+        return obj.game_sessions.aggregate(total_score=models.Sum('score'))['total_score'] or 0
     
-    def get_avg_accuracy(self, obj: PlayerInfo):
-        game_sessions = obj.user.game_sessions.all()
+    def get_avg_accuracy(self, obj: User):
+        game_sessions = obj.game_sessions.all()
         if not game_sessions.exists():
             return 0.0
         total_questions = game_sessions.aggregate(total_questions=models.Count('round_records'))['total_questions'] or 0

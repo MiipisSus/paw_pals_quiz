@@ -25,6 +25,14 @@ class GameSessionService:
         session = GameSession.objects.get(id=session_id)
         session.score = session.round_records.aggregate(total_score=models.Sum('score'))['total_score'] or 0
         session.ended_at = datetime.now()
+        
+        total_rounds = session.round_records.count()
+        if total_rounds > 0:
+            correct_rounds = session.round_records.filter(is_correct=True).count()
+            session.avg_accuracy = round((correct_rounds / total_rounds) * 100, 2)
+        else:
+            session.avg_accuracy = 0.0
+            
         session.save()
         return session
     
