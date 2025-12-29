@@ -37,6 +37,10 @@ class GameSessionService:
         return session
     
     @classmethod
+    def terminate_session(cls, session_id: int):
+        GameSession.objects.filter(id=session_id).delete()
+    
+    @classmethod
     def get_current_round(cls, session_id: int) -> int:
         session = GameSession.objects.get(id=session_id)
         return session.round_records.count() + 1

@@ -9,6 +9,7 @@ export function GameProvider({ children }) {
   const [currentRound, setCurrentRound] = useState(1);
   const [totalRounds, setTotalRounds] = useState(0);
   const [roundRecords, setRoundRecords] = useState([]);
+  const [onHomeButtonClick, setOnHomeButtonClick] = useState(null);
 
   const startNewGame = async () => {
     const res = await startGameSession();
@@ -32,8 +33,17 @@ export function GameProvider({ children }) {
       setCurrentRound,
       setTotalRounds,
       setRoundRecords,
+      onHomeButtonClick,
+      setOnHomeButtonClick,
     }),
-    [gameSessionId, score, currentRound, totalRounds, roundRecords]
+    [
+      gameSessionId,
+      score,
+      currentRound,
+      totalRounds,
+      roundRecords,
+      onHomeButtonClick,
+    ]
   );
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;

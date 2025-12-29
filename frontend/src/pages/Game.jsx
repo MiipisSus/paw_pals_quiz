@@ -8,6 +8,7 @@ import {
   fetchQuestion,
   submitAnswer,
   endGameSession,
+  terminateGameSession,
 } from "../services/apiService";
 import { useGame } from "../contexts/GameContext";
 
@@ -20,6 +21,7 @@ function Game() {
     currentRound,
     totalRounds,
     setRoundRecords,
+    setOnHomeButtonClick,
   } = useGame();
   const navigate = useNavigate();
   const { t, i18n } = useTranslation();
@@ -34,6 +36,7 @@ function Game() {
   const [currentOrigin, setCurrentOrigin] = useState(null);
   const [isAnswerCorrect, setIsAnswerCorrect] = useState(null);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [showExitDialog, setShowExitDialog] = useState(false);
 
   useEffect(() => {
     if (gameSessionId) {
@@ -46,6 +49,16 @@ function Game() {
       handleQuestionFetch();
     }
   }, [i18n.language]);
+
+  useEffect(() => {
+    // 註冊 Home 按鈕點擊處理器
+    setOnHomeButtonClick(() => handleHomeButtonClick);
+
+    // 清理函數：組件卸載時移除處理器
+    return () => {
+      setOnHomeButtonClick(null);
+    };
+  }, [gameSessionId]);
 
   async function handleQuestionFetch() {
     try {
@@ -99,8 +112,57 @@ function Game() {
     navigate("/game-result");
   }
 
+  function handleHomeButtonClick() {
+    setShowExitDialog(true);
+  }
+
+  async function handleConfirmExit() {
+    try {
+      if (gameSessionId) {
+        await terminateGameSession(gameSessionId);
+      }
+      navigate("/");
+    } catch (error) {
+      console.error("Failed to end game session:", error);
+      navigate("/");
+    }
+  }
+
+  function handleCancelExit() {
+    setShowExitDialog(false);
+  }
+
   return (
     <div className="center h-screen">
+      {showExitDialog && (
+        <div className="fixed inset-0 center bg-black/50 z-30">
+          <div className="bg-white rounded-2xl p-8 max-w-md mx-4 shadow-2xl">
+            <h3 className="text-xl font-bold text-brown mb-4">
+              {t("game.exitConfirmTitle", "確認離開")}
+            </h3>
+            <p className="text-brown/70 mb-6">
+              {t(
+                "game.exitConfirmMessage",
+                "若現在回到主頁面，遊戲會終止。確定要離開嗎？"
+              )}
+            </p>
+            <div className="flex gap-3 justify-end">
+              <button
+                className="px-6 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition-colors"
+                onClick={handleCancelExit}
+              >
+                {t("game.cancel", "取消")}
+              </button>
+              <button
+                className="px-6 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors"
+                onClick={handleConfirmExit}
+              >
+                {t("game.confirm", "確定離開")}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="flex w-[clamp(60rem,70%,75rem)] h-7/10 overflow-hidden bg-white rounded-4xl shadow-2xl">
         <div className="relative w-1/2 bg-tetariary">
           {isLoading && (

@@ -34,14 +34,7 @@ function AppRouter() {
         <Route index element={<Home />} />
       </Route>
       <Route path="/" element={<MainLayout />}>
-        <Route
-          path="/game"
-          element={
-            <ProtectedRoute>
-              <Game />
-            </ProtectedRoute>
-          }
-        />
+        <Route path="/game" element={<Game />} />
         <Route path="/login" element={<Login />} />
         <Route
           path="/user-info"
@@ -53,14 +46,7 @@ function AppRouter() {
         />
         <Route path="/register" element={<Register />} />
       </Route>
-      <Route
-        path="/game-result"
-        element={
-          <ProtectedRoute>
-            <GameResult />
-          </ProtectedRoute>
-        }
-      />
+      <Route path="/game-result" element={<GameResult />} />
     </Routes>
   );
 }

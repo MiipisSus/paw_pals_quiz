@@ -1,14 +1,31 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { House, Globe, User } from "lucide-react";
+import { useGame } from "../contexts/GameContext";
 
-function HomeButton() {
+function HomeButton({ onClick }) {
   const navigate = useNavigate();
   const location = useLocation();
+  const { onHomeButtonClick } = useGame();
+
+  const handleClick = () => {
+    // 優先使用傳入的 onClick prop
+    if (onClick) {
+      onClick();
+    }
+    // 其次使用 GameContext 中的 onHomeButtonClick
+    else if (onHomeButtonClick) {
+      onHomeButtonClick();
+    }
+    // 最後使用默認導航
+    else {
+      navigate("/");
+    }
+  };
 
   return (
     <button
       className="size-fit p-3 text-white bg-darker-accent rounded-full cursor-pointer"
-      onClick={() => navigate("/")}
+      onClick={handleClick}
     >
       <House className="size-7" />
     </button>

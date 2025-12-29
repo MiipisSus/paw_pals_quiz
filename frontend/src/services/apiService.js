@@ -66,23 +66,22 @@ async function authenticatedFetch(url, options = {}) {
 
   let response = await fetch(url, config);
 
-  // 如果收到 401 錯誤，嘗試刷新 token
   if (response.status === 401 && tokenManager.getRefreshToken()) {
     try {
       await refreshToken();
 
-      // 使用新的 access token 重新發送請求
       const newToken = tokenManager.getAccessToken();
       if (newToken) {
         config.headers.Authorization = `Bearer ${newToken}`;
         response = await fetch(url, config);
       }
     } catch (error) {
-      // Refresh token 也失效了，清除 tokens 並導向登入頁
+      const hadToken = tokenManager.isAuthenticated();
       tokenManager.clearAllTokens();
 
-      // 使用全域事件通知需要導向登入頁
-      window.dispatchEvent(new CustomEvent("token-expired"));
+      if (hadToken) {
+        window.dispatchEvent(new CustomEvent("token-expired"));
+      }
       throw new Error("Authentication failed");
     }
   }
@@ -111,6 +110,20 @@ export async function endGameSession(gameSessionId) {
   });
   if (!response.ok) {
     throw new Error("Failed to end game session");
+  }
+  return response.json();
+}
+
+export async function terminateGameSession(gameSessionId) {
+  const url = addLanguageParam(`${BASE_URL}terminate-game/`);
+  const response = await authenticatedFetch(url, {
+    method: "POST",
+    body: JSON.stringify({
+      game_session_id: gameSessionId,
+    }),
+  });
+  if (!response.ok) {
+    throw new Error("Failed to terminate game session");
   }
   return response.json();
 }

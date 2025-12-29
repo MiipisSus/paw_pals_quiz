@@ -189,6 +189,28 @@ class EndGameView(APIView):
         
         serializer = EndGameSerializer(game_session, context={'request': request})
         return Response(serializer.data)
+    
+
+class TerminateGameView(APIView):
+    def post(self, request, *args, **kwargs):
+        serializer = EndGameInputSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+
+        data = serializer.validated_data
+
+        if not request.user.is_authenticated:
+            GuestGameSessionService.delete_session(game_session_id=data.get('game_session_id'))
+            return Response({"message": "Guest game session terminated"}, status=200)
+        
+        if not GameSessionService.is_session_owned_by_user(data.get('game_session_id'), request.user.id):
+            return Response({"error": "Invalid game session or access denied"}, status=403)
+        
+        try:
+            GameSessionService.terminate_session(session_id=data.get('game_session_id'))
+        except Exception as e:
+            return Response({"error": "Failed to terminate game session"}, status=500)
+        
+        return Response({"message": "Game session terminated"}, status=200)
 
 
 class LogoutView(APIView):
