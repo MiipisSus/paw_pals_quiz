@@ -8,6 +8,7 @@ import GameResult from "./pages/GameResult.jsx";
 import Login from "./pages/Login.jsx";
 import UserInfo from "./pages/UserInfo.jsx";
 import Register from "./pages/Register.jsx";
+import GlobalStatics from "./pages/GlobalStatics.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { AppProvider } from "./contexts/AppProvider.jsx";
 
@@ -45,6 +46,7 @@ function AppRouter() {
           }
         />
         <Route path="/register" element={<Register />} />
+        <Route path="/global-statics" element={<GlobalStatics />} />
       </Route>
       <Route path="/game-result" element={<GameResult />} />
     </Routes>

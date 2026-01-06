@@ -23,7 +23,7 @@ function StatesViewSwitcher() {
       </button>
       <button
         className="size-fit p-3 text-white bg-darker-primary rounded-full cursor-pointer"
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/global-statics")}
       >
         <ChartBar className="size-7" />
       </button>

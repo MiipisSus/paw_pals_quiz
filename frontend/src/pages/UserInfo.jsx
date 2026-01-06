@@ -38,7 +38,7 @@ function UserInfo() {
 
   return (
     <div className="center h-screen">
-      <div className="flex overflow-hidden w-7/10 min-w-180 h-9/10 bg-white rounded-4xl shadow-2xl border-5 border-white">
+      <div className="flex overflow-hidden w-7/10 min-w-230 h-9/10 bg-white rounded-4xl shadow-2xl border-5 border-white">
         <div className="flex-1 bg-darker-accent">
           <div className="center flex-col gap-3 h-5/10">
             <div className="overflow-hidden h-1/2 aspect-square bg-white rounded-full shadow-lg border-4 border-white">
@@ -89,7 +89,7 @@ function UserInfo() {
             <History className="size-6" />
             <h2 className="text-xl">Recent Matches</h2>
           </div>
-          <div className="flex flex-col gap-4 overflow-y-auto flex-1 px-4 pb-4">
+          <div className="flex flex-col gap-4 overflow-y-scroll flex-1 px-4 pb-4 scrollbar scrollbar-thumb-none scrollbar-track-gray-100">
             {gameSessions.length !== 0 ? (
               gameSessions.map((session) => (
                 <div className="flex justify-between items-center shrink-0 gap-4 h-30 p-6 border-2 border-gray-200 rounded-xl">

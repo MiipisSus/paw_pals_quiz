@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@plugin 'tailwind-scrollbar';
+
 @font-face {
   font-family: "GenSenRoundedTW";
   src: url("./assets/fonts/GenSenRounded2TW-otf/GenSenRounded2TW-R.otf")
@@ -42,5 +44,13 @@
 @layer utilities {
   .center {
     @apply flex items-center justify-center;
+  }
+
+  .progress-bar::-moz-progress-bar {
+    @apply bg-darker-accent;
+  }
+
+  .progress-bar-first::-moz-progress-bar {
+    @apply bg-darker-primary;
   }
 }
