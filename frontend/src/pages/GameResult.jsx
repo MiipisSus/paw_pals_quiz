@@ -76,7 +76,7 @@ function GameResult() {
               ))
             : null}
         </div>
-        <div className="center gap-10 mt-auto px-10 w-full h-1/10 bg-white">
+        <div className="center gap-10 mt-auto px-10 py-3 w-full h-1/10 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
           <button
             className="center flex-1 gap-2 py-3 font-semibold text-brown bg-white border-2 border-darker-primary rounded-2xl"
             onClick={() => navigate("/")}

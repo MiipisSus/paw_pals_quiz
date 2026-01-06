@@ -89,7 +89,7 @@ function UserInfo() {
             <History className="size-6" />
             <h2 className="text-xl">Recent Matches</h2>
           </div>
-          <div className="flex flex-col gap-4 overflow-y-scroll flex-1 px-4 pb-4 scrollbar scrollbar-thumb-none scrollbar-track-gray-100">
+          <div className="flex flex-col gap-4 overflow-y-auto flex-1 px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {gameSessions.length !== 0 ? (
               gameSessions.map((session) => (
                 <div className="flex justify-between items-center shrink-0 gap-4 h-30 p-6 border-2 border-gray-200 rounded-xl">
