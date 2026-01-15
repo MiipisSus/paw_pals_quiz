@@ -148,13 +148,13 @@ function Game() {
             </p>
             <div className="flex gap-3 justify-end">
               <button
-                className="px-6 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition-colors"
+                className="px-6 py-2 bg-gray-200 text-gray-700 font-semibold rounded-lg hover:bg-gray-300 transition-all duration-200 hover:scale-105 active:scale-95"
                 onClick={handleCancelExit}
               >
                 {t("game.cancel", "取消")}
               </button>
               <button
-                className="px-6 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-colors"
+                className="px-6 py-2 bg-red-500 text-white font-semibold rounded-lg hover:bg-red-600 transition-all duration-200 hover:scale-105 active:scale-95"
                 onClick={handleConfirmExit}
               >
                 {t("game.confirm", "確定離開")}
@@ -247,14 +247,14 @@ function Game() {
                   <button
                     key={index}
                     disabled={isAnswerCorrect !== null}
-                    className={`text-white font-semibold p-3 rounded-lg shadow-sm ${
+                    className={`text-white font-semibold p-3 rounded-lg shadow-sm transition-all duration-200 ${
                       isAnswerCorrect !== null
                         ? choice.slug === correctAnswer
                           ? "bg-green-500"
                           : choice.slug === selectedChoice?.slug
                           ? "bg-red-500"
                           : "bg-gray-200 cursor-not-allowed"
-                        : "bg-darker-primary cursor-pointer"
+                        : "bg-darker-primary cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 hover:brightness-110"
                     }`}
                     onClick={() =>
                       isAnswerCorrect === null && handleSubmitAnswer(choice)
@@ -289,18 +289,18 @@ function Game() {
             )}
             {isGameOver ? (
               <button
-                className="center gap-2 px-4 py-1 text-sm font-semibold bg-darker-accent text-white rounded-2xl"
+                className="center gap-2 px-4 py-1 text-sm font-semibold bg-darker-accent text-white rounded-2xl transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95"
                 onClick={() => handleEndGame()}
               >
                 {t("game.seeResult")}
               </button>
             ) : (
               <button
-                className="center gap-2 px-4 py-1 text-sm font-semibold bg-brown text-white rounded-2xl"
+                className="center gap-2 px-4 py-1 text-sm font-semibold bg-brown text-white rounded-2xl transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95"
                 onClick={() => handleQuestionFetch()}
               >
                 {t("game.nextRound")}
-                <ArrowRight className="size-4 font-semibold" />
+                <ArrowRight className="size-4 font-semibold transition-transform duration-200 group-hover:translate-x-1" />
               </button>
             )}
           </div>

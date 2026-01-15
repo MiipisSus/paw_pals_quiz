@@ -24,7 +24,7 @@ function HomeButton({ onClick }) {
 
   return (
     <button
-      className="size-fit p-3 text-white bg-darker-accent rounded-full cursor-pointer"
+      className="size-fit p-3 text-white bg-darker-accent rounded-full cursor-pointer transition-all duration-200 hover:scale-110 hover:shadow-lg active:scale-95 hover:bg-darker-accent/90"
       onClick={handleClick}
     >
       <House className="size-7" />

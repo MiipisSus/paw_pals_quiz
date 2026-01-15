@@ -1,7 +1,6 @@
 from api.models import GameSession
 from django.db import models
-
-from datetime import datetime
+from django.utils import timezone
 
 from .redis import RedisService
 
@@ -24,7 +23,7 @@ class GameSessionService:
     def end_session(cls, session_id: int):
         session = GameSession.objects.get(id=session_id)
         session.score = session.round_records.aggregate(total_score=models.Sum('score'))['total_score'] or 0
-        session.ended_at = datetime.now()
+        session.ended_at = timezone.now()
         
         total_rounds = session.round_records.count()
         if total_rounds > 0:
@@ -45,13 +44,34 @@ class GameSessionService:
         session = GameSession.objects.get(id=session_id)
         return session.round_records.count() + 1
     
+    @classmethod
+    def calculate_stats(cls, session_id: int) -> dict:
+        session = GameSession.objects.get(id=session_id)
+        total_games = 1
+        total_rounds = session.round_records.count()
+        breed_stats = {}
+        for record in session.round_records.all():
+            breed = record.question.breed_slug
+            if breed is not None:
+                if breed not in breed_stats:
+                    breed_stats[breed] = {"attempts": 0, "successes": 0}
+                breed_stats[breed]["attempts"] += 1
+                if getattr(record, "is_correct", False):
+                    breed_stats[breed]["successes"] += 1
+        
+        return {
+            "total_games": total_games,
+            "total_rounds": total_rounds,
+            "breed_stats": breed_stats
+        }
+    
 
 class GuestGameSessionService:
     @classmethod
     def create_session(cls, game_session_id: str) -> str:
         RedisService.set(f"guest_game_session:{game_session_id}",
                             {
-                                "started_at": str(datetime.now()),
+                                "started_at": str(timezone.now()),
                                 "score": 0,
                                 "rounds": 0,
                                 "round_records": []

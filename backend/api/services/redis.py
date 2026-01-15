@@ -15,6 +15,8 @@ class RedisService:
 
     @classmethod
     def incr(cls, key, amount=1):
+        if cache.get(key) is None:
+            cache.set(key, 0, timeout=None)
         return cache.incr(key, amount)
 
     @classmethod

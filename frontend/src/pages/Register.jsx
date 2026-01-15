@@ -90,7 +90,7 @@ function Register() {
             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-darker-accent/60" />
           </div>
           <button
-            className="py-2 mt-5 bg-darker-accent text-white font-bold rounded-lg"
+            className="py-2 mt-5 bg-darker-accent text-white font-bold rounded-lg transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 hover:brightness-110"
             onClick={handleRegister}
           >
             Create Account

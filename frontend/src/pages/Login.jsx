@@ -96,10 +96,10 @@ function Login() {
           <button
             type="submit"
             disabled={isLoading}
-            className={`p-3 text-brown font-semibold rounded-3xl ${
+            className={`p-3 text-brown font-semibold rounded-3xl transition-all duration-200 ${
               isLoading
                 ? "bg-gray-300 cursor-not-allowed"
-                : "bg-darker-primary hover:bg-darker-primary/90"
+                : "bg-darker-primary hover:bg-darker-primary/90 hover:scale-105 hover:shadow-lg active:scale-95"
             }`}
           >
             {isLoading ? "Loading..." : "Submit"}
@@ -111,7 +111,7 @@ function Login() {
             <span class="px-3 text-brown/30 text-sm font-semibold">OR</span>
             <div class="grow h-px bg-brown/30"></div>
           </div>
-          <button className="center gap-3 w-full p-3 text-darker-accent font-semibold bg-white border-2 border-accent/70 rounded-3xl">
+          <button className="center gap-3 w-full p-3 text-darker-accent font-semibold bg-white border-2 border-accent/70 rounded-3xl transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 hover:bg-gray-50">
             <svg className="inline-block w-5 h-5" viewBox="0 0 24 24">
               <path
                 d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -139,7 +139,7 @@ function Login() {
           </p>
           <button
             onClick={() => navigate("/register")}
-            className="text-darker-primary font-semibold"
+            className="text-darker-primary font-semibold transition-all duration-200 hover:scale-105 active:scale-95 hover:brightness-110"
           >
             Sign up for free
           </button>

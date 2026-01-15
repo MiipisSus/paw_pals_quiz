@@ -9,7 +9,7 @@ from datetime import datetime
 
 from .serializers import QuestionInputSerializer, QuestionSerializer, AnswerInputSerializer, AnswerSerializer, \
     StartGameSerializer, EndGameInputSerializer, EndGameSerializer, UserInfoSerializer, UserInputSerializer, \
-        UserSerializer
+        UserSerializer, GlobalStatsSerializer
 from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, RoundRecordService, BreedService
     
 
@@ -142,7 +142,7 @@ class StartGameView(APIView):
         serializer = StartGameSerializer(
             {'game_session_id': game_session_id,
              'is_guest': is_guest,
-             'total_rounds': 10}
+             'total_rounds': 3}
             )
         
         return Response(serializer.data)
@@ -184,7 +184,16 @@ class EndGameView(APIView):
         
         try:
             game_session = GameSessionService.end_session(session_id=data.get('game_session_id'))
+            stats = GameSessionService.calculate_stats(session_id=data.get('game_session_id'))
+
+            RedisService.incr('global:stats:total_games', stats.get('total_games', 0))
+            RedisService.incr('global:stats:total_rounds', stats.get('total_rounds', 0))
+            for breed, breed_stat in stats.get('breed_stats', {}).items():
+                RedisService.incr(f"breed:{breed}:attempts", breed_stat.get('attempts', 0))
+                RedisService.incr(f"breed:{breed}:corrects", breed_stat.get('successes', 0))
+            
         except Exception as e:
+            print(e)
             return Response({"error": "Failed to end game session"}, status=500)
         
         serializer = EndGameSerializer(game_session, context={'request': request})
@@ -259,3 +268,19 @@ class RegisterView(APIView):
         data = UserSerializer(user).data
         
         return Response(data, status=status.HTTP_201_CREATED)
+    
+    
+class GlobalStatsView(APIView):
+    def get(self, request):
+        total_games = RedisService.get('global:stats:total_games') or 0
+        total_rounds = RedisService.get('global:stats:total_rounds') or 0
+        
+        data = {
+            'total_games': int(total_games),
+            'total_rounds': int(total_rounds)
+        }
+        
+        serializer = GlobalStatsSerializer(data=data)
+        serializer.is_valid(raise_exception=True)
+        
+        return Response(data)

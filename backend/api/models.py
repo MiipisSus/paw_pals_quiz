@@ -12,6 +12,8 @@ class Breed(models.Model):
     origin_zh = models.CharField(max_length=100, null=True, blank=True)
     introduction_en = models.TextField(null=True, blank=True)
     introduction_zh = models.TextField(null=True, blank=True)
+    total_attempts = models.IntegerField(default=0)
+    correct_attempts = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -62,3 +64,16 @@ class RoundRecordBreedChoice(models.Model):
     round_record = models.ForeignKey(RoundRecord, on_delete=models.CASCADE, related_name='choices')
     breed = models.ForeignKey(Breed, on_delete=models.SET_NULL, null=True, blank=True)
     slug = models.CharField(max_length=100)
+    
+
+class GlobalStat(models.Model):
+    total_games = models.BigIntegerField(default=0)
+    total_rounds = models.BigIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+
+class HardestBreedStat(models.Model):
+    rank = models.IntegerField(unique=True)
+    breed = models.OneToOneField(Breed, on_delete=models.CASCADE, related_name='hardest_stat')
+    correct_rate = models.FloatField()
+    created_at = models.DateTimeField(auto_now_add=True)

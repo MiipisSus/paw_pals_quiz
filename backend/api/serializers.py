@@ -170,3 +170,8 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id', 'username', 'nickname']
+        
+
+class GlobalStatsSerializer(serializers.Serializer):
+    total_games = serializers.IntegerField()
+    total_rounds = serializers.IntegerField()
