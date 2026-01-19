@@ -9,8 +9,9 @@ from datetime import datetime
 
 from .serializers import QuestionInputSerializer, QuestionSerializer, AnswerInputSerializer, AnswerSerializer, \
     StartGameSerializer, EndGameInputSerializer, EndGameSerializer, UserInfoSerializer, UserInputSerializer, \
-        UserSerializer, GlobalStatsSerializer
+        UserSerializer, GlobalStatsSerializer, HardestBreedsSerializer
 from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, RoundRecordService, BreedService
+from .models import HardestBreedStat
     
 
 class QuestionView(APIView):
@@ -186,11 +187,12 @@ class EndGameView(APIView):
             game_session = GameSessionService.end_session(session_id=data.get('game_session_id'))
             stats = GameSessionService.calculate_stats(session_id=data.get('game_session_id'))
 
-            RedisService.incr('global:stats:total_games', stats.get('total_games', 0))
-            RedisService.incr('global:stats:total_rounds', stats.get('total_rounds', 0))
+            RedisService.incr('global:count:games', stats.get('total_games', 0))
+            RedisService.incr('global:count:rounds', stats.get('total_rounds', 0))
+            RedisService.incr('global:count:correct', stats.get('total_correct', 0))
             for breed, breed_stat in stats.get('breed_stats', {}).items():
                 RedisService.incr(f"breed:{breed}:attempts", breed_stat.get('attempts', 0))
-                RedisService.incr(f"breed:{breed}:corrects", breed_stat.get('successes', 0))
+                RedisService.incr(f"breed:{breed}:correct", breed_stat.get('successes', 0))
             
         except Exception as e:
             print(e)
@@ -274,10 +276,18 @@ class GlobalStatsView(APIView):
     def get(self, request):
         total_games = RedisService.get('global:stats:total_games') or 0
         total_rounds = RedisService.get('global:stats:total_rounds') or 0
+        total_correct = RedisService.get('global:stats:total_correct') or 0
+        total_players = User.objects.count()
+        avg_accuracy = total_correct / total_rounds * 100 if total_rounds > 0 else 0.0
+        hardest_breeds = HardestBreedStat.objects.select_related('breed').order_by('rank')
+        hardest_stats_serializer = HardestBreedsSerializer(hardest_breeds, many=True, context={'request': request})
         
         data = {
             'total_games': int(total_games),
-            'total_rounds': int(total_rounds)
+            'total_rounds': int(total_rounds),
+            'total_players': int(total_players),
+            'avg_accuracy': round(avg_accuracy, 2),
+            'hardest_breeds': hardest_stats_serializer.data,
         }
         
         serializer = GlobalStatsSerializer(data=data)

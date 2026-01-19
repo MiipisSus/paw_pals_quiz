@@ -68,6 +68,7 @@ class RoundRecordBreedChoice(models.Model):
 
 class GlobalStat(models.Model):
     total_games = models.BigIntegerField(default=0)
+    total_correct = models.BigIntegerField(default=0)
     total_rounds = models.BigIntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     

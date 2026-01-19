@@ -1,40 +1,20 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Trophy, History, Award, Globe, Dog, Users, Star } from "lucide-react";
 
-import { useUser } from "../contexts/UserContext";
-import headshotImg from "../assets/headshot.jpg";
-
-function formatGameDate(dateString) {
-  const date = new Date(dateString);
-  const now = new Date();
-  const diffTime = Math.abs(now - date);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
-  if (diffDays === 1) {
-    return "昨天";
-  } else if (diffDays < 7) {
-    return `${diffDays} 天前`;
-  } else {
-    return date.toLocaleDateString("zh-TW", {
-      month: "short",
-      day: "numeric",
-    });
-  }
-}
+import { fetchGlobalStats } from "../services/apiService";
 
 function GlobalStatics() {
-  const {
-    nickname,
-    totalGameSessions,
-    totalScore,
-    avgAccuracy,
-    updateUserInfo,
-    gameSessions,
-  } = useUser();
+  const { t, i18n } = useTranslation();
+  const [globalStats, setGlobalStats] = useState(null);
 
   useEffect(() => {
-    updateUserInfo();
+    fetchGlobalStats().then(data => setGlobalStats(data));
   }, []);
+
+  useEffect(() => {
+    fetchGlobalStats().then(data => setGlobalStats(data));
+  }, [i18n.language]);
 
   return (
     <div className="center h-screen">
@@ -54,7 +34,7 @@ function GlobalStatics() {
               <div className="flex items-center justify-between gap-1 w-full p-4 bg-gray-100 rounded-xl">
                 <div className="text-left">
                   <p className="text-xs">Dogs Identified</p>
-                  <h1 className="text-brown text-4xl font-bold">100000</h1>
+                  <h1 className="text-brown text-4xl font-bold">{globalStats?.total_rounds || 0}</h1>
                 </div>
                 <div className="center p-4 bg-gray-200 rounded-2xl">
                   <Dog className="size-10 text-darker-accent" />
@@ -66,13 +46,13 @@ function GlobalStatics() {
                 </div>
                 <div className="text-right">
                   <p className="text-xs">Active Players</p>
-                  <h1 className="text-brown text-4xl font-bold">100000</h1>
+                  <h1 className="text-brown text-4xl font-bold">{globalStats?.total_players || 0}</h1>
                 </div>
               </div>
               <div className="flex items-center justify-between gap-1 w-full p-4 bg-gray-100 rounded-xl">
                 <div className="text-left">
                   <p className="text-xs">Avg. Accuracy</p>
-                  <h1 className="text-brown text-4xl font-bold">100000</h1>
+                  <h1 className="text-brown text-4xl font-bold">{ globalStats?.avg_accuracy || 0}</h1>
                 </div>
                 <div className="center p-4 bg-gray-200 rounded-2xl">
                   <Trophy className="size-10 text-darker-accent" />
@@ -91,28 +71,29 @@ function GlobalStatics() {
               The hardest breeds to identify
             </h3>
           </div>
-          <div className="flex flex-col gap-4 flex-1 mx-8 mb-8 bg-gray-100 border-2 border-gray-200 rounded-4xl">
-            {Array.from({ length: 5 }).map((_, index) => (
-              <div
+          <div className="flex flex-col gap-4 flex-1 mx-8 mb-8 overflow-y-scroll bg-gray-100 border-2 border-gray-200 rounded-4xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {
+              globalStats ? globalStats.hardest_breeds.map((breed, index) => (
+                <div
                 key={index}
                 className={`flex justify-between items-center shrink-0 gap-4 h-30 p-4 mx-6 ${
-                  index < 4 ? "border-b-2 border-gray-300" : ""
+                  index < 9 ? "border-b-2 border-gray-300" : ""
                 }`}
               >
                 <div className="flex items-center gap-2">
                   <p
                     className={`center ${
                       index === 0 ? "bg-darker-primary" : "bg-darker-accent"
-                    } size-10 text-white font-semibold rounded-full`}
+                    } size-10 text-white font-semibold rounded-full shrink-0`}
                   >
                     {index + 1}
                   </p>
-                  <p className="text-brown font-semibold">apple</p>
+                  <p className="text-brown font-semibold">{breed.name}</p>
                 </div>
                 <div className="flex flex-col gap-1 text-right ml-auto">
                   <div className="center">
                     <progress
-                      value="60"
+                      value={breed.correct_rate}
                       max="100"
                       className={`h-3 bg-white rounded-md ${
                         index === 0 ? "progress-bar-first" : "progress-bar"
@@ -120,11 +101,12 @@ function GlobalStatics() {
                     ></progress>
                   </div>
                   <p className="mt-2 text-brown/20 text-xs">
-                    CORRECT RATE<span className="ml-2">60%</span>
+                    CORRECT RATE<span className="ml-2">{breed.correct_rate}%</span>
                   </p>
                 </div>
               </div>
-            ))}
+              )): null
+            }
           </div>
         </div>
       </div>

@@ -62,6 +62,7 @@ class GameSessionService:
         return {
             "total_games": total_games,
             "total_rounds": total_rounds,
+            "total_correct": sum(bs["successes"] for bs in breed_stats.values()),
             "breed_stats": breed_stats
         }
     

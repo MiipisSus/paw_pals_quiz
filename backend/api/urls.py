@@ -19,5 +19,5 @@ urlpatterns = [
     path('end-game/', EndGameView.as_view()),
     path('terminate-game/', TerminateGameView.as_view()),
     path('user/me/', UserInfoView.as_view()),
-    path('global-stats/', GlobalStatsView.as_view()),    
+    path('global-stats/', GlobalStatsView.as_view()),
 ]

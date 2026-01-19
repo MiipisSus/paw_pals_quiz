@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from django.db import models
 from django.contrib.auth.models import User
-from .models import Breed, Question, RoundRecord, GameSession, PlayerInfo, RoundRecordBreedChoice
+from .models import Breed, Question, RoundRecord, GameSession, PlayerInfo, RoundRecordBreedChoice, HardestBreedStat
 
 
 class BreedSerializer(serializers.ModelSerializer):
@@ -172,6 +172,22 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ['id', 'username', 'nickname']
         
 
+class HardestBreedsSerializer(serializers.Serializer):
+    rank = serializers.IntegerField()
+    name = serializers.SerializerMethodField()
+    correct_rate = serializers.FloatField()
+    
+    def get_name(self, obj: HardestBreedStat):
+        request = self.context.get('request')
+        lang = request.GET.get('lang') if request else None
+        if lang == 'zh':
+            return obj.breed.name_zh
+        return obj.breed.name_en
+    
+    
 class GlobalStatsSerializer(serializers.Serializer):
     total_games = serializers.IntegerField()
     total_rounds = serializers.IntegerField()
+    total_players = serializers.IntegerField()
+    avg_accuracy = serializers.FloatField()
+    hardest_breeds = HardestBreedsSerializer(many=True)

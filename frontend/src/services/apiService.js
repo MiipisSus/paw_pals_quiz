@@ -236,6 +236,23 @@ export async function fetchUserInfo() {
   return response.json();
 }
 
+export async function fetchGlobalStats() {
+  const url = addLanguageParam(`${BASE_URL}global-stats/`);
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch global stats");
+  }
+
+  return response.json();
+}
+
 export async function refreshToken() {
   const refreshToken = tokenManager.getRefreshToken();
 
