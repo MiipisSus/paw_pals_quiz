@@ -11,10 +11,10 @@ function LanguageButton() {
 
   return (
     <button
-      className="center gap-2 size-fit px-5 py-3 bg-white rounded-3xl shadow-md transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 hover:bg-gray-50"
+      className="center gap-2 size-fit px-5 py-3 bg-white rounded-3xl shadow-md btn-animate hover:bg-gray-50"
       onClick={toggleLanguage}
     >
-      <Globe className="size-5 text-darker-accent transition-transform duration-200 hover:rotate-12" />
+      <Globe className="size-5 text-darker-accent icon-animate hover:rotate-12" />
       <p className="text-brown font-medium">
         {i18n.language === "en" ? "En" : "中文"}
       </p>

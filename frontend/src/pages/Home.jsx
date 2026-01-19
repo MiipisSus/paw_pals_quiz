@@ -48,13 +48,13 @@ function Home() {
           {isAuthenticated ? (
             <>
               <button
-                className="w-1/2 py-3 bg-gray-200 text-gray-600 font-bold rounded-3xl cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 hover:bg-gray-300"
+                className="w-1/2 py-3 bg-gray-200 text-gray-600 font-bold rounded-3xl cursor-pointer btn-animate hover:bg-gray-300"
                 onClick={handleLogout}
               >
                 {t("home.buttons.logout")}
               </button>
               <button
-                className="w-1/2 py-3 bg-darker-accent text-white font-bold rounded-3xl cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 hover:brightness-110"
+                className="w-1/2 py-3 bg-darker-accent text-white font-bold rounded-3xl cursor-pointer btn-animate hover:brightness-110"
                 onClick={handleStartGame}
               >
                 {t("home.buttons.play")}
@@ -63,13 +63,13 @@ function Home() {
           ) : (
             <>
               <button
-                className="w-1/2 py-3 bg-darker-primary text-brown font-bold rounded-3xl cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 hover:brightness-110"
+                className="w-1/2 py-3 bg-darker-primary text-brown font-bold rounded-3xl cursor-pointer btn-animate hover:brightness-110"
                 onClick={() => navigate("/login")}
               >
                 {t("home.buttons.login")}
               </button>
               <button
-                className="w-1/2 py-3 bg-darker-accent text-white font-bold rounded-3xl cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 hover:brightness-110"
+                className="w-1/2 py-3 bg-darker-accent text-white font-bold rounded-3xl cursor-pointer btn-animate hover:brightness-110"
                 onClick={handleStartGame}
               >
                 {t("home.buttons.playAsGuest")}

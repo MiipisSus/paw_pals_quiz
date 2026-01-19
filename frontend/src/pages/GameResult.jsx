@@ -78,13 +78,13 @@ function GameResult() {
         </div>
         <div className="center gap-10 mt-auto px-10 py-3 w-full h-1/10 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)]">
           <button
-            className="center flex-1 gap-2 py-3 font-semibold text-brown bg-white border-2 border-darker-primary rounded-2xl transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 hover:bg-gray-50"
+            className="center flex-1 gap-2 py-3 font-semibold text-brown bg-white border-2 border-darker-primary rounded-2xl btn-animate hover:bg-gray-50"
             onClick={() => navigate("/")}
           >
             <House className="inline-block size-6" /> HOME
           </button>
           <button
-            className="center flex-1 gap-2 py-3 font-semibold text-white bg-darker-primary border-2 border-darker-primary rounded-2xl transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95 hover:brightness-110"
+            className="center flex-1 gap-2 py-3 font-semibold text-white bg-darker-primary border-2 border-darker-primary rounded-2xl btn-animate hover:brightness-110"
             onClick={handlePlayAgain}
           >
             <RotateCcw className="inline-block size-6" /> PLAY AGAIN

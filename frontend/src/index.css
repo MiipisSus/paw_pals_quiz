@@ -53,4 +53,17 @@
   .progress-bar-first::-moz-progress-bar {
     @apply bg-darker-primary;
   }
+
+  /* 互動動畫效果 */
+  .btn-animate {
+    @apply transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-animate-sm {
+    @apply transition-all duration-200 hover:scale-110 hover:shadow-lg active:scale-95;
+  }
+
+  .icon-animate {
+    @apply transition-transform duration-200;
+  }
 }
