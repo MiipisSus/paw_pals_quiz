@@ -26,7 +26,7 @@
   "login": {
     "title": "WELCOME",
     "titleHighlight": "BACK!",
-    "subtitle": "Ready to play?",
+    "subtitle": "Login to save your game history and stats!",
     "email": "Email",
     "emailPlaceholder": "example@gmail.com",
     "password": "Password",

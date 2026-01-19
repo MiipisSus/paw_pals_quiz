@@ -26,7 +26,7 @@
   "login": {
     "title": "歡迎",
     "titleHighlight": "回來！",
-    "subtitle": "準備好玩了嗎？",
+    "subtitle": "登入以儲存遊玩記錄和統計！",
     "email": "電子信箱",
     "emailPlaceholder": "example@gmail.com",
     "password": "密碼",
