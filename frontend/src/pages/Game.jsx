@@ -51,10 +51,8 @@ function Game() {
   }, [i18n.language]);
 
   useEffect(() => {
-    // 註冊 Home 按鈕點擊處理器
     setOnHomeButtonClick(() => handleHomeButtonClick);
 
-    // 清理函數：組件卸載時移除處理器
     return () => {
       setOnHomeButtonClick(null);
     };
@@ -186,16 +184,16 @@ function Game() {
             className="w-full h-full object-cover object-center bg-primary text-white"
           />
           {isAnswerCorrect === null ? (
-            <div className="center z-2 absolute bottom-6 right-6 size-12 bg-white rounded-full">
+            <div className="center z-2 absolute bottom-6 right-6 size-12 bg-white rounded-full fade-in">
               <div className="flex items-center gap-2">
                 <i className="ri-question-line text-3xl mr-left text-darker-accent shrink-0"></i>
               </div>
             </div>
           ) : (
-            <div className="flex flex-col z-2 absolute bottom-6 right-6 p-4 bg-white rounded-lg max-w-80 shadow-lg">
+            <div className="flex flex-col z-2 absolute bottom-6 right-6 p-4 bg-white rounded-lg max-w-80 shadow-lg fade-scale-in">
               <div className="flex items-center gap-2 mb-2">
                 <i className="ri-question-line text-3xl mr-left text-darker-accent shrink-0"></i>
-                <p className="px-2 py-1 bg-darker-accent text-white text-xs rounded-lg whitespace-nowrap">
+                <p className="px-2 py-1 bg-darker-accent text-white text-xs rounded-lg">
                   FROM &nbsp;
                   <span className="text-primary font-medium text-sm">
                     {currentOrigin}

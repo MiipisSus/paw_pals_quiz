@@ -39,6 +39,14 @@
   button {
     @apply cursor-pointer;
   }
+
+  input {
+    @apply transition-all duration-200;
+  }
+
+  input:focus {
+    @apply ring-2 ring-darker-accent/20 outline-none;
+  }
 }
 
 @layer utilities {
@@ -65,5 +73,46 @@
 
   .icon-animate {
     @apply transition-transform duration-200;
+  }
+
+  /* 淡入動畫 */
+  .fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  .fade-scale-in {
+    animation: fadeScaleIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeScaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.8) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes inputFocusGlow {
+    0% {
+      box-shadow: 0 0 0 0 rgba(238, 242, 255, 0);
+    }
+    50% {
+      box-shadow: 0 0 0 4px rgba(109, 142, 242, 0.2);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(109, 142, 242, 0);
+    }
   }
 }
