@@ -89,7 +89,7 @@ function Login() {
             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-darker-primary/60" />
           </div>
 
-          <a href="#" className="ml-auto text-darker-primary">
+          <a href="#" className="ml-auto text-darker-primary hover:text-darker-accent hover:underline">
             Forget Password?
           </a>
 
@@ -139,7 +139,7 @@ function Login() {
           </p>
           <button
             onClick={() => navigate("/register")}
-            className="text-darker-primary font-semibold btn-animate hover:brightness-110"
+            className="text-darker-primary font-semibold hover:underline hover:brightness-110"
           >
             Sign up for free
           </button>
