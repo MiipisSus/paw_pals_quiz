@@ -24,6 +24,7 @@ def sync_game_count_from_redis():
     redis_total_games = cache.get(total_games_key) or 0
     redis_total_rounds = cache.get(total_rounds_key) or 0
     redis_total_correct = cache.get(total_correct_key) or 0
+    global_stat, created = GlobalStat.objects.get_or_create(id=1)
     
     if redis_total_games > 0 or redis_total_rounds > 0 or redis_total_correct > 0:
         with transaction.atomic():
@@ -40,11 +41,11 @@ def sync_game_count_from_redis():
                 
             global_stat.save(update_fields=['total_games', 'total_rounds', 'total_correct'])
             
-        cache.set('global:stats:total_games', global_stat.total_games)
-        cache.set('global:stats:total_rounds', global_stat.total_rounds)
-        cache.set('global:stats:total_correct', global_stat.total_correct)
-        
         logger.info(f"同步全局遊戲數據: total_games +{redis_total_games}, total_rounds +{redis_total_rounds}, total_correct +{redis_total_correct}")
+            
+    cache.set('global:stats:total_games', global_stat.total_games)
+    cache.set('global:stats:total_rounds', global_stat.total_rounds)
+    cache.set('global:stats:total_correct', global_stat.total_correct)        
     
 def sync_breed_stats_from_redis():
     """
@@ -101,6 +102,8 @@ def calculate_hardest_breeds(top_n=10):
     基於正確率（correct_attempts / total_attempts）
     """
     logger.info("開始計算最難品種統計...")
+    print("=" * 60)
+    print("開始計算最難品種統計...")
     
     try:
         # 獲取所有有嘗試記錄的品種，並計算正確率
@@ -118,6 +121,8 @@ def calculate_hardest_breeds(top_n=10):
             'correct_attempts'
         )
         
+        print(f"找到 {len(breeds_with_stats)} 個有嘗試記錄的品種")
+        
         # 計算正確率並排序（正確率越低越難）
         breeds_stats = []
         for breed in breeds_with_stats:
@@ -132,14 +137,18 @@ def calculate_hardest_breeds(top_n=10):
         
         # 按正確率升序排序（最難的在前面）
         # 同時考慮最小嘗試次數（避免樣本太少的品種）
-        MIN_ATTEMPTS = 1  # 至少需要 10 次嘗試才納入排名
+        MIN_ATTEMPTS = 10  # 至少需要 10 次嘗試才納入排名
         breeds_stats = [b for b in breeds_stats if b['total_attempts'] >= MIN_ATTEMPTS]
         breeds_stats.sort(key=lambda x: x['correct_rate'])
+        
+        print(f"符合最小嘗試次數 (>={MIN_ATTEMPTS}) 的品種: {len(breeds_stats)}")
         
         # 更新 HardestBreedStat 表
         with transaction.atomic():
             # 清空舊數據
+            deleted_count = HardestBreedStat.objects.count()
             HardestBreedStat.objects.all().delete()
+            print(f"已刪除 {deleted_count} 筆舊排名資料")
             
             # 插入新的排名
             hardest_stats = []
@@ -156,11 +165,21 @@ def calculate_hardest_breeds(top_n=10):
             if hardest_stats:
                 HardestBreedStat.objects.bulk_create(hardest_stats)
                 logger.info(f"已更新前 {len(hardest_stats)} 個最難品種排名")
+                print(f"\n✓ 已更新前 {len(hardest_stats)} 個最難品種排名:")
+                print("-" * 60)
+                for i, stat in enumerate(hardest_stats, 1):
+                    breed = Breed.objects.get(id=stat.breed_id)
+                    print(f"  {i}. {breed.slug:30} | 正確率: {stat.correct_rate:5.1f}%")
+                print("-" * 60)
             else:
                 logger.warning("沒有足夠的數據來計算最難品種排名")
+                print("⚠ 沒有足夠的數據來計算最難品種排名")
+        
+        print("=" * 60)
         
     except Exception as e:
         logger.error(f"計算最難品種統計時發生錯誤: {str(e)}", exc_info=True)
+        print(f"✗ 錯誤: {str(e)}")
         raise
 
 

@@ -175,7 +175,10 @@ class UserSerializer(serializers.ModelSerializer):
 class HardestBreedsSerializer(serializers.Serializer):
     rank = serializers.IntegerField()
     name = serializers.SerializerMethodField()
-    correct_rate = serializers.FloatField()
+    correct_rate = serializers.SerializerMethodField()
+
+    def get_correct_rate(self, obj: HardestBreedStat):
+        return round(obj.correct_rate, 2) if obj.correct_rate is not None else 0.0
     
     def get_name(self, obj: HardestBreedStat):
         request = self.context.get('request')
