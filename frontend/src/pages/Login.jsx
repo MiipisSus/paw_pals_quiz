@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Mail, Lock } from "lucide-react";
 import { loginUser } from "../services/apiService";
 import { useAuth } from "../contexts/AuthContext";
 
 function Login() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -20,7 +22,7 @@ function Login() {
     e.preventDefault();
 
     if (!email || !password) {
-      setError("請填寫所有欄位");
+      setError(t("login.errorFillAll"));
       return;
     }
 
@@ -38,7 +40,7 @@ function Login() {
       navigate(from, { replace: true });
     } catch (error) {
       console.error("Login failed:", error);
-      setError(error.message || "登入失敗，請檢查您的帳號密碼");
+      setError(error.message || t("login.errorLoginFailed"));
     } finally {
       setIsLoading(false);
     }
@@ -49,10 +51,10 @@ function Login() {
       <div className="flex justify-between items-center flex-col gap-2 w-3/10 min-w-120 h-8/10 px-10 py-10 bg-white rounded-4xl shadow-2xl">
         <div className="center flex-col">
           <h1 className="mt-8 text-brown text-3xl font-bold">
-            WELCOME&nbsp;
-            <span className="text-darker-accent">BACK!</span>
+            {t("login.title")}&nbsp;
+            <span className="text-darker-accent">{t("login.titleHighlight")}</span>
           </h1>
-          <h2 className="text-brown/50 font-semibold">Ready to play?</h2>
+          <h2 className="text-brown/50 font-semibold">{t("login.subtitle")}</h2>
         </div>
         <form onSubmit={handleLogin} className="flex flex-col gap-3 w-full">
           <div
@@ -63,26 +65,26 @@ function Login() {
             {error}
           </div>
 
-          <p className="text-brown/80">Email</p>
+          <p className="text-brown/80">{t("login.email")}</p>
           <div className="relative">
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="example@gmail.com"
+              placeholder={t("login.emailPlaceholder")}
               className="w-full pl-10 pr-4 py-2 text-darker-primary bg-secondary border border-darker-primary rounded-lg"
               required
             />
             <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-darker-primary/60" />
           </div>
 
-          <p className="text-brown/80">Password</p>
+          <p className="text-brown/80">{t("login.password")}</p>
           <div className="relative">
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              placeholder="********"
+              placeholder={t("login.passwordPlaceholder")}
               className="w-full pl-10 pr-4 py-2 text-darker-primary bg-secondary border border-darker-primary rounded-lg"
               required
             />
@@ -97,7 +99,7 @@ function Login() {
             }}
             className="ml-auto text-darker-primary hover:text-darker-accent hover:underline"
           >
-            Forget Password?
+            {t("login.forgetPassword")}
           </a>
 
           <button
@@ -109,13 +111,13 @@ function Login() {
                 : "bg-darker-primary hover:bg-darker-primary/90"
             }`}
           >
-            {isLoading ? "Loading..." : "Submit"}
+            {isLoading ? t("login.loading") : t("login.submit")}
           </button>
         </form>
         <div className="center flex-col gap-3 w-full">
           <div class="flex items-center w-full">
             <div class="grow h-px bg-brown/30"></div>
-            <span class="px-3 text-brown/30 text-sm font-semibold">OR</span>
+            <span class="px-3 text-brown/30 text-sm font-semibold">{t("login.or")}</span>
             <div class="grow h-px bg-brown/30"></div>
           </div>
           <button className="center gap-3 w-full p-3 text-darker-accent font-semibold bg-white border-2 border-accent/70 rounded-3xl btn-animate hover:bg-gray-50">
@@ -137,18 +139,18 @@ function Login() {
                 fill="#EA4335"
               ></path>
             </svg>
-            Sign in with Google
+            {t("login.googleSignIn")}
           </button>
         </div>
         <div className="flex gap-3">
           <p className="inline-block text-brown font-semibold">
-            No account yet?
+            {t("login.noAccount")}
           </p>
           <button
             onClick={() => navigate("/register")}
             className="text-darker-primary font-semibold btn-text-animate"
           >
-            Sign up for free
+            {t("login.signUpFree")}
           </button>
         </div>
       </div>

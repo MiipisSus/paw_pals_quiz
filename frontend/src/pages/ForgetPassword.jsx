@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Mail, ArrowLeft } from "lucide-react";
 
 import { checkEmailExists } from "../services/apiService";
 
 function ForgetPassword() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -15,7 +17,7 @@ function ForgetPassword() {
     e.preventDefault();
 
     if (!email) {
-      setError("請輸入您的電子信箱");
+      setError(t("forgetPassword.errorEmailRequired"));
       return;
     }
 
@@ -32,7 +34,7 @@ function ForgetPassword() {
       setSuccess(true);
     } catch (error) {
       console.error("Reset password failed:", error);
-      setError(error.message || "發送重設信件失敗，請稍後再試");
+      setError(error.message || t("forgetPassword.errorSendFailed"));
     } finally {
       setIsLoading(false);
     }
@@ -43,11 +45,11 @@ function ForgetPassword() {
       <div className="flex justify-between items-center flex-col gap-2 w-3/10 min-w-120 h-8/10 px-10 py-10 bg-white rounded-4xl shadow-2xl">
         <div className="center flex-col">
           <h1 className="mt-8 text-brown text-3xl font-bold">
-            FORGOT&nbsp;
-            <span className="text-darker-accent">PASSWORD?</span>
+            {t("forgetPassword.title")}&nbsp;
+            <span className="text-darker-accent">{t("forgetPassword.titleHighlight")}</span>
           </h1>
           <h2 className="text-brown/50 font-semibold text-center mt-2">
-            No worries, we'll send you reset instructions.
+            {t("forgetPassword.subtitle")}
           </h2>
         </div>
 
@@ -57,9 +59,9 @@ function ForgetPassword() {
               <div className="center size-16 bg-green-100 rounded-full">
                 <Mail className="size-8 text-green-600" />
               </div>
-              <h3 className="text-brown text-xl font-bold">Check your email</h3>
+              <h3 className="text-brown text-xl font-bold">{t("forgetPassword.successTitle")}</h3>
               <p className="text-brown/70 text-sm">
-                We sent a password reset link to
+                {t("forgetPassword.successMessage")}
                 <br />
                 <span className="font-semibold text-darker-accent">{email}</span>
               </p>
@@ -70,7 +72,7 @@ function ForgetPassword() {
               className="center gap-2 w-full p-3 text-white font-semibold bg-darker-primary rounded-3xl btn-animate hover:bg-darker-primary/90"
             >
               <ArrowLeft className="size-4" />
-              Back to Login
+              {t("forgetPassword.backToLogin")}
             </button>
           </div>
         ) : (
@@ -83,13 +85,13 @@ function ForgetPassword() {
               {error || "placeholder"}
             </div>
 
-            <p className="text-brown/80">Email</p>
+            <p className="text-brown/80">{t("forgetPassword.email")}</p>
             <div className="relative mb-4">
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="example@gmail.com"
+                placeholder={t("forgetPassword.emailPlaceholder")}
                 className="w-full pl-10 pr-4 py-2 text-darker-primary bg-secondary border border-darker-primary rounded-lg"
                 required
               />
@@ -105,7 +107,7 @@ function ForgetPassword() {
                   : "bg-darker-primary hover:bg-darker-primary/90"
               }`}
             >
-              {isLoading ? "Sending..." : "Send Reset Link"}
+              {isLoading ? t("forgetPassword.sending") : t("forgetPassword.sendResetLink")}
             </button>
 
             <button
@@ -114,20 +116,20 @@ function ForgetPassword() {
               className="center gap-2 mt-2 text-darker-primary font-semibold btn-text-animate hover:text-darker-accent hover:brightness-100"
             >
               <ArrowLeft className="size-4" />
-              Back to Login
+              {t("forgetPassword.backToLogin")}
             </button>
           </form>
         )}
 
         <div className="flex gap-3">
           <p className="inline-block text-brown font-semibold">
-            Don't have an account?
+            {t("forgetPassword.noAccount")}
           </p>
           <button
             onClick={() => navigate("/register")}
             className="text-darker-primary font-semibold btn-text-animate"
           >
-            Sign up for free
+            {t("forgetPassword.signUpFree")}
           </button>
         </div>
       </div>
