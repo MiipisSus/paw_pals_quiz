@@ -71,6 +71,10 @@
     @apply transition-all duration-200 hover:scale-110 hover:shadow-lg active:scale-95;
   }
 
+  .btn-text-animate {
+    @apply transition-all duration-200 hover:brightness-110;
+  }
+
   .icon-animate {
     @apply transition-transform duration-200;
   }
