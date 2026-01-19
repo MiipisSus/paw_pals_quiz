@@ -14,23 +14,21 @@ uv sync
 python manage.py migrate
 ```
 
-## 啟動開發伺服器
+## 啟動伺服器
 
-使用 Django 開發伺服器：
+**快速啟動（推薦）：**
 ```bash
-python manage.py runserver
+./start.sh
 ```
 
-## 啟動生產伺服器
-
-使用 Gunicorn：
+**或使用完整指令：**
 ```bash
 gunicorn config.wsgi:application -c gunicorn.conf.py
 ```
 
-或簡化命令：
+**開發模式（使用 Django 開發伺服器）：**
 ```bash
-gunicorn config.wsgi:application
+python manage.py runserver
 ```
 
 ## 背景任務
