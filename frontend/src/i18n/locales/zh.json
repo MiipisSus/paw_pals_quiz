@@ -57,6 +57,28 @@
     "successTitle": "查看您的信箱",
     "successMessage": "我們已將密碼重設連結寄送至"
   },
+  "userInfo": {
+    "achievements": "成就",
+    "achievementsSubtitle": "追蹤您的狗狗專業知識",
+    "totalScore": "總分數",
+    "gamesPlayed": "遊玩場次",
+    "avgAccuracy": "平均正確率",
+    "recentMatches": "最近的比賽",
+    "totalScoreLabel": "總分數",
+    "correctRate": "正確率",
+    "yesterday": "昨天",
+    "daysAgo": "天前"
+  },
+  "globalStats": {
+    "title": "全球數據",
+    "subtitle": "所有玩家的累積努力",
+    "dogsIdentified": "已識別狗狗",
+    "activePlayers": "活躍玩家",
+    "avgAccuracy": "平均正確率",
+    "trickiestBreeds": "最難品種",
+    "trickiestBreedsSubtitle": "最難識別的品種",
+    "correctRate": "正確率"
+  },
   "game": {
     "startGameFailed": "遊戲開始失敗",
     "fetchQuestionFailed": "獲取問題失敗",

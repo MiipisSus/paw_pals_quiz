@@ -25,15 +25,15 @@ function GlobalStatics() {
               <Globe className="size-16 text-darker-accent" />
             </div>
             <h2 className="text-4xl font-bold text-darker-accent">
-              Global Data
+              {t("globalStats.title")}
             </h2>
             <h3 className="mb-5 text-white/50 font-semibold">
-              Cumulative efforts of all players
+              {t("globalStats.subtitle")}
             </h3>
             <div className="center flex-col w-full gap-4">
               <div className="flex items-center justify-between gap-1 w-full p-4 bg-gray-100 rounded-xl">
                 <div className="text-left">
-                  <p className="text-xs">Dogs Identified</p>
+                  <p className="text-xs">{t("globalStats.dogsIdentified")}</p>
                   <h1 className="text-brown text-4xl font-bold">{globalStats?.total_rounds || 0}</h1>
                 </div>
                 <div className="center p-4 bg-gray-200 rounded-2xl">
@@ -45,13 +45,13 @@ function GlobalStatics() {
                   <Users className="size-10 text-darker-primary" />
                 </div>
                 <div className="text-right">
-                  <p className="text-xs">Active Players</p>
+                  <p className="text-xs">{t("globalStats.activePlayers")}</p>
                   <h1 className="text-brown text-4xl font-bold">{globalStats?.total_players || 0}</h1>
                 </div>
               </div>
               <div className="flex items-center justify-between gap-1 w-full p-4 bg-gray-100 rounded-xl">
                 <div className="text-left">
-                  <p className="text-xs">Avg. Accuracy</p>
+                  <p className="text-xs">{t("globalStats.avgAccuracy")}</p>
                   <h1 className="text-brown text-4xl font-bold">{ globalStats?.avg_accuracy || 0}</h1>
                 </div>
                 <div className="center p-4 bg-gray-200 rounded-2xl">
@@ -65,10 +65,10 @@ function GlobalStatics() {
           <div className="center flex-col text-center text-darker-accent font-semibold pt-4">
             <div className="flex gap-2">
               <Star fill="#6d8ef2" className="size-6" />
-              <h2 className="text-xl">Trickiest Breeds</h2>
+              <h2 className="text-xl">{t("globalStats.trickiestBreeds")}</h2>
             </div>
             <h3 className="text-gray-300 font-medium">
-              The hardest breeds to identify
+              {t("globalStats.trickiestBreedsSubtitle")}
             </h3>
           </div>
           <div className="flex flex-col gap-4 flex-1 mx-8 mb-8 overflow-y-scroll bg-gray-100 border-2 border-gray-200 rounded-4xl [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
@@ -101,7 +101,7 @@ function GlobalStatics() {
                     ></progress>
                   </div>
                   <p className="mt-2 text-brown/20 text-xs">
-                    CORRECT RATE<span className="ml-2">{breed.correct_rate}%</span>
+                    {t("globalStats.correctRate")}<span className="ml-2">{breed.correct_rate}%</span>
                   </p>
                 </div>
               </div>
