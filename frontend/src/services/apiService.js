@@ -284,3 +284,21 @@ export async function refreshToken() {
 
   return data;
 }
+
+export async function checkEmailExists(email) {
+  const url = addLanguageParam(`${BASE_URL}check-email/`);
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({ email }),
+  });
+
+  if (!response.ok) {
+    throw new Error("Email is not registered");
+  }
+
+  return response.json();
+}

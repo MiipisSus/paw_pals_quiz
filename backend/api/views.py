@@ -10,7 +10,8 @@ from datetime import datetime
 from .serializers import QuestionInputSerializer, QuestionSerializer, AnswerInputSerializer, AnswerSerializer, \
     StartGameSerializer, EndGameInputSerializer, EndGameSerializer, UserInfoSerializer, UserInputSerializer, \
         UserSerializer, GlobalStatsSerializer, HardestBreedsSerializer
-from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, RoundRecordService, BreedService
+from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, \
+    RoundRecordService, BreedService, PlayerService
 from .models import HardestBreedStat
     
 
@@ -294,3 +295,30 @@ class GlobalStatsView(APIView):
         serializer.is_valid(raise_exception=True)
         
         return Response(data)
+
+
+class CheckEmailView(APIView):
+    def post(self, request):
+        """
+        檢查 email 是否已註冊
+        若 email 不存在則回傳 400
+        """
+        email = request.data.get('email')
+        
+        if not email:
+            return Response(
+                {"error": "Email is required"}, 
+                status=status.HTTP_400_BAD_REQUEST
+            ) 
+
+        user = PlayerService.get_user_by_email(email=email)
+        if user:
+            return Response(
+                {"message": "Email found", "email": email}, 
+                status=status.HTTP_200_OK
+            )
+        else:
+            return Response(
+                {"error": "Email not found"}, 
+            status=status.HTTP_400_BAD_REQUEST
+        )

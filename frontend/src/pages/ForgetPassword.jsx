@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mail, ArrowLeft } from "lucide-react";
 
+import { checkEmailExists } from "../services/apiService";
+
 function ForgetPassword() {
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -21,8 +23,8 @@ function ForgetPassword() {
     setError("");
 
     try {
+      await checkEmailExists(email);
       // TODO: 實作重設密碼 API 呼叫
-      // await resetPassword(email);
       
       // 模擬 API 呼叫
       await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -75,10 +77,10 @@ function ForgetPassword() {
           <form onSubmit={handleResetPassword} className="flex flex-col gap-3 w-full">
             <div
               className={`p-3 text-red-600 bg-red-100 border border-red-300 rounded-lg text-sm ${
-                error ? "visible" : "invisible"
+                error ? "visible fade-in" : "invisible"
               }`}
             >
-              {error}
+              {error || "placeholder"}
             </div>
 
             <p className="text-brown/80">Email</p>

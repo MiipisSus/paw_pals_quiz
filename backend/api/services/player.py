@@ -12,3 +12,10 @@ class PlayerService:
         )
         PlayerInfo.objects.create(user=user)
         return user
+    
+    @staticmethod
+    def get_user_by_email(email: str) -> User | None:
+        try:
+            return User.objects.get(username=email)
+        except User.DoesNotExist:
+            return None
