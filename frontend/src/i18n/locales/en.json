@@ -39,7 +39,14 @@
     "noAccount": "No account yet?",
     "signUpFree": "Sign up for free",
     "errorFillAll": "Please fill in all fields",
-    "errorLoginFailed": "Login failed, please check your credentials"
+    "errorLoginFailed": "Login failed, please check your credentials",
+    "errorInvalidState": "Invalid security token, please try again",
+    "errorNoCode": "No authorization code received",
+    "errorNoEmail": "No email received from Google",
+    "errorOAuthFailed": "Google authentication failed",
+    "errorServerError": "Server error, please try again later",
+    "processing": "Processing login...",
+    "redirecting": "Redirecting to login page..."
   },
   "forgetPassword": {
     "title": "FORGOT",

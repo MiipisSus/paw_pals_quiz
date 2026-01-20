@@ -1,4 +1,7 @@
 from django.contrib.auth.models import User
+from django.shortcuts import redirect
+from django.conf import settings
+from django.middleware.csrf import get_token
 from rest_framework.views import APIView, Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -6,6 +9,9 @@ from rest_framework import status
 
 from uuid import uuid4
 from datetime import datetime
+from urllib.parse import urlencode
+import requests
+import secrets
 
 from .serializers import QuestionInputSerializer, QuestionSerializer, AnswerInputSerializer, AnswerSerializer, \
     StartGameSerializer, EndGameInputSerializer, EndGameSerializer, UserInfoSerializer, UserInputSerializer, \
@@ -322,3 +328,105 @@ class CheckEmailView(APIView):
                 {"error": "Email not found"}, 
             status=status.HTTP_400_BAD_REQUEST
         )
+
+
+class GoogleLoginView(APIView):
+    def get(self, request):
+        """
+        重定向到 Google OAuth 授權頁面
+        """
+        # 生成 state token 用於 CSRF 保護
+        state = secrets.token_urlsafe(32)
+        request.session['oauth_state'] = state
+        
+        params = {
+            "client_id": settings.GOOGLE_CLIENT_ID,
+            "redirect_uri": settings.GOOGLE_REDIRECT_URI,
+            "response_type": "code",
+            "scope": "openid email profile",
+            "state": state,
+        }
+        
+        auth_url = "https://accounts.google.com/o/oauth2/v2/auth?" + urlencode(params)
+        return redirect(auth_url)
+
+
+class GoogleCallbackView(APIView):
+    def get(self, request):
+        """
+        處理 Google OAuth 回調
+        """
+        code = request.GET.get('code')
+        state = request.GET.get('state')
+        error = request.GET.get('error')
+        
+        # 檢查是否有錯誤
+        if error:
+            return redirect(f"{settings.FRONTEND_URL}/login?error={error}")
+        
+        # 驗證 state token
+        stored_state = request.session.get('oauth_state')
+        if not state or state != stored_state:
+            return redirect(f"{settings.FRONTEND_URL}/login?error=invalid_state")
+        
+        # 清除 session 中的 state
+        request.session.pop('oauth_state', None)
+        
+        if not code:
+            return redirect(f"{settings.FRONTEND_URL}/login?error=no_code")
+        
+        try:
+            # 使用授權碼換取 access token
+            token_url = "https://oauth2.googleapis.com/token"
+            token_data = {
+                "code": code,
+                "client_id": settings.GOOGLE_CLIENT_ID,
+                "client_secret": settings.GOOGLE_CLIENT_SECRET,
+                "redirect_uri": settings.GOOGLE_REDIRECT_URI,
+                "grant_type": "authorization_code",
+            }
+            
+            token_response = requests.post(token_url, data=token_data)
+            token_response.raise_for_status()
+            tokens = token_response.json()
+            
+            # 使用 access token 獲取用戶信息
+            userinfo_url = "https://www.googleapis.com/oauth2/v2/userinfo"
+            headers = {"Authorization": f"Bearer {tokens['access_token']}"}
+            userinfo_response = requests.get(userinfo_url, headers=headers)
+            userinfo_response.raise_for_status()
+            user_info = userinfo_response.json()
+            
+            # 獲取或創建用戶
+            email = user_info.get('email')
+            if not email:
+                return redirect(f"{settings.FRONTEND_URL}/login?error=no_email")
+            
+            # 查找或創建用戶
+            user, created = User.objects.get_or_create(
+                email=email,
+                defaults={
+                    'username': email.split('@')[0] + '_' + secrets.token_hex(4),
+                    'first_name': user_info.get('given_name', ''),
+                    'last_name': user_info.get('family_name', ''),
+                }
+            )
+            
+            # 生成 JWT tokens
+            refresh = RefreshToken.for_user(user)
+            access_token = str(refresh.access_token)
+            refresh_token = str(refresh)
+            
+            # 重定向到前端，帶上 tokens
+            redirect_url = (
+                f"{settings.FRONTEND_URL}/login/callback?"
+                f"access_token={access_token}&refresh_token={refresh_token}"
+            )
+            return redirect(redirect_url)
+            
+        except requests.RequestException as e:
+            print(f"Google OAuth error: {e}")
+            return redirect(f"{settings.FRONTEND_URL}/login?error=oauth_failed")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
+            return redirect(f"{settings.FRONTEND_URL}/login?error=server_error")

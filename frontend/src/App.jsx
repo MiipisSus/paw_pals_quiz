@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import Game from "./pages/Game.jsx";
 import GameResult from "./pages/GameResult.jsx";
 import Login from "./pages/Login.jsx";
+import LoginCallback from "./pages/LoginCallback.jsx";
 import UserInfo from "./pages/UserInfo.jsx";
 import Register from "./pages/Register.jsx";
 import ForgetPassword from "./pages/ForgetPassword.jsx";
@@ -38,6 +39,7 @@ function AppRouter() {
       <Route path="/" element={<MainLayout />}>
         <Route path="/game" element={<Game />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/login/callback" element={<LoginCallback />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
         <Route

@@ -30,7 +30,7 @@ def start_scheduler():
     # 註冊任務：每 30 分鐘執行一次
     scheduler.add_job(
         sync_redis_data_to_db,
-        trigger=IntervalTrigger(minutes=1),
+        trigger=IntervalTrigger(minutes=30),
         id='sync_breed_stats',
         name='同步 Redis 品種統計到資料庫',
         replace_existing=True,

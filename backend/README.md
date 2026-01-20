@@ -16,17 +16,18 @@ python manage.py migrate
 
 ## 啟動伺服器
 
-**快速啟動（推薦）：**
+**快速啟動 HTTPS 伺服器（推薦）：**
 ```bash
 ./start.sh
 ```
+服務器將在 `https://localhost:8000` 上運行
 
 **或使用完整指令：**
 ```bash
 gunicorn config.wsgi:application -c gunicorn.conf.py
 ```
 
-**開發模式（使用 Django 開發伺服器）：**
+**開發模式（使用 Django 開發伺服器，HTTP）：**
 ```bash
 python manage.py runserver
 ```

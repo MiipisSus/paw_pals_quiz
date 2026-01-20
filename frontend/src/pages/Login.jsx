@@ -18,6 +18,12 @@ function Login() {
   // 獲取使用者原本想要訪問的頁面
   const from = location.state?.from?.pathname || "/";
 
+  // 處理 Google 登入
+  const handleGoogleLogin = () => {
+    // 重定向到後端的 Google OAuth 端點
+    window.location.href = "/api/auth/google/login/";
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -120,7 +126,11 @@ function Login() {
             <span class="px-3 text-brown/30 text-sm font-semibold">{t("login.or")}</span>
             <div class="grow h-px bg-brown/30"></div>
           </div>
-          <button className="center gap-3 w-full p-3 text-darker-accent font-semibold bg-white border-2 border-accent/70 rounded-3xl btn-animate hover:bg-gray-50">
+          <button
+            onClick={handleGoogleLogin}
+            type="button"
+            className="center gap-3 w-full p-3 text-darker-accent font-semibold bg-white border-2 border-accent/70 rounded-3xl btn-animate hover:bg-gray-50"
+          >
             <svg className="inline-block w-5 h-5" viewBox="0 0 24 24">
               <path
                 d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"

@@ -39,7 +39,14 @@
     "noAccount": "還沒有帳號？",
     "signUpFree": "免費註冊",
     "errorFillAll": "請填寫所有欄位",
-    "errorLoginFailed": "登入失敗，請檢查您的帳號密碼"
+    "errorLoginFailed": "登入失敗，請檢查您的帳號密碼",
+    "errorInvalidState": "安全標記無效，請重試",
+    "errorNoCode": "未收到授權碼",
+    "errorNoEmail": "未從 Google 收到電子信箱",
+    "errorOAuthFailed": "Google 認證失敗",
+    "errorServerError": "伺服器錯誤，請稍後再試",
+    "processing": "處理登入中...",
+    "redirecting": "跳轉到登入頁面..."
   },
   "forgetPassword": {
     "title": "忘記",
