@@ -263,15 +263,32 @@ class UserInfoView(APIView):
         serializer = UserInfoSerializer(user)
         return Response(serializer.data)
     
+    def put(self, request):
+        user = request.user
+        
+        serializer = UserInputSerializer(data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        
+        data = serializer.validated_data
+        
+        if 'nickname' in data:
+            player_info = user.player_info
+            player_info.nickname = data['nickname']
+            player_info.save()
+        
+        user_serializer = UserSerializer(user)
+        return Response(user_serializer.data)
+    
 
 class RegisterView(APIView):
     def post(self, request):
         serializer = UserInputSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         
-        user = User.objects.create_user(
+        user = PlayerService.create_user(
             username=serializer.validated_data['username'],
-            password=serializer.validated_data['password']
+            password=serializer.validated_data['password'],
+            email=serializer.validated_data.get('email', serializer.validated_data['username'])
         )
         
         data = UserSerializer(user).data
@@ -403,19 +420,15 @@ class GoogleCallbackView(APIView):
                 return redirect(f"{settings.FRONTEND_URL}/login?error=no_email")
             
             # 查找或創建用戶
-            user, created = User.objects.get_or_create(
-                email=email,
-                defaults={
-                    'username': email.split('@')[0] + '_' + secrets.token_hex(4),
-                    'first_name': user_info.get('given_name', ''),
-                    'last_name': user_info.get('family_name', ''),
-                }
-            )
+            user, created = PlayerService.get_or_create_by_email(email=email)
+            if created:
+                print(f"Created new user for Google OAuth: {email}")
             
             # 生成 JWT tokens
             refresh = RefreshToken.for_user(user)
             access_token = str(refresh.access_token)
             refresh_token = str(refresh)
+            print(access_token)
             
             # 重定向到前端，帶上 tokens
             redirect_url = (

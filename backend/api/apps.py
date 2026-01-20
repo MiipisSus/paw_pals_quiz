@@ -20,6 +20,12 @@ class ApiConfig(AppConfig):
         if os.environ.get('RUN_MAIN') == 'true' or os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
             try:
                 from api.scheduler import start_scheduler
+                from api.tasks import sync_redis_data_to_db
+                
+                # 啟動時執行一次 Redis 數據同步
+                sync_redis_data_to_db()
+                logger.info("啟動時已執行 Redis 數據同步")
+                
                 start_scheduler()
             except Exception as e:
                 logger.error(f"啟動調度器失敗: {str(e)}", exc_info=True)

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Trophy, CirclePlay, Shapes, History, Award } from "lucide-react";
+import { Trophy, CirclePlay, Shapes, History, Award, Pencil } from "lucide-react";
 
 import { useUser } from "../contexts/UserContext";
 import headshotImg from "../assets/headshot.jpg";
@@ -8,10 +8,18 @@ import headshotImg from "../assets/headshot.jpg";
 function formatGameDate(dateString, t) {
   const date = new Date(dateString);
   const now = new Date();
-  const diffTime = Math.abs(now - date);
-  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  
+  // 將兩個日期都轉換為本地時區的午夜時間以計算天數差
+  const dateLocal = new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  const nowLocal = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  
+  // 計算天數差異
+  const diffTime = nowLocal - dateLocal;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
-  if (diffDays === 1) {
+  if (diffDays === 0) {
+    return t("userInfo.today");
+  } else if (diffDays === 1) {
     return t("userInfo.yesterday");
   } else if (diffDays < 7) {
     return `${diffDays} ${t("userInfo.daysAgo")}`;
@@ -50,7 +58,10 @@ function UserInfo() {
                 className="w-full h-full object-center object-cover"
               />
             </div>
-            <p className="text-white text-2xl font-semibold">{nickname}</p>
+            <div className="center gap-2 text-white text-2xl font-semibold">
+              <p>{nickname}</p>
+              <Pencil className="size-6 inline" />
+            </div>
           </div>
           <div className="text-center px-8">
             <h2 className="text-xl font-bold text-darker-primary">
