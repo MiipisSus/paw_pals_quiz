@@ -159,13 +159,31 @@ class UserInfoSerializer(serializers.ModelSerializer):
     
     
 class UserInputSerializer(serializers.ModelSerializer):
+    nickname = serializers.CharField(required=False, allow_blank=True, max_length=100)
+    
     class Meta:
         model = User
-        fields = ['id', 'username', 'password']
+        fields = ['id', 'username', 'password', 'nickname']
+        
+    def update(self, instance, validated_data):
+        if 'username' in validated_data:
+            instance.username = validated_data['username']
+
+        if 'password' in validated_data:
+            instance.set_password(validated_data['password'])
+
+        instance.save()
+
+        if 'nickname' in validated_data:
+            player_info = instance.player_info
+            player_info.nickname = validated_data['nickname']
+            player_info.save()
+
+        return instance
         
 
 class UserSerializer(serializers.ModelSerializer):
-    nickname = serializers.CharField(source='playerinfo.nickname')
+    nickname = serializers.CharField(source='player_info.nickname')
     
     class Meta:
         model = User

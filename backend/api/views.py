@@ -6,6 +6,7 @@ from rest_framework.views import APIView, Response
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework import status
+from django.db import transaction
 
 from uuid import uuid4
 from datetime import datetime
@@ -263,21 +264,20 @@ class UserInfoView(APIView):
         serializer = UserInfoSerializer(user)
         return Response(serializer.data)
     
-    def put(self, request):
+    def patch(self, request):
         user = request.user
-        
-        serializer = UserInputSerializer(data=request.data, partial=True)
+
+        serializer = UserInputSerializer(
+            instance=user,
+            data=request.data,
+            partial=True
+        )
         serializer.is_valid(raise_exception=True)
-        
-        data = serializer.validated_data
-        
-        if 'nickname' in data:
-            player_info = user.player_info
-            player_info.nickname = data['nickname']
-            player_info.save()
-        
-        user_serializer = UserSerializer(user)
-        return Response(user_serializer.data)
+
+        with transaction.atomic():
+            serializer.save()
+
+        return Response(UserSerializer(user).data)
     
 
 class RegisterView(APIView):
@@ -377,23 +377,19 @@ class GoogleCallbackView(APIView):
         state = request.GET.get('state')
         error = request.GET.get('error')
         
-        # 檢查是否有錯誤
         if error:
             return redirect(f"{settings.FRONTEND_URL}/login?error={error}")
         
-        # 驗證 state token
         stored_state = request.session.get('oauth_state')
         if not state or state != stored_state:
             return redirect(f"{settings.FRONTEND_URL}/login?error=invalid_state")
         
-        # 清除 session 中的 state
         request.session.pop('oauth_state', None)
         
         if not code:
             return redirect(f"{settings.FRONTEND_URL}/login?error=no_code")
         
         try:
-            # 使用授權碼換取 access token
             token_url = "https://oauth2.googleapis.com/token"
             token_data = {
                 "code": code,
