@@ -302,3 +302,21 @@ export async function checkEmailExists(email) {
 
   return response.json();
 }
+
+export async function fetchUserInfoUpdate(params) {
+  const url = addLanguageParam(`${BASE_URL}user/me/`);
+  const response = await authenticatedFetch(url, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify(params),
+  });
+
+  if (!response.ok) {
+    throw new Error("Failed to update user info");
+  }
+
+  return response.json();
+}

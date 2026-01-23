@@ -16,7 +16,7 @@ export function UserProvider({ children }) {
   const [avgAccuracy, setAvgAccuracy] = useState(0.0);
   const [gameSessions, setGameSessions] = useState([]);
 
-  const updateUserInfo = useCallback(async () => {
+  const refreshUserData = useCallback(async () => {
     try {
       const userInfo = await fetchUserInfo();
       setNickname(userInfo.nickname);
@@ -41,7 +41,7 @@ export function UserProvider({ children }) {
       setTotalScore,
       setAvgAccuracy,
       setGameSessions,
-      updateUserInfo,
+      refreshUserData: refreshUserData,
     }),
     [
       nickname,
@@ -49,7 +49,7 @@ export function UserProvider({ children }) {
       totalScore,
       avgAccuracy,
       gameSessions,
-      updateUserInfo,
+      refreshUserData,
     ]
   );
 

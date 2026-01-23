@@ -1,19 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Trophy, CirclePlay, Shapes, History, Award, Pencil } from "lucide-react";
+import { Trophy, CirclePlay, Shapes, History, Award, Pencil, Check } from "lucide-react";
 
 import { useUser } from "../contexts/UserContext";
+import { fetchUserInfoUpdate } from "../services/apiService";
 import headshotImg from "../assets/headshot.jpg";
 
 function formatGameDate(dateString, t) {
   const date = new Date(dateString);
   const now = new Date();
   
-  // 將兩個日期都轉換為本地時區的午夜時間以計算天數差
   const dateLocal = new Date(date.getFullYear(), date.getMonth(), date.getDate());
   const nowLocal = new Date(now.getFullYear(), now.getMonth(), now.getDate());
   
-  // 計算天數差異
   const diffTime = nowLocal - dateLocal;
   const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
@@ -35,16 +34,32 @@ function UserInfo() {
   const { t } = useTranslation();
   const {
     nickname,
+    setNickname,
     totalGameSessions,
     totalScore,
     avgAccuracy,
-    updateUserInfo,
+    refreshUserData,
     gameSessions,
   } = useUser();
 
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedNickname, setEditedNickname] = useState("");
+
   useEffect(() => {
-    updateUserInfo();
+    refreshUserData();
   }, []);
+
+  useEffect(() => {
+    setEditedNickname(nickname);
+  }, [nickname]);
+
+  const handleEditClick = () => {
+    if (isEditing) {
+      fetchUserInfoUpdate({ nickname: editedNickname });
+      setNickname(editedNickname);
+    }
+    setIsEditing(!isEditing);
+  };
 
   return (
     <div className="center h-screen">
@@ -59,8 +74,28 @@ function UserInfo() {
               />
             </div>
             <div className="center gap-2 text-white text-2xl font-semibold">
-              <p>{nickname}</p>
-              <Pencil className="size-6 inline" />
+              {isEditing ? (
+                <input
+                  type="text"
+                  value={editedNickname}
+                  onChange={(e) => setEditedNickname(e.target.value)}
+                  className="px-3 py-1 text-brown bg-white rounded-lg border-2 border-darker-primary focus:outline-none focus:border-darker-accent"
+                  autoFocus
+                />
+              ) : (
+                <p>{nickname}</p>
+              )}
+              {isEditing ? (
+                <Check 
+                  className="size-6 inline cursor-pointer hover:scale-110 transition-transform" 
+                  onClick={handleEditClick}
+                />
+              ) : (
+                <Pencil 
+                  className="size-6 inline cursor-pointer hover:scale-110 transition-transform" 
+                  onClick={handleEditClick}
+                />
+              )}
             </div>
           </div>
           <div className="text-center px-8">
