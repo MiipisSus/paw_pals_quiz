@@ -320,3 +320,39 @@ export async function fetchUserInfoUpdate(params) {
 
   return response.json();
 }
+
+export async function requestPasswordReset(email) {
+  const response = await fetch(`${BASE_URL}request-password-reset/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({ email }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.error || "Failed to send reset email");
+  }
+
+  return response.json();
+}
+
+export async function resetPassword(token, newPassword) {
+  const response = await fetch(`${BASE_URL}reset-password/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    credentials: "include",
+    body: JSON.stringify({ token, new_password: newPassword }),
+  });
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.error || "Failed to reset password");
+  }
+
+  return response.json();
+}

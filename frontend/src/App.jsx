@@ -10,6 +10,7 @@ import LoginCallback from "./pages/LoginCallback.jsx";
 import UserInfo from "./pages/UserInfo.jsx";
 import Register from "./pages/Register.jsx";
 import ForgetPassword from "./pages/ForgetPassword.jsx";
+import ResetPassword from "./pages/ResetPassword.jsx";
 import GlobalStatics from "./pages/GlobalStatics.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { AppProvider } from "./contexts/AppProvider.jsx";
@@ -42,6 +43,7 @@ function AppRouter() {
         <Route path="/login/callback" element={<LoginCallback />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route
           path="/user-info"
           element={

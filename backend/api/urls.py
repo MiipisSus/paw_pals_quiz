@@ -5,7 +5,8 @@ from rest_framework_simplejwt.views import (
 )
 
 from .views import QuestionView, AnswerView, StartGameView, EndGameView, LogoutView, UserInfoView, \
-    RegisterView, TerminateGameView, GlobalStatsView, CheckEmailView, GoogleLoginView, GoogleCallbackView
+    RegisterView, TerminateGameView, GlobalStatsView, CheckEmailView, GoogleLoginView, GoogleCallbackView, \
+    RequestPasswordResetView, ResetPasswordView
 
 
 urlpatterns = [
@@ -13,6 +14,8 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('register/', RegisterView.as_view(), name='register'),
     path('check-email/', CheckEmailView.as_view(), name='check_email'),
+    path('request-password-reset/', RequestPasswordResetView.as_view(), name='request_password_reset'),
+    path('reset-password/', ResetPasswordView.as_view(), name='reset_password'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
     path('auth/google/login/', GoogleLoginView.as_view(), name='google_login'),
     path('auth/google/callback/', GoogleCallbackView.as_view(), name='google_callback'),

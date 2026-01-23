@@ -439,3 +439,104 @@ class GoogleCallbackView(APIView):
         except Exception as e:
             print(f"Unexpected error: {e}")
             return redirect(f"{settings.FRONTEND_URL}/login?error=server_error")
+
+
+class RequestPasswordResetView(APIView):
+    """Request a password reset link to be sent via email"""
+    
+    def post(self, request, *args, **kwargs):
+        email = request.data.get('email')
+        
+        if not email:
+            return Response({"error": "Email is required"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            # Return success even if user doesn't exist (security best practice)
+            return Response({"message": "If the email exists, a reset link has been sent"}, status=status.HTTP_200_OK)
+        
+        # Invalidate any existing tokens for this user
+        from .models import PasswordResetToken
+        PasswordResetToken.objects.filter(user=user, is_used=False).update(is_used=True)
+        
+        # Create new reset token
+        reset_token = PasswordResetToken.objects.create(user=user)
+        
+        # Build reset URL
+        frontend_url = settings.FRONTEND_URL
+        reset_url = f"{frontend_url}/reset-password?token={reset_token.token}"
+        
+        # Send email
+        from django.core.mail import send_mail
+        from django.template.loader import render_to_string
+        
+        try:
+            subject = "Password Reset Request - PAW PALS QUIZ"
+            message = f"""
+Hello,
+
+You requested to reset your password for PAW PALS QUIZ.
+
+Click the link below to reset your password:
+{reset_url}
+
+This link will expire in 24 hours.
+
+If you didn't request this, please ignore this email.
+
+Best regards,
+PAW PALS QUIZ Team
+            """
+            
+            send_mail(
+                subject,
+                message,
+                settings.DEFAULT_FROM_EMAIL,
+                [email],
+                fail_silently=False,
+            )
+        except Exception as e:
+            print(f"Error sending email: {e}")
+            return Response({"error": "Failed to send email"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+        return Response({"message": "If the email exists, a reset link has been sent"}, status=status.HTTP_200_OK)
+
+
+class ResetPasswordView(APIView):
+    """Reset password using the token from email"""
+    
+    def post(self, request, *args, **kwargs):
+        token = request.data.get('token')
+        new_password = request.data.get('new_password')
+        
+        if not token or not new_password:
+            return Response({"error": "Token and new password are required"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Validate password strength
+        if len(new_password) < 8:
+            return Response({"error": "Password must be at least 8 characters long"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        try:
+            from .models import PasswordResetToken
+            reset_token = PasswordResetToken.objects.get(token=token)
+            
+            if not reset_token.is_valid():
+                return Response({"error": "Invalid or expired token"}, status=status.HTTP_400_BAD_REQUEST)
+            
+            # Reset the password
+            user = reset_token.user
+            user.set_password(new_password)
+            user.save()
+            
+            # Mark token as used
+            reset_token.is_used = True
+            reset_token.save()
+            
+            return Response({"message": "Password reset successfully"}, status=status.HTTP_200_OK)
+            
+        except PasswordResetToken.DoesNotExist:
+            return Response({"error": "Invalid token"}, status=status.HTTP_400_BAD_REQUEST)
+        except Exception as e:
+            print(f"Error resetting password: {e}")
+            return Response({"error": "Failed to reset password"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

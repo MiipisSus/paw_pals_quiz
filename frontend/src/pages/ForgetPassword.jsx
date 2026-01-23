@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Mail, ArrowLeft } from "lucide-react";
 
-import { checkEmailExists } from "../services/apiService";
+import { checkEmailExists, requestPasswordReset } from "../services/apiService";
 
 function ForgetPassword() {
   const { t } = useTranslation();
@@ -26,11 +26,7 @@ function ForgetPassword() {
 
     try {
       await checkEmailExists(email);
-      // TODO: 實作重設密碼 API 呼叫
-      
-      // 模擬 API 呼叫
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      
+      await requestPasswordReset(email);
       setSuccess(true);
     } catch (error) {
       console.error("Reset password failed:", error);
