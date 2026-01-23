@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { Mail, Lock } from "lucide-react";
+import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { loginUser } from "../services/apiService";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -9,18 +9,16 @@ function Login() {
   const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const { login } = useAuth();
 
-  // 獲取使用者原本想要訪問的頁面
   const from = location.state?.from?.pathname || "/";
 
-  // 處理 Google 登入
   const handleGoogleLogin = () => {
-    // 重定向到後端的 Google OAuth 端點
     window.location.href = "/api/auth/google/login/";
   };
 
@@ -87,14 +85,21 @@ function Login() {
           <p className="text-brown/80">{t("login.password")}</p>
           <div className="relative">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder={t("login.passwordPlaceholder")}
-              className="w-full pl-10 pr-4 py-2 text-darker-primary bg-secondary border border-darker-primary rounded-lg"
+              className="w-full pl-10 pr-12 py-2 text-darker-primary bg-secondary border border-darker-primary rounded-lg"
               required
             />
             <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-darker-primary/60" />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-darker-primary/60 hover:text-darker-primary"
+            >
+              {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
+            </button>
           </div>
 
           <a
