@@ -4,6 +4,7 @@ import MainLayout from "./layouts/MainLayout.jsx";
 import HomeLayout from "./layouts/HomeLayout.jsx";
 import Home from "./pages/Home.jsx";
 import Game from "./pages/Game.jsx";
+import GameSettings from "./pages/GameSettings.jsx";
 import GameResult from "./pages/GameResult.jsx";
 import Login from "./pages/Login.jsx";
 import LoginCallback from "./pages/LoginCallback.jsx";
@@ -39,6 +40,7 @@ function AppRouter() {
       </Route>
       <Route path="/" element={<MainLayout />}>
         <Route path="/game" element={<Game />} />
+        <Route path="/game-settings" element={<GameSettings />} />
         <Route path="/login" element={<Login />} />
         <Route path="/login/callback" element={<LoginCallback />} />
         <Route path="/register" element={<Register />} />

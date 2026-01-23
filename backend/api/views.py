@@ -139,6 +139,11 @@ class AnswerView(APIView):
 class StartGameView(APIView):
     def post(self, request, *args, **kwargs):
         is_guest = False
+        total_rounds = request.data.get('total_rounds', 10)  # 預設 10 回合
+        
+        # 驗證回合數
+        if not isinstance(total_rounds, int) or total_rounds < 1 or total_rounds > 50:
+            return Response({"error": "total_rounds must be between 1 and 50"}, status=400)
         
         if request.user.is_authenticated:    
             game_session = GameSessionService.create_session(user_id=request.user.id)
@@ -151,7 +156,7 @@ class StartGameView(APIView):
         serializer = StartGameSerializer(
             {'game_session_id': game_session_id,
              'is_guest': is_guest,
-             'total_rounds': 10}
+             'total_rounds': total_rounds}
             )
         
         return Response(serializer.data)

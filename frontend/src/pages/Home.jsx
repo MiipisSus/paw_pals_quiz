@@ -14,12 +14,7 @@ function Home() {
   const { isAuthenticated, logout } = useAuth();
 
   const handleStartGame = async () => {
-    try {
-      await startNewGame();
-      navigate("/game");
-    } catch (error) {
-      console.error(t("game.startGameFailed"), error);
-    }
+    navigate("/game-settings");
   };
 
   const handleLogout = async () => {

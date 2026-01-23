@@ -129,5 +129,19 @@
     "wrong": "Wrong!",
     "gameOver": "Game Over",
     "finalScore": "Final Score"
+  },
+  "gameSettings": {
+    "title": "GAME",
+    "titleHighlight": "SETTINGS",
+    "subtitle": "Customize your game experience",
+    "rounds": "Number of Rounds",
+    "difficulty": "Difficulty",
+    "easy": "Easy",
+    "medium": "Medium",
+    "hard": "Hard",
+    "comingSoon": "Coming Soon",
+    "startGame": "Start Game",
+    "starting": "Starting...",
+    "backToHome": "Back to Home"
   }
 }

@@ -11,8 +11,8 @@ export function GameProvider({ children }) {
   const [roundRecords, setRoundRecords] = useState([]);
   const [onHomeButtonClick, setOnHomeButtonClick] = useState(null);
 
-  const startNewGame = async () => {
-    const res = await startGameSession();
+  const startNewGame = async (totalRounds = 10) => {
+    const res = await startGameSession(totalRounds);
 
     setGameSessionId(res.game_session_id);
     setTotalRounds(res.total_rounds);

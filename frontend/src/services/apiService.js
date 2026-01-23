@@ -89,9 +89,12 @@ async function authenticatedFetch(url, options = {}) {
   return response;
 }
 
-export async function startGameSession() {
+export async function startGameSession(totalRounds = 10) {
   const response = await authenticatedFetch(`${BASE_URL}start-game/`, {
     method: "POST",
+    body: JSON.stringify({
+      total_rounds: totalRounds,
+    }),
   });
 
   if (!response.ok) {

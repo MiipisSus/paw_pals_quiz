@@ -129,5 +129,19 @@
     "wrong": "答錯了！",
     "gameOver": "遊戲結束",
     "finalScore": "最終分數"
+  },
+  "gameSettings": {
+    "title": "遊戲",
+    "titleHighlight": "設定",
+    "subtitle": "自定義您的遊戲體驗",
+    "rounds": "回合數",
+    "difficulty": "難度",
+    "easy": "簡單",
+    "medium": "中等",
+    "hard": "困難",
+    "comingSoon": "即將推出",
+    "startGame": "開始遊戲",
+    "starting": "開始中...",
+    "backToHome": "返回首頁"
   }
 }
