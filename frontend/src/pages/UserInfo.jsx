@@ -150,7 +150,7 @@ function UserInfo() {
                         {t("userInfo.totalScoreLabel")}
                       </p>
                       <p className="text-brown font-semibold">
-                        {session.score}
+                        {session.score} <span className="text-xs text-brown/60">&nbsp;/&nbsp;{session.round_record_count}</span>
                       </p>
                     </div>
                   </div>
