@@ -1,0 +1,20 @@
+{
+  "name": "midogshop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MidogShop - Dog Breed Quiz Platform",
+  "workspaces": [
+    "frontend",
+    "pawpals-quiz"
+  ],
+  "scripts": {
+    "version": "npm version --workspaces",
+    "version:major": "npm version major --workspaces && npm version major",
+    "version:minor": "npm version minor --workspaces && npm version minor",
+    "version:patch": "npm version patch --workspaces && npm version patch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/midogshop"
+  }
+}

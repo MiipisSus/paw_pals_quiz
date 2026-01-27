@@ -20,6 +20,7 @@ from .serializers import QuestionInputSerializer, QuestionSerializer, AnswerInpu
 from .services import QuestionService, RedisService, GameSessionService, GuestGameSessionService, \
     RoundRecordService, BreedService, PlayerService
 from .models import HardestBreedStat
+from .version import VERSION_INFO
     
 
 class QuestionView(APIView):
@@ -139,7 +140,7 @@ class AnswerView(APIView):
 class StartGameView(APIView):
     def post(self, request, *args, **kwargs):
         is_guest = False
-        total_rounds = request.data.get('total_rounds', 10)  # 預設 10 回合
+        total_rounds = request.data.get('total_rounds', 10)
         
         # 驗證回合數
         if not isinstance(total_rounds, int) or total_rounds < 1 or total_rounds > 50:
@@ -545,3 +546,11 @@ class ResetPasswordView(APIView):
         except Exception as e:
             print(f"Error resetting password: {e}")
             return Response({"error": "Failed to reset password"}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class VersionView(APIView):
+    """API 版本資訊端點"""
+    permission_classes = []
+    
+    def get(self, request):
+        return Response(VERSION_INFO, status=status.HTTP_200_OK)

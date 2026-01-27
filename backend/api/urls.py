@@ -6,10 +6,11 @@ from rest_framework_simplejwt.views import (
 
 from .views import QuestionView, AnswerView, StartGameView, EndGameView, LogoutView, UserInfoView, \
     RegisterView, TerminateGameView, GlobalStatsView, CheckEmailView, GoogleLoginView, GoogleCallbackView, \
-    RequestPasswordResetView, ResetPasswordView
+    RequestPasswordResetView, ResetPasswordView, VersionView
 
 
 urlpatterns = [
+    path('version/', VersionView.as_view(), name='version'),
     path('login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('register/', RegisterView.as_view(), name='register'),

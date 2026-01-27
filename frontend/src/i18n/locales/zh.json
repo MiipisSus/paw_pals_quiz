@@ -143,5 +143,18 @@
     "startGame": "開始遊戲",
     "starting": "開始中...",
     "backToHome": "返回首頁"
+  },
+  "about": {
+    "authorName": "MiipisSus",
+    "authorDescription": "Full-stack Developer",
+    "title": "關於我們",
+    "subtitle": "熱愛狗狗，熱愛學習",
+    "version": "版本",
+    "description": "Paw Pals Quiz 是一個互動式狗品種識別遊戲，旨在透過有趣的方式幫助玩家學習和辨識不同的狗狗品種。",
+    "purpose": "無論您是狗狗愛好者還是想要增進對犬類品種的了解，這個平台都能為您提供有趣且富有教育意義的體驗。",
+    "techStack": "技術棧",
+    "author": "作者資訊",
+    "githubPlaceholder": "@你的使用者名稱",
+    "thanks": "感謝所有玩家的支持與熱情參與！🐕"
   }
 }

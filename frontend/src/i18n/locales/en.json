@@ -143,5 +143,19 @@
     "startGame": "Start Game",
     "starting": "Starting...",
     "backToHome": "Back to Home"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Love dogs, love learning",
+    "version": "Version",
+    "madeWith": "Made with ❤️",
+    "projectInfo": "Project Information",
+    "description": "Paw Pals Quiz is an interactive dog breed identification game designed to help players learn and recognize different dog breeds in a fun way.",
+    "purpose": "Whether you're a dog lover or looking to expand your knowledge of canine breeds, this platform offers an engaging and educational experience.",
+    "techStack": "Tech Stack",
+    "author": "Author Information",
+    "authorName": "Your Name",
+    "authorDescription": "Full-Stack Developer & Dog Lover",
+    "thanks": "Thank you to all players for your support and enthusiasm! 🐕"
   }
 }

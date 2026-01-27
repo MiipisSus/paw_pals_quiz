@@ -13,6 +13,7 @@ import Register from "./pages/Register.jsx";
 import ForgetPassword from "./pages/ForgetPassword.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
 import GlobalStatics from "./pages/GlobalStatics.jsx";
+import About from "./pages/About.jsx";
 import ProtectedRoute from "./components/ProtectedRoute.jsx";
 import { AppProvider } from "./contexts/AppProvider.jsx";
 
@@ -39,6 +40,7 @@ function AppRouter() {
         <Route index element={<Home />} />
       </Route>
       <Route path="/" element={<MainLayout />}>
+        <Route path="/about" element={<About />} />
         <Route path="/game" element={<Game />} />
         <Route path="/game-settings" element={<GameSettings />} />
         <Route path="/login" element={<Login />} />
