@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Database, Mail, Globe } from "lucide-react";
 import headshotImg from "../assets/headshot.jpg";
 import githubLogo from "../assets/GitHub_Invertocat_Black.svg";
-import BuyMeACoffee from "../components/BuyMeACoffee";
+import BuyMeACoffee from "../assets/blue-button.png";
 
 function About() {
   const { t } = useTranslation();
@@ -59,11 +59,18 @@ function About() {
                 <Globe className="p-0.5 text-white" />
               </a>
             </div>
-            <div
-              className="inline-block rounded-lg overflow-hidden"
-              style={{ boxShadow: "0 0 0 4px white" }}
-            >
-              <BuyMeACoffee />
+            <div className="w-50">
+              <img
+                src={BuyMeACoffee}
+                alt="Buy me a coffee"
+                className="cursor-pointer"
+                onClick={() =>
+                  window.open(
+                    "https://www.buymeacoffee.com/miipissus",
+                    "_blank",
+                  )
+                }
+              />
             </div>
           </div>
         </div>

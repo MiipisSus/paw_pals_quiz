@@ -1,17 +1,17 @@
 export default function BuyMeACoffee() {
   return (
-    <div>
-      <a
-        href="https://www.buymeacoffee.com/miipissus"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img
-          src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
-          alt="Buy Me A Coffee"
-          style={{ height: "60px", width: "217px" }}
-        />
-      </a>
-    </div>
+    <a
+      className="center bg-[#FD0] p-2"
+      target="_blank"
+      href="https://www.buymeacoffee.com/theshubhagrwl"
+    >
+      <img
+        className="size-10"
+        src="https://cdn.buymeacoffee.com/buttons/bmc-new-btn-logo.svg"
+        alt="Buy me a coffee"
+        fill
+      />
+      <span className="coffeeButtonText">Buy me a coffee</span>
+    </a>
   );
 }
