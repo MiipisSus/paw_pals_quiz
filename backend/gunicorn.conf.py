@@ -4,12 +4,8 @@ Gunicorn 配置文件
 import multiprocessing
 import os
 
-# 綁定地址和端口
+# 綁定地址和端口（Docker 環境需要綁定 0.0.0.0）
 bind = "0.0.0.0:8000"
-
-# SSL 憑證配置（用於 HTTPS）
-certfile = os.path.join(os.path.dirname(__file__), "certs", "localhost+1.pem")
-keyfile = os.path.join(os.path.dirname(__file__), "certs", "localhost+1-key.pem")
 
 # Worker 數量（建議為 CPU 核心數的 2-4 倍）
 workers = multiprocessing.cpu_count() * 2 + 1

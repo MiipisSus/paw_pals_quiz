@@ -92,15 +92,15 @@ DATABASES = {
         'NAME': 'dog_breed_guesser',
         'USER': config('DATABASE_USERNAME', default='postgres'),
         'PASSWORD': config('DATABASE_PASSWORD', default='postgres'),
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'HOST': config('DATABASE_HOST', default='localhost'),
+        'PORT': config('DATABASE_PORT', default='5432'),
     }
 }
 
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",
+        "LOCATION": f"redis://{config('REDIS_HOST', default='127.0.0.1')}:{config('REDIS_PORT', default='6379')}/1",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }
