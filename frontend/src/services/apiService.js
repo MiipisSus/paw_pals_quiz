@@ -3,7 +3,8 @@ export const BASE_URL = import.meta.env.VITE_API_URL || "/api/";
 function getCurrentLanguage() {
   const savedLang = localStorage.getItem("i18nextLng");
   if (savedLang) {
-    return savedLang;
+    // 標準化語言代碼：zh-TW, zh-CN 等 → zh
+    return savedLang.startsWith("zh") ? "zh" : "en";
   }
 
   const browserLang = navigator.language || navigator.userLanguage;
