@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
-import { loginUser } from "../services/apiService";
+import { loginUser, BASE_URL } from "../services/apiService";
 import { useAuth } from "../contexts/AuthContext";
 
 function Login() {
@@ -19,7 +19,7 @@ function Login() {
   const from = location.state?.from?.pathname || "/";
 
   const handleGoogleLogin = () => {
-    window.location.href = "/api/auth/google/login/";
+    window.location.href = `${BASE_URL}auth/google/login/`;
   };
 
   const handleLogin = async (e) => {
@@ -56,7 +56,9 @@ function Login() {
         <div className="center flex-col">
           <h1 className="mt-8 text-brown text-3xl font-bold">
             {t("login.title")}&nbsp;
-            <span className="text-darker-accent">{t("login.titleHighlight")}</span>
+            <span className="text-darker-accent">
+              {t("login.titleHighlight")}
+            </span>
           </h1>
           <h2 className="text-brown/50 font-semibold">{t("login.subtitle")}</h2>
         </div>
@@ -98,7 +100,11 @@ function Login() {
               onClick={() => setShowPassword(!showPassword)}
               className="absolute right-3 top-1/2 transform -translate-y-1/2 text-darker-primary/60 hover:text-darker-primary"
             >
-              {showPassword ? <EyeOff className="size-4" /> : <Eye className="size-4" />}
+              {showPassword ? (
+                <EyeOff className="size-4" />
+              ) : (
+                <Eye className="size-4" />
+              )}
             </button>
           </div>
 
@@ -128,7 +134,9 @@ function Login() {
         <div className="center flex-col gap-3 w-full">
           <div class="flex items-center w-full">
             <div class="grow h-px bg-brown/30"></div>
-            <span class="px-3 text-brown/30 text-sm font-semibold">{t("login.or")}</span>
+            <span class="px-3 text-brown/30 text-sm font-semibold">
+              {t("login.or")}
+            </span>
             <div class="grow h-px bg-brown/30"></div>
           </div>
           <button

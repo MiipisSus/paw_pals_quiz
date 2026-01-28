@@ -1,0 +1,62 @@
+# ====== 階段 1: 建置階段 ======
+FROM python:3.11-slim AS builder
+
+WORKDIR /app
+
+# 安裝建置依賴
+RUN apt-get update && apt-get install -y \
+    gcc \
+    python3-dev \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# 複製依賴檔案
+COPY pyproject.toml ./
+
+# 安裝 Python 依賴
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir .
+
+# ====== 階段 2: 生產階段 ======
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# 安裝執行時依賴
+RUN apt-get update && apt-get install -y \
+    postgresql-client \
+    libpq-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# 從建置階段複製已安裝的套件
+COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
+
+# 複製應用程式碼
+COPY . .
+
+# 建立靜態文件目錄
+RUN mkdir -p /app/staticfiles /app/media
+
+# 收集靜態檔案（在建置時執行，而非啟動時）
+RUN python manage.py collectstatic --noinput || true
+
+# 建立非 root 使用者
+RUN useradd -m -u 1000 appuser && \
+    chown -R appuser:appuser /app
+
+USER appuser
+
+# 暴露端口
+EXPOSE 8000
+
+# 設定環境變數
+ENV PYTHONUNBUFFERED=1
+ENV PYTHONDONTWRITEBYTECODE=1
+
+# 健康檢查
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+    CMD python -c "import requests; requests.get('http://localhost:8000/api/health/', timeout=2)" || exit 1
+
+# 預設命令
+CMD ["gunicorn", "config.wsgi:application", "-c", "gunicorn.conf.py"]
